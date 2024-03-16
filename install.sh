@@ -18,3 +18,5 @@ source installation/confirm_installation.sh
 
 source installation/yay.sh
 
+source installation/backup.sh
+

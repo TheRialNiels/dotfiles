@@ -20,11 +20,9 @@ if [ $SCRIPTPATH = "/home/$USER/dotfiles" ]; then
     echo "Proceeding is not recommended!"
 fi
 
-echo $GUM_CONFIRM_SELECTED_FOREGROUND
-
 if [ ! -d ~/dotfiles ];then
     echo -e "${BLUE}"
-    if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" ;then
+    if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" --default=false;then
 echo -e "${NOCOLOR}"
         echo "Installation started."
     elif [ $? -eq 130 ]; then
@@ -36,7 +34,7 @@ echo -e "${NOCOLOR}"
     fi
 else
     echo -e "${BLUE}"
-    if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" ;then
+    if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" --default=false;then
 	echo -e "${NOCOLOR}"
         echo "Update started."
     elif [ $? -eq 130 ]; then
