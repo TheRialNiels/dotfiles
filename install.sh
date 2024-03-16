@@ -40,3 +40,5 @@ source "${inst_path}install-packages.sh"
 
 source "${inst_path}wallpapers.sh"
 
+source "${inst_path}display-manager.sh"
+
