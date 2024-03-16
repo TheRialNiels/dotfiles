@@ -212,12 +212,16 @@ _replaceInFile() {
 
         # Check that deliminters exists
         if [[ "$start_found" == "0" ]] ;then
+	    echo -e "${RED}"
             echo "ERROR: Start deliminter not found."
+	    echo -e "${NOCOLOR}"
             sleep 2
         fi
 
         if [[ "$end_found" == "0" ]] ;then
+	    echo -e "${RED}"
             echo "ERROR: End deliminter not found."
+	    echo -e "${NOCOLOR}"
             sleep 2
         fi
 
@@ -233,11 +237,15 @@ _replaceInFile() {
             # Add the new line
             sed -i "$start_found i $new_string" $file_path
         else
+	    echo -e "${RED}"
             echo "ERROR: Delimiters syntax."
+	    echo -e "${NOCOLOR}"
             sleep 2
         fi
     else
+	echo -e "${RED}"
         echo "ERROR: Target file not found."
+	echo -e "${NOCOLOR}"
         sleep 2
     fi
 }
@@ -247,41 +255,64 @@ _replaceInFile() {
 # replaceLineInFile $findText $customtext $targetFile
 # ------------------------------------------------------
 _replaceLineInFile() {
-   # Set function parameters
+    # Set function parameters
     find_string="$1"
     new_string="$2"
-    file_path=$3
+    file_path="$3"
 
     # Counters
     find_line_counter=0
     line_found=0
 
-    if [ -f $file_path ] ;then
-        # Detect Line
-        while read -r line
-        do
+    if [ -f "$file_path" ]; then
+        # Detect the line with find_string
+        while IFS= read -r line; do
             ((find_line_counter++))
             if [[ $line = *$find_string* ]]; then
-                # echo "Start found in $start_line_counter"
                 line_found=$find_line_counter
                 break
-            fi 
+            fi
         done < "$file_path"
 
-        if [[ ! "$line_found" == "0" ]] ;then            
-            #Remove the line
-            sed -i "$line_found d" $file_path
-
+        if [[ ! "$line_found" == "0" ]]; then
+            # Remove the line with new_string if it exists
+            sed -i "/$new_string/d" "$file_path"
+            # Remove the line with find_string
+            sed -i "${line_found}d" "$file_path"
             # Add the new line
-            sed -i "$line_found i $new_string" $file_path            
+            sed -i "${line_found}i$new_string" "$file_path"
+	    
+	    echo -e "${CYAN}"
+            echo "Line replaced in $file_path"
+	    echo -e "${NOCOLOR}"
         else
-            echo "ERROR: Target line not found."
-            sleep 2
-        fi   
+            # If the line with find_string is not found, check if the line with new_string exists
+            while IFS= read -r line; do
+                ((find_line_counter++))
+                if [[ $line = *$new_string* ]]; then
+                    line_found=$find_line_counter
+                    break
+                fi
+            done < "$file_path"
+            
+            if [[ ! "$line_found" == "0" ]]; then
+		echo -e "${CYAN}"
+                echo "ERROR: The line with \"$find_string\" was not found but the line with \"$new_string\" already exists in $file_path"
+		echo -e "${NOCOLOR}"
+            else
+		echo -e "${RED}"
+                echo "ERROR: The line with \"$find_string\" was not found in $file_path"
+		echo -e "${NOCOLOR}"
 
+		exit 1
+            fi
+        fi
     else
-        echo "ERROR: Target file not found."
-        sleep 2
+	echo -e "${RED}"
+        echo "ERROR: Target file $file_path not found."
+	echo -e "${NOCOLOR}"
+
+	exit 1
     fi
 }
 

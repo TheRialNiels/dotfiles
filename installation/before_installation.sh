@@ -1,6 +1,17 @@
 #!/bin/bash
 
 # ------------------------------------------------------
+# Update /etc/pacman.conf file
+# ------------------------------------------------------
+_replaceLineInFile "#Color" "Color" "/etc/pacman.conf"
+_replaceLineInFile "#ParallelDownloads = 5" "ParallelDownloads = 3" "/etc/pacman.conf"
+
+# ------------------------------------------------------
+# Pacman Key
+# ------------------------------------------------------
+sudo pacman-key --init
+
+# ------------------------------------------------------
 # Check for required packages to run the installation
 # ------------------------------------------------------
 
