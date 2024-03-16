@@ -8,8 +8,8 @@ datets=$(date '+%Y%m%d%H%M%S')
 if [ -d ~/dotfiles ] || [ -f ~/.bashrc ] || [ -f ~/.zshrc ]; then
     echo -e "${BLUE}"
     figlet "Backup"
-    echo -e "${NOCOLOR}"
 
+    echo -e "${CYAN}"
     if [ -d ~/dotfiles ]; then
         echo ":: The script has detected an existing dotfiles folder and will try to create a backup into the folder:"
         echo "   ~/dotfiles-versions/backups/$datets"
@@ -25,7 +25,8 @@ if [ -d ~/dotfiles ] || [ -f ~/.bashrc ] || [ -f ~/.zshrc ]; then
         echo "   ~/dotfiles-versions/backups/$datets/.zshrc-old"
     fi
 
-    if gum confirm "Do you want to create a backup?" --default=false;then
+    echo -e "${BLUE}"
+    if gum confirm "DO YOU WANT TO CREATE A BACKUP?" --default=false;then
 	echo -e "${CYAN}"
 
         if [ ! -d ~/dotfiles-versions ]; then
@@ -63,4 +64,6 @@ if [ -d ~/dotfiles ] || [ -f ~/.bashrc ] || [ -f ~/.zshrc ]; then
     fi
     echo ""
 fi
+
+echo -e "${NOCOLOR}"
 
