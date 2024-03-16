@@ -6,6 +6,7 @@ echo -e "${NOCOLOR}"
 
 packagesPacman=(
     "pacman-contrib"
+    "kitty"
     "vim"
     "bluez"
     "bluez-utils"
@@ -60,11 +61,16 @@ packagesPacman=(
     "imagemagick"
     "guvcview"
     "neofetch"
+    "bat"
+    "locate"
 );
 
 packagesYay=(
     "bibata-cursor-theme" 
     "trizen"
     "pacseek"
+    "zsh-syntax-highlighting"
+    "zsh-autosuggestions"
+    "zsh-sudo-git"
 );
 

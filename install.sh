@@ -4,6 +4,7 @@ version='1.0'
 
 utils_path="utils/"
 inst_path="installation/"
+pkg_path="${inst_path}packages/"
 
 # Load some utils that will be used in the scripts
 source "${utils_path}utils.sh"
@@ -29,7 +30,11 @@ source "${inst_path}installer.sh"
 
 source "${inst_path}remove.sh"
 
-source "${inst_path}packages/general-packages.sh"
+source "${pkg_path}general-packages.sh"
+
+source "${inst_path}install-packages.sh"
+
+source "${pkg_path}hyprland-packages.sh"
 
 source "${inst_path}install-packages.sh"
 
