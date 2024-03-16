@@ -16,7 +16,7 @@ sudo pacman-key --init
 # ------------------------------------------------------
 
 # Synchronize packages
-sudo pacman -Sy
+sudo pacman -Syu
 echo -e "\n"
 
 # Check for required packages

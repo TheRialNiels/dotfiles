@@ -12,6 +12,7 @@ _checkSudo
 # Check some packages before begin with the installation
 source installation/before_installation.sh
 
-# Start installation
 source utils/print-title.sh
+
+source installation/confirm_installation.sh
 
