@@ -20,3 +20,5 @@ source installation/yay.sh
 
 source installation/backup.sh
 
+source installation/preparation.sh
+
