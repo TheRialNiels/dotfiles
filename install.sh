@@ -38,3 +38,5 @@ source "${pkg_path}hyprland-packages.sh"
 
 source "${inst_path}install-packages.sh"
 
+source "${inst_path}wallpapers.sh"
+
