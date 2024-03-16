@@ -22,3 +22,5 @@ source installation/backup.sh
 
 source installation/preparation.sh
 
+source installation/remove.sh
+
