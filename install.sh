@@ -61,3 +61,14 @@ source "${inst_path}zshrc.sh"
 
 source "${inst_path}cleanup.sh"
 
+echo -e "${BLUE}"
+figlet "Done"
+echo -e "\n"
+
+echo -e "${CYAN}"
+echo "Please reboot your system!"
+echo -e "${NOCOLOR}"
+echo -e "\n"
+
+sleep 3
+
