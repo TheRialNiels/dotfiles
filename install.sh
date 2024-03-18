@@ -47,3 +47,5 @@ source "${inst_path}restore.sh"
 
 source "${inst_path}keyboard.sh"
 
+source "${inst_path}copy.sh"
+
