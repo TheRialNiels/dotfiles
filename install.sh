@@ -5,6 +5,7 @@ version='1.0'
 utils_path="utils/"
 inst_path="installation/"
 pkg_path="${inst_path}packages/"
+tpl_path="${inst_path}templates/"
 
 # Load some utils that will be used in the scripts
 source "${utils_path}utils.sh"
@@ -41,4 +42,8 @@ source "${inst_path}install-packages.sh"
 source "${inst_path}wallpapers.sh"
 
 source "${inst_path}display-manager.sh"
+
+source "${inst_path}restore.sh"
+
+source "${inst_path}keyboard.sh"
 
