@@ -57,3 +57,5 @@ source "${inst_path}init-pywal.sh"
 
 source "${inst_path}bashrc.sh"
 
+source "${inst_path}zshrc.sh"
+
