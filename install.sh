@@ -51,5 +51,7 @@ source "${inst_path}copy.sh"
 
 source "${inst_path}init-pywal.sh"
 
-#source "${inst_path}"hyprland-dotfiles.sh"
+#source "${inst_path}hyprland-dotfiles.sh"
+
+#source "${inst_path}gtk.sh"
 
