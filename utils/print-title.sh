@@ -8,7 +8,6 @@ clear
 
 echo -e "${BLUE}"
 figlet -f slant -t -c "HYPRLAND DOTFILES"
-echo -e "${NOCOLOR}"
 
 # Ascii Font -> Mini
 echo -e "${WHITE}"
