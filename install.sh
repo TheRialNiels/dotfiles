@@ -1,9 +1,8 @@
 #!/bin/bash
 
-version='1.0'
-
+version="$(cat .version/version)"
 utils_path="utils/"
-inst_path="installation/"
+inst_path=".install/"
 pkg_path="${inst_path}packages/"
 tpl_path="${inst_path}templates/"
 
@@ -48,12 +47,6 @@ source "${inst_path}restore.sh"
 source "${inst_path}keyboard.sh"
 
 source "${inst_path}copy.sh"
-
-source "${inst_path}init-pywal.sh"
-
-#source "${inst_path}hyprland-dotfiles.sh"
-
-#source "${inst_path}gtk.sh"
 
 source "${inst_path}bashrc.sh"
 
