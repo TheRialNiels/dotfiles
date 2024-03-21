@@ -25,11 +25,13 @@ packagesPacman=(
     "mousepad"
     "noto-fonts" 
     "otf-font-awesome" 
+    "ttf-font-awesome" 
     "ttf-fira-sans" 
     "ttf-fira-code" 
     "ttf-firacode-nerd" 
     "ttf-hack-nerd"
     "ttf-nerd-fonts-symbols"
+    "ttf-nerd-fonts-symbols-mono"
     "figlet" 
     "vlc" 
     "eza" 
@@ -63,6 +65,7 @@ packagesPacman=(
     "neofetch"
     "bat"
     "locate"
+    "pastel"
 );
 
 packagesYay=(
