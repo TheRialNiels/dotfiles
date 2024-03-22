@@ -12,6 +12,8 @@
     // Group Modules
     "~/dotfiles/waybar/group-modules/group-modules.json"
   ],
+  
+  // Separators
   "custom/dot-separator": {
     "format": "",
     "tooltip": false
