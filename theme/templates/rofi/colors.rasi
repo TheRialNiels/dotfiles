@@ -1,0 +1,8 @@
+* {
+    background:     ${background};
+    background-alt: ${modbackground1};
+    foreground:     ${foreground};
+    selected:       ${accent};
+    active:         ${color2};
+    urgent:         ${color1};
+}
