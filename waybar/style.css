@@ -45,16 +45,22 @@ window#waybar.hidden {
   opacity: 0.5;
 }
 
-/** ========== General ========== **/
+/** ========== Left Modules ========== **/
 #workspaces,
 #custom-launcher,
 #temperatureGroup,
 #storageGroup,
-#hardwareGroup {
+#hardwareGroup,
+#clockGroup {
   background-color: @background-alt2;
   padding: 0.25rem;
-  margin: 0.5rem 0 0.5rem 0.75rem;
+  margin: 0.5rem 0 0.5rem 0.5rem;
   border-radius: 0.25rem;
+}
+
+/** ========== Right Modules ========== **/
+#clockGroup {
+  margin: 0.5rem 0.5rem 0.5rem 0;
 }
 
 /** ========== General Modules ========== **/

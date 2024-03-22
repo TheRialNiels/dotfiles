@@ -3,7 +3,8 @@
 /** ======================================= **/
 #temperatureGroup,
 #storageGroup,
-#hardwareGroup {
+#hardwareGroup,
+#clockGroup {
   color: @foreground;
   padding: 0 0.75rem;
 }

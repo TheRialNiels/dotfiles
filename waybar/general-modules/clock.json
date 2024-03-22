@@ -1,0 +1,15 @@
+{
+  "clock#Icon": {
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "",
+    "timezone": "America/Mexico_City",
+    "locale": "en_US.UTF-8"
+  },
+  "clock#Text": {
+    "interval": 60,
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%I:%M %p, %a %d %b, %G}",
+    "timezone": "America/Mexico_City",
+    "locale": "en_US.UTF-8"
+  }
+}

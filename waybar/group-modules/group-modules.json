@@ -31,5 +31,9 @@
       "memory#Icon",
       "memory#Text"
     ]
+  },
+  "group/clockGroup": {
+    "orientation": "horizontal",
+    "modules": ["clock#Icon", "clock#Text"]
   }
 }

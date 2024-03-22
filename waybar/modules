@@ -5,6 +5,7 @@
     "~/dotfiles/waybar/general-modules/hardware.json",
     "~/dotfiles/waybar/general-modules/temperature.json",
     "~/dotfiles/waybar/general-modules/storage.json",
+    "~/dotfiles/waybar/general-modules/clock.json",
 
     // Custom Modules
     "~/dotfiles/waybar/custom-modules/custom-launcher.json",
@@ -12,7 +13,7 @@
     // Group Modules
     "~/dotfiles/waybar/group-modules/group-modules.json"
   ],
-  
+
   // Separators
   "custom/dot-separator": {
     "format": "",

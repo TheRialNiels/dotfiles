@@ -37,7 +37,8 @@
 #temperature,
 #disk,
 #cpu,
-#memory {
+#memory,
+#clock {
   font-size: medium;
   font-weight: bold;
 }
@@ -48,7 +49,8 @@
 #disk.Root,
 #disk.Home,
 #cpu.Icon,
-#memory.Icon {
+#memory.Icon,
+#clock.Icon {
   padding-right: 0.5rem;
 }
 
@@ -58,7 +60,8 @@
 #disk.Root2,
 #disk.Home2,
 #cpu.Text,
-#memory.Text {
+#memory.Text,
+#clock.Text {
   font-size: small;
 }
 
