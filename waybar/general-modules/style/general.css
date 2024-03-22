@@ -52,6 +52,16 @@
   padding-right: 0.5rem;
 }
 
+#temperature.Cpu2,
+#temperature.Gpu2,
+#temperature.Nvme2,
+#disk.Root2,
+#disk.Home2,
+#cpu.Text,
+#memory.Text {
+  font-size: small;
+}
+
 #temperature.Cpu.critical,
 #temperature.Cpu2.critical,
 #temperature.Gpu.critical,
