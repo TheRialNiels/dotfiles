@@ -1,0 +1,2 @@
+#TODO Add script to identify the temp path
+for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $($(dirname $i)/temp_label 2>/dev/null || echo ${i%_*}) $(readlink -f $i)"; done
