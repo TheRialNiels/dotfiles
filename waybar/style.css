@@ -14,11 +14,22 @@
   font-size: 13px;
 }
 
+tooltip {
+  background-color: @background-alt2;
+}
+
+tooltip label {
+  color: @foreground;
+  font-weight: bold;
+  font-size: medium;
+}
+
 /** ========== Separators ========== **/
 #custom-dot-separator {
   font-size: xx-small;
+  font-weight: bold;
   color: @blue;
-  margin: 0 0.5rem;
+  margin: 0 0.65rem;
 }
 
 /** ========== Waybar Window ========== **/
@@ -36,7 +47,8 @@ window#waybar.hidden {
 
 /** ========== General ========== **/
 #workspaces,
-#hardware,
+#temperatureGroup,
+#storageGroup,
 #custom-launcher {
   background-color: @background-alt2;
   padding: 0.25rem;
@@ -49,3 +61,6 @@ window#waybar.hidden {
 
 /** ========== Custom Modules ========== **/
 @import "./custom-modules/style/custom.css";
+
+/** ========== Group Modules ========== **/
+@import "./group-modules/group.css";
