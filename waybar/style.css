@@ -1,0 +1,51 @@
+/* ================================================== **
+** ==========  Copyright (C) TheRialNiels  ========== **
+** ================================================== */
+
+/** ========== Colors ========== **/
+@import "./colors.css";
+
+/** ========== Global ========== **/
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Symbols Nerd Font", "Hack Nerd Font", FontAwesome, Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+/** ========== Separators ========== **/
+#custom-dot-separator {
+  font-size: xx-small;
+  color: @blue;
+  margin: 0 0.5rem;
+}
+
+/** ========== Waybar Window ========== **/
+window#waybar {
+  background-color: @background;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border: 2px solid @background-alt1;
+  border-radius: 0.25rem;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+/** ========== General ========== **/
+#workspaces,
+#hardware,
+#custom-launcher {
+  background-color: @background-alt2;
+  padding: 0.25rem;
+  margin: 0.5rem 0 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/** ========== General Modules ========== **/
+@import "./general-modules/style/general.css";
+
+/** ========== Custom Modules ========== **/
+@import "./custom-modules/style/custom.css";

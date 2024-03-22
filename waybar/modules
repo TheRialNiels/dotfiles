@@ -1,0 +1,14 @@
+{
+  "include": [
+    // General Modules
+    "~/dotfiles/waybar/general-modules/workspaces.json",
+    "~/dotfiles/waybar/general-modules/hardware.json",
+
+    // Custom Modules
+    "~/dotfiles/waybar/custom-modules/custom-launcher.json"
+  ],
+  "custom/dot-separator": {
+    "format": "󰻃",
+    "tooltip": false
+  }
+}

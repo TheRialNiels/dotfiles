@@ -1,0 +1,15 @@
+/** ================================ **/
+/** =========== Launcher =========== **/
+/** ================================ **/
+#custom-launcher {
+  font-size: large;
+  font-weight: bold;
+  color: @foreground;
+  background-color: transparent;
+  padding: 0.5rem;
+}
+
+/*TODO #custom-launcher:hover {
+  color: @background;
+  background-color: @cyan;
+}*/

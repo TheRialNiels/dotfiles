@@ -1,0 +1,22 @@
+{
+  "id": "waybar",
+  "name": "waybar",
+  "layer": "top", // Bar is displayes in front (top) of the windows or behind (bottom).
+  "position": "top", // Bar position [top / bottom / left / right]
+  "height": 34, // Waybar height (to be removed for auto height)
+  "width": "", // Waybar width
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
+  "spacing": 0, // Gaps between modules
+  "exclusive": true, // Option to request an exclusive zone from the compositor.
+  "fixed-center": true, // The center block will stay in the middle of the bar whenever possible.
+  "passthrough": false, // Option to pass any pointer events to the window under the bar.
+  "include": [
+    // Paths to additional configuration files.
+    "~/dotfiles/waybar/modules"
+  ],
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "group/hardware"],
+  "modules-center": [],
+  "modules-right": []
+}
