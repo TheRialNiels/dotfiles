@@ -1,0 +1,25 @@
+{
+  "group/temperatureGroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature#Nvme",
+      "temperature#Nvme2",
+      "custom/dot-separator",
+      "temperature#Cpu",
+      "temperature#Cpu2",
+      "custom/dot-separator",
+      "temperature#Gpu",
+      "temperature#Gpu2"
+    ]
+  },
+  "group/storageGroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "disk#Root",
+      "disk#Root2",
+      "custom/dot-separator",
+      "disk#Home",
+      "disk#Home2"
+    ]
+  }
+}

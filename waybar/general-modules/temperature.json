@@ -1,0 +1,109 @@
+{
+  /** ========== Temperature CPU ========== **/
+  "temperature#Cpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "{icon}",
+    "format": "{icon}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "tooltip-format": "CPU Temp: {temperatureC}°C"
+  },
+  "temperature#Cpu2": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "{temperatureC}°C",
+    "format": "{temperatureC}°C",
+    "tooltip-format": "CPU Temp: {temperatureC}°C"
+  },
+
+  /** ========== Temperature GPU ========== **/
+  "temperature#Gpu": {
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "{icon}",
+    "format": "{icon}",
+    "format-icons": [
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 "
+    ],
+    "tooltip-format": "GPU Temp: {temperatureC}°C"
+  },
+  "temperature#Gpu2": {
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "{temperatureC}°C",
+    "format": "{temperatureC}°C",
+    "format-icons": [
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 ",
+      "󰢮 "
+    ],
+    "tooltip-format": "GPU Temp: {temperatureC}°C"
+  },
+
+  /** ========== Temperature NVME ========== **/
+  "temperature#Nvme": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "{icon}",
+    "format": "{icon}",
+    "format-icons": [
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 "
+    ],
+    "tooltip-format": "NVME Temp: {temperatureC}°C"
+  },
+  "temperature#Nvme2": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "{temperatureC}°C",
+    "format": "{temperatureC}°C",
+    "format-icons": [
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 ",
+      "󰾲 "
+    ],
+    "tooltip-format": "NVME Temp: {temperatureC}°C"
+  }
+}

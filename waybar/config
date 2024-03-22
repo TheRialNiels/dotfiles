@@ -16,7 +16,7 @@
     // Paths to additional configuration files.
     "~/dotfiles/waybar/modules"
   ],
-  "modules-left": ["custom/launcher", "hyprland/workspaces", "group/hardware"],
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "group/temperatureGroup", "group/storageGroup"],
   "modules-center": [],
   "modules-right": []
 }

@@ -1,0 +1,8 @@
+/** ======================================= **/
+/** ========== Temperature Group ========== **/
+/** ======================================= **/
+#temperatureGroup,
+#storageGroup {
+  color: @foreground;
+  padding: 0 0.75rem;
+}

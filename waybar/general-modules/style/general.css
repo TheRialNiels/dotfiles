@@ -31,34 +31,21 @@
   border-radius: 0.25rem;
 }
 
-/** ==================================== **/
-/** ========== Hardware Group ========== **/
-/** ==================================== **/
-#hardware {
-  color: @foreground;
-  padding: 0 0.75rem;
+/** ======================================== **/
+/** ========== Temperature & Disk ========== **/
+/** ======================================== **/
+#temperature,
+#disk {
+  font-size: medium;
+  font-weight: bold;
 }
 
-#cpu,
 #temperature.Cpu,
 #temperature.Gpu,
-#temperature.Nvme {
-  font-size: larger;
+#temperature.Nvme,
+#disk.Root,
+#disk.Home {
   padding-right: 0.5rem;
-}
-
-#cpu.2,
-#temperature.Cpu2 {
-  font-size: medium;
-}
-
-#cpu.2 {
-  padding-right: 0;
-}
-
-#temperature.Gpu,
-#temperature.Nvme {
-  font-size: large;
 }
 
 #temperature.Cpu.critical,
