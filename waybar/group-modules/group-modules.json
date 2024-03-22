@@ -21,5 +21,15 @@
       "disk#Home",
       "disk#Home2"
     ]
+  },
+  "group/hardwareGroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu#Icon",
+      "cpu#Text",
+      "custom/dot-separator",
+      "memory#Icon",
+      "memory#Text"
+    ]
   }
 }

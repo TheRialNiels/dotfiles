@@ -35,7 +35,9 @@
 /** ========== Temperature & Disk ========== **/
 /** ======================================== **/
 #temperature,
-#disk {
+#disk,
+#cpu,
+#memory {
   font-size: medium;
   font-weight: bold;
 }
@@ -44,7 +46,9 @@
 #temperature.Gpu,
 #temperature.Nvme,
 #disk.Root,
-#disk.Home {
+#disk.Home,
+#cpu.Icon,
+#memory.Icon {
   padding-right: 0.5rem;
 }
 

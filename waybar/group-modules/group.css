@@ -2,7 +2,8 @@
 /** ========== Temperature Group ========== **/
 /** ======================================= **/
 #temperatureGroup,
-#storageGroup {
+#storageGroup,
+#hardwareGroup {
   color: @foreground;
   padding: 0 0.75rem;
 }

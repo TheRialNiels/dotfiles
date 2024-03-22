@@ -47,9 +47,10 @@ window#waybar.hidden {
 
 /** ========== General ========== **/
 #workspaces,
+#custom-launcher,
 #temperatureGroup,
 #storageGroup,
-#custom-launcher {
+#hardwareGroup {
   background-color: @background-alt2;
   padding: 0.25rem;
   margin: 0.5rem 0 0.5rem 0.75rem;
