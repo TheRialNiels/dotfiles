@@ -5,7 +5,7 @@
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "default": "",
+      "default": "",
       "empty": "",
       "active": "",
       "urgent": ""
