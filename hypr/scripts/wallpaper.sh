@@ -4,7 +4,8 @@
 ##
 ## Set Wallpaper in Hyprland
 
-WALLPAPER='/home/test/dotfiles/wallpapers/wallpaper11.jpg'
+CACHE_WALL="$HOME/.cache/current_wallpaper"
+WALLPAPER=$(cat "$CACHE_WALL")
 
 # -----------------------------------------------------
 # Set the new wallpaper
