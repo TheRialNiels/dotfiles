@@ -16,7 +16,6 @@
       "default": ["", "", ""]
     },
     "scroll-step": 5.0,
-    // Commands to execute on events
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol",
     "smooth-scrolling-threshold": 1
