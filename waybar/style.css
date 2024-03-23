@@ -52,7 +52,8 @@ window#waybar.hidden {
 #storageGroup,
 #hardwareGroup,
 #clockGroup,
-#network {
+#network,
+#pulseaudio {
   background-color: @background-alt2;
   padding: 0.25rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
@@ -61,7 +62,8 @@ window#waybar.hidden {
 
 /** ========== Right Modules ========== **/
 #clockGroup,
-#network {
+#network,
+#pulseaudio {
   margin: 0.5rem 0.5rem 0.5rem 0;
 }
 

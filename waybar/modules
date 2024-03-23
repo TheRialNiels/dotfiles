@@ -7,6 +7,7 @@
     "~/dotfiles/waybar/general-modules/storage.json",
     "~/dotfiles/waybar/general-modules/clock.json",
     "~/dotfiles/waybar/general-modules/network.json",
+    "~/dotfiles/waybar/general-modules/pulseaudio.json",
 
     // Custom Modules
     "~/dotfiles/waybar/custom-modules/custom-launcher.json",
