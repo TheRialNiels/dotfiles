@@ -50,10 +50,7 @@ window#waybar.hidden {
 #custom-launcher,
 #temperatureGroup,
 #storageGroup,
-#hardwareGroup,
-#clockGroup,
-#network,
-#pulseaudio {
+#hardwareGroup {
   background-color: @background-alt2;
   padding: 0.25rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
@@ -63,8 +60,12 @@ window#waybar.hidden {
 /** ========== Right Modules ========== **/
 #clockGroup,
 #network,
-#pulseaudio {
+#pulseaudio,
+#custom-theme {
+  background-color: @background-alt2;
+  padding: 0.25rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
+  border-radius: 0.25rem;
 }
 
 /** ========== General Modules ========== **/

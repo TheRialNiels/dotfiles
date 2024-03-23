@@ -1,0 +1,7 @@
+{
+  "custom/theme": {
+    "format": "󰸉",
+    "on-click": "$HOME/dotfiles/theme/theme.sh --pywal",
+    "on-click-right": "$HOME/dotfiles/theme/theme.sh --default"
+  }
+}

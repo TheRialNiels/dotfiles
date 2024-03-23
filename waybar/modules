@@ -11,6 +11,7 @@
 
     // Custom Modules
     "~/dotfiles/waybar/custom-modules/custom-launcher.json",
+    "~/dotfiles/waybar/custom-modules/custom-theme.json",
 
     // Group Modules
     "~/dotfiles/waybar/group-modules/group-modules.json"
