@@ -66,6 +66,7 @@ packagesPacman=(
     "bat"
     "locate"
     "pastel"
+    "net-tools"
 );
 
 packagesYay=(
