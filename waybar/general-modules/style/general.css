@@ -34,12 +34,17 @@
 /** ============================= **/
 /** ========== General ========== **/
 /** ============================= **/
+#network {
+  color: @foreground;
+  padding: 0 0.75rem;
+  font-weight: bold;
+}
+
 #temperature,
 #disk,
 #cpu,
 #memory,
 #clock {
-  font-size: medium;
   font-weight: bold;
 }
 
@@ -50,19 +55,9 @@
 #disk.Home,
 #cpu.Icon,
 #memory.Icon,
-#clock.Icon {
+#clock.Icon,
+#network {
   padding-right: 0.5rem;
-}
-
-#temperature.Cpu2,
-#temperature.Gpu2,
-#temperature.Nvme2,
-#disk.Root2,
-#disk.Home2,
-#cpu.Text,
-#memory.Text,
-#clock.Text {
-  font-size: small;
 }
 
 /** ================================= **/

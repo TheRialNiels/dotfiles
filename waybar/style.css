@@ -51,7 +51,8 @@ window#waybar.hidden {
 #temperatureGroup,
 #storageGroup,
 #hardwareGroup,
-#clockGroup {
+#clockGroup,
+#network {
   background-color: @background-alt2;
   padding: 0.25rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
@@ -59,7 +60,8 @@ window#waybar.hidden {
 }
 
 /** ========== Right Modules ========== **/
-#clockGroup {
+#clockGroup,
+#network {
   margin: 0.5rem 0.5rem 0.5rem 0;
 }
 

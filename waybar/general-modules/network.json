@@ -1,0 +1,14 @@
+{
+  "network": {
+    "interval": 5,
+    //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+    "format-wifi": "直 {essid}",
+    "format-linked": " {ifname} (No IP)",
+    "format-ethernet": "   󰕒 {bandwidthUpBits}      󰇚 {bandwidthDownBits}",
+    "format-disconnected": "睊 Disconnected",
+    "format-disabled": "睊 Disabled",
+    "format-alt": " {ipaddr}/{cidr}",
+    "tooltip-format": " {ifname} via {gwaddr}"
+    //TODO "on-click": "~/Hyprland-Dotfiles/hypr/scripts/rofi_network"
+  }
+}
