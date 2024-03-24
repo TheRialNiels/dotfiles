@@ -11,10 +11,18 @@
   background-color: @cyan;
 }*/
 
-#custom-theme {
+#custom-theme,
+#custom-power,
+#custom-restart,
+#custom-sleep,
+#custom-lock {
   background-color: @foreground;
   color: @background;
   padding: 0 0.75rem 0 0.75rem;
   font-size: large;
   font-weight: bold;
+}
+
+#powerGroup {
+  background-color: @foreground;
 }

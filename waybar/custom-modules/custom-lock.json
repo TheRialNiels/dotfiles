@@ -1,0 +1,8 @@
+{
+  "custom/lock": {
+    "format": "",
+    "tooltip": false,
+    //TODO "on-click": "$HOME/Hyprland-Dotfiles/hypr/scripts/rofi_powermenu"
+    "on-click": "notify-send 'Lock'"
+  }
+}

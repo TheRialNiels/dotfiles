@@ -12,6 +12,10 @@
     // Custom Modules
     "~/dotfiles/waybar/custom-modules/custom-launcher.json",
     "~/dotfiles/waybar/custom-modules/custom-theme.json",
+    "~/dotfiles/waybar/custom-modules/custom-power.json",
+    "~/dotfiles/waybar/custom-modules/custom-restart.json",
+    "~/dotfiles/waybar/custom-modules/custom-sleep.json",
+    "~/dotfiles/waybar/custom-modules/custom-lock.json",
 
     // Group Modules
     "~/dotfiles/waybar/group-modules/group-modules.json"
