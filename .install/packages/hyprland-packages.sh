@@ -21,5 +21,6 @@ packagesYay=(
     "emote"
     "hypridle"
     "hyprlock"
+    "waybar-module-pacman-updates-git"
 );
 

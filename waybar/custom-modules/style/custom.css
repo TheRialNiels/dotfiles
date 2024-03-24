@@ -23,6 +23,8 @@
   font-weight: bold;
 }
 
-#powerGroup {
-  background-color: @foreground;
+#custom-updates {
+  color: @foreground;
+  padding: 0 0.75rem;
+  font-weight: bold;
 }

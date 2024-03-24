@@ -24,5 +24,12 @@
     "group/hardwareGroup"
   ],
   "modules-center": [],
-  "modules-right": ["custom/theme", "pulseaudio", "network", "group/clockGroup", "group/powerGroup"]
+  "modules-right": [
+    "custom/theme",
+    "custom/updates",
+    "pulseaudio",
+    "network",
+    "group/clockGroup",
+    "group/powerGroup"
+  ]
 }

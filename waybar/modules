@@ -16,6 +16,7 @@
     "~/dotfiles/waybar/custom-modules/custom-restart.json",
     "~/dotfiles/waybar/custom-modules/custom-sleep.json",
     "~/dotfiles/waybar/custom-modules/custom-lock.json",
+    "~/dotfiles/waybar/custom-modules/custom-updates.json",
 
     // Group Modules
     "~/dotfiles/waybar/group-modules/group-modules.json"
