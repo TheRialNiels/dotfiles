@@ -1,15 +1,29 @@
 {
   "clock#Icon": {
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "format": "",
     "timezone": "America/Mexico_City",
     "locale": "en_US.UTF-8"
   },
   "clock#Text": {
     "interval": 60,
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt>{calendar}</tt>",
     "format": "{:%I:%M %p, %a %d %b, %G}",
     "timezone": "America/Mexico_City",
-    "locale": "en_US.UTF-8"
+    "locale": "en_US.UTF-8",
+    "calendar": {
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ADAC9F'><b>{}</b></span>",
+        "days": "<span color='#A8C059'>{}</span>",
+        "weekdays": "<span color='#ADAC9F'><b>{}</b></span>",
+        "today": "<span color='#e4e4e1'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "none",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   }
 }
