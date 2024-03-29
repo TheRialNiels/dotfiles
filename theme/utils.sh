@@ -128,9 +128,9 @@ _applyWaybarTemplate() {
     
     # waybar clock module : colors
     sed -i "${HOME}/dotfiles/waybar/general-modules/clock.json" \
-        -e "s|\"months\": \"<span color='.\\+|\"months\": \"<span color='${color14}'><b>{}</b></span>\",|g" \
+        -e "s|\"months\": \"<span color='.\\+|\"months\": \"<span color='${foreground}'><b>{}</b></span>\",|g" \
         -e "s|\"days\": \"<span color='.\\+|\"days\": \"<span color='${color12}'>{}</span>\",|g" \
-        -e "s|\"weekdays\": \"<span color='.\\+|\"weekdays\": \"<span color='${color14}'><b>{}</b></span>\",|g" \
+        -e "s|\"weekdays\": \"<span color='.\\+|\"weekdays\": \"<span color='${foreground}'><b>{}</b></span>\",|g" \
         -e "s|\"today\": \"<span color='.\\+|\"today\": \"<span color='${foreground}'><b>{}</b></span>\"|g"
 	
     bash $script_file_path &
