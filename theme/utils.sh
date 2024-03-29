@@ -90,6 +90,17 @@ _applyKittyTemplate() {
     cat "${tmpl_path}/kitty/color.ini" | envsubst > "${kitty_path}/color.ini"
 }
 
+_applyDunstTemplate() {
+    local tmpl_path=$1
+    local dunst_path=$2
+
+    # dunst : colors
+    cat "${tmpl_path}/dunst/dunstrc" | envsubst > "${dunst_path}/dunstrc"
+
+    # Reset dunst
+    killall dunst;dunst &
+}
+
 _applyFootTemplate() {
     local tmpl_path=$1
     local foot_path=$2

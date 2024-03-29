@@ -5,6 +5,7 @@ DIR="$HOME/dotfiles"
 
 PATH_WALL="$DIR/wallpapers"
 PATH_KITT="$DIR/kitty"
+PATH_DUNS="$DIR/dunst"
 PATH_FOOT="$DIR/foot"
 PATH_ROFI="$DIR/rofi"
 PATH_WAYB="$DIR/waybar"
@@ -83,6 +84,7 @@ if [[ `which wal` ]]; then
     #TODO _applyFootTemplate $PATH_TMPL $PATH_FOOT
     #TODO _applyRofiTemplate $PATH_TMPL $PATH_ROFI
     _applyWaybarTemplate $PATH_TMPL $PATH_WAYB "$HYPR_SCRIPTS/statusbar.sh"
+    _applyDunstTemplate $PATH_TMPL $PATH_DUNS
     #TODO _applyWlogoutTemplate $PATH_TMPL $PATH_WLOG
     _applyHyprTemplate
 else
