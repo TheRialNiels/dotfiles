@@ -1,4 +1,5 @@
 [global]
+    monitor = 0
     follow = mouse
     width = 300
     height = 145
@@ -31,7 +32,8 @@
     history_length = 20 
     show_age_threshold = 60 
     markup = "full" 
-    font = "monospace 10"
+    font = "Hack Nerd Font 10"
+    format = "<b>%s</b>\n%b"
     word_wrap = "yes" 
     sort = "yes" 
     shrink = "no" 
@@ -54,6 +56,7 @@
 
 
 [urgency_low]
+    #icon = path/to/image.jpg
     frame_color = "#ADAC9F"
     background = "#0f1318"
     foreground = "#e4e4e1"
@@ -61,12 +64,14 @@
     timeout = 4
 
 [urgency_normal]
+    #icon = path/to/image.jpg
     background = "#0f1318"
     foreground = "#e4e4e1"
     highlight = "#A8C059"
     timeout = 6
 
 [urgency_critical]
+    #icon = path/to/image.jpg
     frame_color = "#96744B"
     background = "#0f1318"
     foreground = "#e4e4e1"
