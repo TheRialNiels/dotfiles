@@ -14,9 +14,9 @@
     "calendar": {
       "on-scroll": 1,
       "format": {
-        "months": "<span color='#ADAC9F'><b>{}</b></span>",
+        "months": "<span color='#e4e4e1'><b>{}</b></span>",
         "days": "<span color='#A8C059'>{}</span>",
-        "weekdays": "<span color='#ADAC9F'><b>{}</b></span>",
+        "weekdays": "<span color='#e4e4e1'><b>{}</b></span>",
         "today": "<span color='#e4e4e1'><b>{}</b></span>"
       }
     },
