@@ -71,6 +71,7 @@ packagesPacman=(
     "pastel"
     "net-tools"
     "qt5ct"
+    "arc-gtk-theme"
 );
 
 packagesYay=(
@@ -80,6 +81,6 @@ packagesYay=(
     "zsh-syntax-highlighting"
     "zsh-autosuggestions"
     "zsh-sudo-git"
-    "nwg-look
+    "nwg-look"
 );
 
