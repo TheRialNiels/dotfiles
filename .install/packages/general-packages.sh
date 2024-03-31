@@ -82,5 +82,7 @@ packagesYay=(
     "zsh-autosuggestions"
     "zsh-sudo-git"
     "nwg-look"
+    "qgnomeplatform-qt5"
+    "qgnomeplatform-qt6"
 );
 
