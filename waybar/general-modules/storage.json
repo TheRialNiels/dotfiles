@@ -2,7 +2,7 @@
   /** ========== Root ========== **/
   "disk#Root": {
     "interval": 30,
-    "format": " ",
+    "format": " 󰷔",
     "tooltip-format": "{used} used of {total} on Root ({percentage_used}%)"
   },
   "disk#Root2": {
@@ -15,7 +15,7 @@
   "disk#Home": {
     "interval": 30,
     "path": "/home",
-    "format": " ",
+    "format": " ",
     "tooltip-format": "{used} used of {total} on Home ({percentage_used}%)"
   },
   "disk#Home2": {
