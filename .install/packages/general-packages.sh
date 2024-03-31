@@ -70,7 +70,6 @@ packagesPacman=(
     "locate"
     "pastel"
     "net-tools"
-    "qt5ct"
     "arc-gtk-theme"
 );
 
