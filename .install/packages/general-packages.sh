@@ -32,6 +32,9 @@ packagesPacman=(
     "ttf-hack-nerd"
     "ttf-nerd-fonts-symbols"
     "ttf-nerd-fonts-symbols-mono"
+    "ttf-jetbrains-mono"
+    "ttf-iosevka-nerd"
+    "ttf-firacode-nerd"
     "figlet" 
     "vlc" 
     "eza" 
@@ -67,6 +70,7 @@ packagesPacman=(
     "locate"
     "pastel"
     "net-tools"
+    "qt5ct"
 );
 
 packagesYay=(
@@ -76,5 +80,6 @@ packagesYay=(
     "zsh-syntax-highlighting"
     "zsh-autosuggestions"
     "zsh-sudo-git"
+    "nwg-look
 );
 
