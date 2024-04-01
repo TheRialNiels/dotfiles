@@ -55,6 +55,15 @@ _selectRandomImage() {
     fi
 }
 
+_replaceHexadecimalColorInLine() {
+    local path=$1
+    local word=$2
+    local color=$3
+
+    sed -i $path \
+        -e "s/${word}=\"#\([0-9a-fA-F]\{3\}\|[0-9a-fA-F]\{6\}\|[0-9a-fA-F]\{8\}\)\"/${word}=\"${color}\"/g"
+}
+
 ## Replace custom colors variable (eg. color0:1)
 _processTemplate() {
     local template_file="$1"
@@ -139,9 +148,18 @@ _applyWaybarTemplate() {
 _applyWlogoutTemplate() {
     local tmpl_path=$1
     local wlog_path=$2
+    local wlog_icons_path=$HOME/dotfiles/wlogout/icons
 
 	# wlogout : colors (Is the same file as waybar)
 	cat "${tmpl_path}/waybar/colors.css" | envsubst > "${wlog_path}/colors.css"
+
+    # wlogout : icons theme
+    _replaceHexadecimalColorInLine "${wlog_icons_path}/hibernate.svg" "fill" $foreground
+    _replaceHexadecimalColorInLine "${wlog_icons_path}/lock.svg" "fill" $foreground
+    _replaceHexadecimalColorInLine "${wlog_icons_path}/logout.svg" "stroke" $foreground
+    _replaceHexadecimalColorInLine "${wlog_icons_path}/reboot.svg" "fill" $foreground
+    _replaceHexadecimalColorInLine "${wlog_icons_path}/shutdown.svg" "fill" $foreground
+    _replaceHexadecimalColorInLine "${wlog_icons_path}/suspend.svg" "fill" $foreground
 }
 
 _applyHyprTemplate() {

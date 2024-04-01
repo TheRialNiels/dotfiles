@@ -85,7 +85,7 @@ if [[ `which wal` ]]; then
     #TODO _applyRofiTemplate $PATH_TMPL $PATH_ROFI
     _applyWaybarTemplate $PATH_TMPL $PATH_WAYB "$HYPR_SCRIPTS/statusbar.sh"
     _applyDunstTemplate $PATH_TMPL $PATH_DUNS
-    #TODO _applyWlogoutTemplate $PATH_TMPL $PATH_WLOG
+    _applyWlogoutTemplate $PATH_TMPL $PATH_WLOG
     _applyHyprTemplate
 else
     #TODO (Send notification) notify-send -h string:x-canonical-private-synchronous:sys-notify-runpywal -u normal -i ${PATH_MAKO}/icons/palette.png "'pywal' is not installed."
