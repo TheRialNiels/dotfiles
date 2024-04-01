@@ -71,6 +71,7 @@ packagesPacman=(
     "pastel"
     "net-tools"
     "arc-gtk-theme"
+    "jq"
 );
 
 packagesYay=(
