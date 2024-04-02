@@ -72,6 +72,7 @@ packagesPacman=(
     "net-tools"
     "arc-gtk-theme"
     "jq"
+    "lazygit"
 );
 
 packagesYay=(
