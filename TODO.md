@@ -1,0 +1,19 @@
+- [] Config kitty
+- [] Config neofetch
+- [] Config starship
+- [] Config ranger
+- [] Config pacseek
+- [] Config screenshots
+- [] Search about how to do dialogs with fuzzel/wofi/rofi
+- [] Add gpu dashboard
+- [] (Fuzzel/Wofi/Rofi) confirm dialog
+- [] (Fuzzel/Wofi/Rofi) wifi dialog
+- [] (Fuzzel/Wofi/Rofi) bluetooth dialog
+- [] (Fuzzel/Wofi/Rofi) keybindings dialog
+- [] (Fuzzel/Wofi/Rofi) wallpaper selector dialog
+- [] (Fuzzel/Wofi/Rofi) launcher selector dialog
+- [] (Fuzzel/Wofi/Rofi) volume dialog with scroll
+- [] (Fuzzel/Wofi/Rofi) notifications dialog
+- [] Config vim/neovim
+- [] Config tmux
+- [] Create GUI app to customize everything
