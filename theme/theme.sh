@@ -10,6 +10,7 @@ PATH_FOOT="$DIR/foot"
 PATH_ROFI="$DIR/rofi"
 PATH_WAYB="$DIR/waybar"
 PATH_WLOG="$DIR/wlogout"
+PATH_WOFI="$DIR/wofi"
 PATH_TMPL="$DIR/theme/templates"
 
 # Hypr Scripts
@@ -86,6 +87,7 @@ if [[ `which wal` ]]; then
     _applyWaybarTemplate $PATH_TMPL $PATH_WAYB "$HYPR_SCRIPTS/statusbar.sh"
     _applyDunstTemplate $PATH_TMPL $PATH_DUNS
     _applyWlogoutTemplate $PATH_TMPL $PATH_WLOG
+    _applyWofiTemplate "$PATH_WAYB/colors.css" "$PATH_WOFI/style.css"
     _applyHyprTemplate
 else
     #TODO (Send notification) notify-send -h string:x-canonical-private-synchronous:sys-notify-runpywal -u normal -i ${PATH_MAKO}/icons/palette.png "'pywal' is not installed."

@@ -162,6 +162,29 @@ _applyWlogoutTemplate() {
     _replaceHexadecimalColorInLine "${wlog_icons_path}/suspend.svg" "fill" $foreground
 }
 
+_applyWofiTemplate() {
+    source $HOME/dotfiles/utils/utils.sh
+
+    local file_path=$1
+    local dest_path=$2
+
+    # Get corresponding lines from new content and old content
+    local new_content=$(cat $file_path | grep @define)
+    local old_content=$(cat $dest_path | grep @define)
+
+    # Create arrays of lines for both contents
+    IFS=$'\n' read -r -d '' -a new_lines <<< "$new_content"
+    IFS=$'\n' read -r -d '' -a old_lines <<< "$old_content"
+
+    # Iterate over each pair of corresponding lines
+    for (( i=0; i<${#new_lines[@]}; i++ )); do
+        new_line="${new_lines[i]}"
+        old_line="${old_lines[i]}"
+        
+        _replaceLineInFile "$old_line" "$new_line" "$dest_path"
+    done
+}
+
 _applyHyprTemplate() {
 	# hyprland : theme
 	sed -i ~/dotfiles/hypr/hyprtheme.conf \
