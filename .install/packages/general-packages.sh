@@ -85,5 +85,7 @@ packagesYay=(
     "nwg-look"
     "qgnomeplatform-qt5"
     "qgnomeplatform-qt6"
+    "fuzzel"
+    "bemoji"
 );
 
