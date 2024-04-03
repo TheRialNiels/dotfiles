@@ -73,12 +73,14 @@ packagesPacman=(
     "arc-gtk-theme"
     "jq"
     "lazygit"
+    "mdcat"
 );
 
 packagesYay=(
     "bibata-cursor-theme" 
     "trizen"
     "pacseek"
+    "zsh"
     "zsh-syntax-highlighting"
     "zsh-autosuggestions"
     "zsh-sudo-git"
