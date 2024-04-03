@@ -38,6 +38,9 @@ source "${pkg_path}hyprland-packages.sh"
 
 source "${inst_path}install-packages.sh"
 
+# Change to SHELL to zsh
+chsh -s /bin/zsh
+
 source "${inst_path}wallpapers.sh"
 
 source "${inst_path}display-manager.sh"
