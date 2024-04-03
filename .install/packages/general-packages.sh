@@ -74,6 +74,7 @@ packagesPacman=(
     "jq"
     "lazygit"
     "mdcat"
+    "fzf"
 );
 
 packagesYay=(
@@ -81,9 +82,6 @@ packagesYay=(
     "trizen"
     "pacseek"
     "zsh"
-    "zsh-syntax-highlighting"
-    "zsh-autosuggestions"
-    "zsh-sudo-git"
     "nwg-look"
     "qgnomeplatform-qt5"
     "qgnomeplatform-qt6"
