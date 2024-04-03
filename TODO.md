@@ -1,11 +1,16 @@
-- [] Config kitty
-- [] Config neofetch
+- [x] Config kitty
+- [x] Config zsh
 - [] Config starship
-- [] Config ranger
-- [] Config pacseek
+- [] Config wlogout
 - [] Config screenshots
-- [] Search about how to do dialogs with fuzzel/wofi/rofi
+- [] Config ranger
+- [] Config neofetch
+- [] Config pacseek
 - [] Add gpu dashboard
+- [] Config vim/neovim
+- [] Config tmux
+- [] Config warp
+- [] Search about how to do dialogs with fuzzel/wofi/rofi
 - [] (Fuzzel/Wofi/Rofi) confirm dialog
 - [] (Fuzzel/Wofi/Rofi) wifi dialog
 - [] (Fuzzel/Wofi/Rofi) bluetooth dialog
@@ -14,6 +19,4 @@
 - [] (Fuzzel/Wofi/Rofi) launcher selector dialog
 - [] (Fuzzel/Wofi/Rofi) volume dialog with scroll
 - [] (Fuzzel/Wofi/Rofi) notifications dialog
-- [] Config vim/neovim
-- [] Config tmux
 - [] Create GUI app to customize everything
