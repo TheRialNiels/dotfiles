@@ -7,6 +7,7 @@ echo -e "${NOCOLOR}"
 packagesPacman=(
     "pacman-contrib"
     "kitty"
+    "cpio"
     "vim"
     "bluez"
     "bluez-utils"
