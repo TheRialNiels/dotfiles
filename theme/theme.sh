@@ -25,6 +25,7 @@ CURRENT_THEME="$DIR/theme/current.bash"
 PYWAL_THEME="$HOME/.cache/wal/colors.sh"
 
 # Wallpapers Variables
+LOCK_SCREEN_WALL="$DIR/.settings/lock-screen.png"
 CACHE_WALL="$HOME/.cache/current_wallpaper"
 CACHE_WALL_RASI="$HOME/.cache/current_wallpaper.rasi"
 DEFAULT_WALL="$PATH_WALL/default.jpg"
@@ -52,6 +53,9 @@ if [[ `which wal` ]]; then
             notification_msg="Applying default theme..."
 
             _applyPyWal "$notification_msg" "$DEFAULT_WALL"
+
+            # Convert jpg image extension to png image extension
+            convert "$DEFAULT_WALL" "$LOCK_SCREEN_WALL"
         ;;
 
         "pywal")
@@ -59,6 +63,9 @@ if [[ `which wal` ]]; then
 
             selected_image=$(_selectRandomImage "$PATH_WALL")
             _applyPyWal "$notification_msg" "$selected_image"
+
+            # Convert jpg image extension to png image extension
+            convert "$selected_image" "$LOCK_SCREEN_WALL"
         ;;
 
         *)
