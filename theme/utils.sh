@@ -60,8 +60,17 @@ _replaceHexadecimalColorInLine() {
     local word=$2
     local color=$3
 
+    sed -i "$path" -e "s/\(\$${word} = #\([0-9a-fA-F]\{3\}\|[0-9a-fA-F]\{6\}\|[0-9a-fA-F]\{8\}\)\)/\$${word} = ${color}/g"
+
+}
+
+_replaceHexadecimalColorInConfLine() {
+    local path=$1
+    local word=$2
+    local color=$3
+
     sed -i $path \
-        -e "s/${word}=\"#\([0-9a-fA-F]\{3\}\|[0-9a-fA-F]\{6\}\|[0-9a-fA-F]\{8\}\)\"/${word}=\"${color}\"/g"
+        -e "s/\$${word} = #\([0-9a-fA-F]\{3\}\|[0-9a-fA-F]\{6\}\|[0-9a-fA-F]\{8\}\)/\$${word} = ${color}/g"
 }
 
 _replaceEightHexadecimalColorInLine() {
@@ -341,6 +350,55 @@ _applyFuzzelTemplate() {
 }
 
 _applyHyprTemplate() {
+    local colors_path="$HOME/dotfiles/theme/colors.conf"
+
+    # Delete "#" symbol
+    background=${background:1:6}
+    foreground=${foreground:1:6}
+    modbackground1=${modbackground1:1:6}
+    modbackground2=${modbackground2:1:6}
+    color0=${color0:1:6}
+    color1=${color1:1:6}
+    color2=${color2:1:6}
+    color3=${color3:1:6}
+    color4=${color4:1:6}
+    color5=${color5:1:6}
+    color6=${color6:1:6}
+    color7=${color7:1:6}
+    color8=${color8:1:6}
+    color9=${color9:1:6}
+    color10=${color10:1:6}
+    color11=${color11:1:6}
+    color12=${color12:1:6}
+    color13=${color13:1:6}
+    color14=${color14:1:6}
+    color15=${color15:1:6}
+
+cat <<EOF > "$colors_path"
+\$background = rgb($background)
+\$foreground = rgb($foreground)
+\$background-alt1 = rgb($modbackground1)
+\$background-alt2 = rgb($modbackground2)
+\$color0 = rgb($color0)
+\$color1 = rgb($color1)
+\$color2 = rgb($color2)
+\$color3 = rgb($color3)
+\$color4 = rgb($color4)
+\$color5 = rgb($color5)
+\$color6 = rgb($color6)
+\$color7 = rgb($color7)
+\$color8 = rgb($color8)
+\$color9 = rgb($color9)
+\$color10 = rgb($color10)
+\$color11 = rgb($color11)
+\$color12 = rgb($color12)
+\$color13 = rgb($color13)
+\$color14 = rgb($color14)
+\$color15 = rgb($color15)
+
+EOF
+
+
 	# hyprland : theme
 	sed -i ~/dotfiles/hypr/hyprtheme.conf \
 		-e "s/\$active_border_col_1 =.*/\$active_border_col_1 = 0xFF${accent:1}/g" \
