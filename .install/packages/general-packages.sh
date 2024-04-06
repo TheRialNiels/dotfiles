@@ -90,5 +90,6 @@ packagesYay=(
     "qgnomeplatform-qt6"
     "fuzzel"
     "bemoji"
+    "wlr-randr"
 );
 
