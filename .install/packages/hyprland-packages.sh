@@ -22,5 +22,6 @@ packagesYay=(
     "hypridle"
     "hyprlock"
     "waybar-module-pacman-updates-git"
+    "pyprland"
 );
 
