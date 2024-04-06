@@ -3,8 +3,7 @@ plugins = [ "scratchpads", "magnify", "fetch_client_menu", "toggle_special" ]
 
 ## ---- Scratchpads --------------------
 [scratchpads.term]
-command = "$TERMINAL --class kitty-scratchpad"
-class = "kitty-scratchpad"
+command = "$TERMINAL --class kittyTerm"
 size = "80% 85%"
 animation = "fromTop"
 margin = 60
@@ -13,8 +12,7 @@ excludes = "*"
 hysteresis = 0.25
 
 [scratchpads.software]
-command = "$SOFTWARE_MANAGER"
-class = "pacseek"
+command = "$TERMINAL --class kittyPacseek -e $SOFTWARE_MANAGER"
 size = "80% 85%"
 animation = "fromTop"
 margin = 60
