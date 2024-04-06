@@ -45,7 +45,7 @@ export FILE_MANAGER=$(cat $SETTINGS_PATH/file-manager)
 export NETWORK_MANAGER=$(cat $SETTINGS_PATH/network-manager)
 
 ## ----- SOFTWARE MANAGER ------------------------------
-export SOFTWARE_MANAGER=$(cat $SETTINGS_PATH/software-manager.sh)
+export SOFTWARE_MANAGER=$(cat $SETTINGS_PATH/software-manager)
 
 ## ----- VOLUME MANAGER ------------------------------
 export VOLUME_MANAGER=$(cat $SETTINGS_PATH/volume-manager)
