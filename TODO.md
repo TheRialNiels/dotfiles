@@ -21,3 +21,4 @@
 - [] (Fuzzel/Wofi/Rofi) volume dialog with scroll
 - [] (Fuzzel/Wofi/Rofi) notifications dialog
 - [] Create GUI app to customize everything
+- [] Create monitors gui/term app
