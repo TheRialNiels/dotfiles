@@ -7,6 +7,7 @@
 - [] Config neofetch
 - [] Config pacseek
 - [] Config grub
+- [] Config sddm
 - [] Add gpu dashboard
 - [] Config vim/neovim
 - [] Config tmux
