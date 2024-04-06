@@ -53,6 +53,7 @@ packagesPacman=(
     "brightnessctl"
     "gum"
     "man-pages"
+    "man-db"
     "nm-connection-editor"
     "gvfs"
     "xdg-user-dirs"
