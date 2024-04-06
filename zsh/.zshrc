@@ -1,23 +1,23 @@
-## ----- ZSH HOME ------------------------------
-export ZSH=$HOME/zsh/
-
 ## ----- Created by Zap installer ------------------------------
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 ## ----- Source ------------------------------
-plug "$HOME/dotfiles/zsh/config/aliases.zsh"
+plug "$ZSH/config/aliases.zsh"
 
 ## ----- Env Variables ------------------------------
-plug "$HOME/dotfiles/zsh/config/env-variables.zsh"
+plug "$ZSH/config/env-variables.zsh"
 
 ## ----- Plugins ------------------------------
-plug "$HOME/dotfiles/zsh/config/plugins.zsh"
+plug "$ZSH/config/plugins.zsh"
 
 ## ----- History ------------------------------
-plug "$HOME/dotfiles/zsh/config/history.zsh"
+plug "$ZSH/config/history.zsh"
 
 ## ----- Keybindings ------------------------------
-plug "$HOME/dotfiles/zsh/config/keybindings.zsh"
+plug "$ZSH/config/keybindings.zsh"
 
 ## ----- General ------------------------------
-plug "$HOME/dotfiles/zsh/config/general.zsh"
+plug "$ZSH/config/general.zsh"
+
+## ----- Functions ------------------------------
+plug "$ZSH/config/functions.zsh"
