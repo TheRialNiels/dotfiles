@@ -1,11 +1,12 @@
 - [x] Config kitty
 - [x] Config zsh
 - [x] Config starship
-- [] Config hyprlock
-- [] Config screenshots
+- [x] Config hyprlock
+- [x] Config screenshots
 - [] Config ranger
 - [] Config neofetch
 - [] Config pacseek
+- [] Config grub
 - [] Add gpu dashboard
 - [] Config vim/neovim
 - [] Config tmux
