@@ -21,7 +21,7 @@
 
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit 0",
+    "action" : "sleep 1; killall -9 Hyprland sleep 2",
     "text" : "Logout",
     "keybind" : "e"
 }
