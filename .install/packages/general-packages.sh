@@ -79,6 +79,14 @@ packagesPacman=(
     "lazygit"
     "mdcat"
     "fzf"
+    "ffmpegthumbnailer"
+    "unarchiver"
+    "poppler"
+    "fd"
+    "zoxide"
+    "ripgrep"
+    "btop"
+    "cmatrix"
 );
 
 packagesYay=(
@@ -92,5 +100,9 @@ packagesYay=(
     "fuzzel"
     "bemoji"
     "wlr-randr"
+    "yazi-git"
+    "tldr++"
+    "jexiftoolgui"
+    "hollywood"
 );
 
