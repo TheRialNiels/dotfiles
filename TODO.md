@@ -3,14 +3,14 @@
 - [x] Config starship
 - [x] Config hyprlock
 - [x] Config screenshots
-- [] Config ranger
+- [x] Config yazi
 - [] Config neofetch
 - [] Config pacseek
 - [] Config grub
 - [] Config sddm
 - [] Add gpu dashboard
 - [] Config vim/neovim
-- [] Config tmux
+- [] Config tmux/zellij
 - [] Config warp
 - [] Search about how to do dialogs with fuzzel/wofi/rofi
 - [] (Fuzzel/Wofi/Rofi) confirm dialog
