@@ -29,7 +29,6 @@
     "custom/updates",
     "pulseaudio",
     "network",
-    "group/clockGroup",
-    "group/powerGroup"
+    "group/clockGroup"
   ]
 }
