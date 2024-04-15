@@ -97,6 +97,7 @@ if [[ `which wal` ]]; then
     _applyWlogoutTemplate $PATH_TMPL $PATH_WLOG
     _applyWofiTemplate "$PATH_WAYB/colors.css" "$PATH_WOFI/style.css"
     _applyFuzzelTemplate "$PATH_FUZZ"
+    _applyPackseekTemplate
     _applyHyprTemplate
 else
     #TODO (Send notification) notify-send -h string:x-canonical-private-synchronous:sys-notify-runpywal -u normal -i ${PATH_MAKO}/icons/palette.png "'pywal' is not installed."

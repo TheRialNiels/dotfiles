@@ -73,6 +73,15 @@ _replaceHexadecimalColorInConfLine() {
         -e "s/\$${word} = #\([0-9a-fA-F]\{3\}\|[0-9a-fA-F]\{6\}\|[0-9a-fA-F]\{8\}\)/\$${word} = ${color}/g"
 }
 
+_replaceHexadecimalColorInColorsLine() {
+    local path=$1
+    local word=$2
+    local color=$3
+
+    sed -i $path \
+        -e "s/\"${word}\": \"\([0-9a-fA-F]\{3\}\|[0-9a-fA-F]\{6\}\|[0-9a-fA-F]\{8\}\)\",/\"${word}\": \"${color}\",/g"
+}
+
 _replaceEightHexadecimalColorInLine() {
     local path=$1
     local word=$2
@@ -407,4 +416,41 @@ EOF
 		-e "s/\$inactive_border_col_2 =.*/\$inactive_border_col_2 = 0xFF${modbackground[2]:1}/g" \
 		-e "s/\$group_border_col =.*/\$group_border_col = 0xFF${color1:1}/g" \
 		-e "s/\$group_border_active_col =.*/\$group_border_active_col = 0xFF${color2:1}/g"
+}
+
+_applyPackseekTemplate() {
+    local colors_path="$HOME/dotfiles/pacseek/colors.json"
+
+    # Delete "#" symbol
+    background=${background:1:6}
+    foreground=${foreground:1:6}
+    modbackground1=${modbackground1:1:6}
+    modbackground2=${modbackground2:1:6}
+    color0=${color0:1:6}
+    color1=${color1:1:6}
+    color2=${color2:1:6}
+    color3=${color3:1:6}
+    color4=${color4:1:6}
+    color5=${color5:1:6}
+    color6=${color6:1:6}
+    color7=${color7:1:6}
+    color8=${color8:1:6}
+    color9=${color9:1:6}
+    color10=${color10:1:6}
+    color11=${color11:1:6}
+    color12=${color12:1:6}
+    color13=${color13:1:6}
+    color14=${color14:1:6}
+    color15=${color15:1:6}
+
+    _replaceHexadecimalColorInColorsLine "$colors_path" "Accent" "$color2"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "Title" "$color4"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "SearchBar" "$color3"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "PackagelistSourceRepository" "$color4"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "PackagelistSourceAUR" "$color2"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "PackagelistHeader" "$color1"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "SettingsFieldBackground" "$color3"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "SettingsFieldText" "$color7"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "SettingsFieldLabel" "$color1"
+    _replaceHexadecimalColorInColorsLine "$colors_path" "SettingsDropdownNotSelected" "$color2"
 }
