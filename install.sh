@@ -54,6 +54,8 @@ source "${inst_path}bashrc.sh"
 
 source "${inst_path}zshrc.sh"
 
+source "${inst_path}grub.sh"
+
 source "${inst_path}cleanup.sh"
 
 echo -e "${BLUE}"
@@ -66,4 +68,3 @@ echo -e "${NOCOLOR}"
 echo -e "\n"
 
 sleep 3
-
