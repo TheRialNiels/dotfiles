@@ -14,6 +14,7 @@
 - [] Config warp
 - [] Search about how to do dialogs with fuzzel/wofi/rofi
 - [] (Fuzzel/Wofi/Rofi) confirm dialog
+- [] Add power module confirm dialogs
 - [] (Fuzzel/Wofi/Rofi) wifi dialog
 - [] (Fuzzel/Wofi/Rofi) bluetooth dialog
 - [] (Fuzzel/Wofi/Rofi) keybindings dialog
