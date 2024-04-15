@@ -8,6 +8,7 @@
 - [x] Config pacseek
 - [] Config grub
 - [] Config sddm
+- [] Add notifications from firefox and spotify
 - [] Add gpu dashboard
 - [] Config vim/neovim
 - [] Config tmux/zellij
