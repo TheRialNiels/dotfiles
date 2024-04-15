@@ -5,7 +5,7 @@
 - [x] Config screenshots
 - [x] Config yazi
 - [x] Config neofetch
-- [] Config pacseek
+- [x] Config pacseek
 - [] Config grub
 - [] Config sddm
 - [] Add gpu dashboard
