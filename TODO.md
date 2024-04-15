@@ -6,7 +6,7 @@
 - [x] Config yazi
 - [x] Config neofetch
 - [x] Config pacseek
-- [] Config grub
+- [x] Config grub
 - [] Config sddm
 - [] Add notifications from firefox and spotify
 - [] Add gpu dashboard
