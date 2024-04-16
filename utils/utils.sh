@@ -49,18 +49,17 @@ _installPackagesPacman() {
     toInstall=()
     for pkg; do
         if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
-            _changeTextColor "$WHITE" ":: ${pkg} is already installed"
+            _showInfoMsg "$(_changeTextWhite "$pkg") is already installed"
             continue
         fi
         toInstall+=("${pkg}")
     done
 
     if [[ "${toInstall[*]}" == "" ]]; then
-        # echo "All pacman packages are already installed.";
+        _showInfoMsg "All pacman packages are already installed"
         return
     fi
 
-    # printf "Package not installed:\n%s\n" "${toInstall[@]}";
     sudo pacman --noconfirm -S "${toInstall[@]}"
 }
 
@@ -71,11 +70,10 @@ _forcePackagesPacman() {
     done
 
     if [[ "${toInstall[*]}" == "" ]]; then
-        # echo "All pacman packages are already installed.";
+        _showInfoMsg "All pacman packages are already installed"
         return
     fi
 
-    # printf "Package not installed:\n%s\n" "${toInstall[@]}";
     sudo pacman --noconfirm -S "${toInstall[@]}" --ask 4
 }
 
@@ -83,18 +81,17 @@ _installPackagesYay() {
     toInstall=()
     for pkg; do
         if [[ $(_isInstalledYay "${pkg}") == 0 ]]; then
-            _changeTextColor "$WHITE" ":: ${pkg} is already installed"
+            _showInfoMsg "$(_changeTextWhite "$pkg") is already installed"
             continue
         fi
         toInstall+=("${pkg}")
     done
 
     if [[ "${toInstall[*]}" == "" ]]; then
-        # echo "All packages are already installed.";
+        _showInfoMsg "All packages are already installed"
         return
     fi
 
-    # printf "AUR packags not installed:\n%s\n" "${toInstall[@]}";
     yay --noconfirm -S "${toInstall[@]}"
 }
 
@@ -105,11 +102,10 @@ _forcePackagesYay() {
     done
 
     if [[ "${toInstall[*]}" == "" ]]; then
-        # echo "All packages are already installed.";
+        _showInfoMsg "All packages are already installed"
         return
     fi
 
-    # printf "AUR packags not installed:\n%s\n" "${toInstall[@]}";
     yay --noconfirm -S "${toInstall[@]}" --ask 4
 }
 
@@ -124,20 +120,20 @@ _installSymLink() {
     if [ -L "${symlink}" ]; then
         rm "${symlink}"
         ln -s "${linksource}" "${linktarget}"
-        _showSuccessMsg "Symlink $(_changeTextColor "$WHITE" "$linksource") -> $(_changeTextColor "$WHITE" "$linktarget") created"
+        _showSuccessMsg "Symlink $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
     else
         if [ -d "${symlink}" ]; then
-            rm -rf "${symlink}/"
+            rm -rf "$symlink/"
             ln -s "${linksource}" "${linktarget}"
-            _showSuccessMsg "Symlink for directory $(_changeTextColor "$WHITE" "$linksource") -> $(_changeTextColor "$WHITE" "$linktarget") created"
+            _showSuccessMsg "Symlink for directory $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
         else
             if [ -f "${symlink}" ]; then
                 rm "${symlink}"
                 ln -s "${linksource}" "${linktarget}"
-                _showSuccessMsg "Symlink to file $(_changeTextColor "$WHITE" "$linksource") -> $(_changeTextColor "$WHITE" "$linktarget") created."
+                _showSuccessMsg "Symlink to file $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
             else
                 ln -s "${linksource}" "${linktarget}"
-                _showSuccessMsg "New symlink $(_changeTextColor "$WHITE" "$linksource") -> $(_changeTextColor "$WHITE" "$linktarget") created."
+                _showSuccessMsg "New symlink $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
             fi
         fi
     fi
@@ -245,7 +241,7 @@ _replaceLineInFile() {
             # Add the new line
             sed -i "${line_found}i$new_string" "$file_path"
 
-            _showSuccessMsg "Line replaced in $(_changeTextColor "$WHITE" "$file_path")"
+            _showSuccessMsg "Line replaced in $(_changeTextWhite "$file_path")"
         else
             # If the line with find_string is not found, check if the line with new_string exists
             while IFS= read -r line; do
@@ -257,15 +253,15 @@ _replaceLineInFile() {
             done <"$file_path"
 
             if [[ ! "$line_found" == "0" ]]; then
-                _showInfoMsg "The line with \"$(_changeTextColor "$WHITE" "$find_string")\" was not found but the line with \"$(_changeTextColor "$WHITE" "$new_string")\" already exists in $(_changeTextColor "$WHITE" "$file_path")"
+                _showInfoMsg "The line with \"$(_changeTextWhite "$find_string")\" was not found but the line with \"$(_changeTextWhite "$new_string")\" already exists in $(_changeTextWhite "$file_path")"
             else
-                _showErrorMsg "The line with \"$(_changeTextColor "$WHITE" "$find_string")\" was not found in $(_changeTextColor "$WHITE" "$file_path")"
+                _showErrorMsg "The line with \"$(_changeTextWhite "$find_string")\" was not found in $(_changeTextWhite "$file_path")"
 
                 exit 1
             fi
         fi
     else
-        _showErrorMsg "Target file $(_changeTextColor "$WHITE" "$file_path") not found"
+        _showErrorMsg "Target file $(_changeTextWhite "$file_path") not found"
 
         exit 1
     fi
@@ -302,6 +298,18 @@ _showInfoMsg() {
     message="$1"
 
     echo -e "${CYAN}:: INFO => ${NOCOLOR}${message}\n"
+}
+
+_showNormalMsg() {
+    message="$1"
+
+    echo -e "${WHITE}:: ${message}${NOCOLOR}\n"
+}
+
+_changeTextWhite() {
+    message="$1"
+
+    echo -e "${WHITE}${message}${NOCOLOR}\n"
 }
 
 _changeTextColor() {
