@@ -4,47 +4,37 @@
 # Confirm Start
 # ------------------------------------------------------
 
-echo -e "${CYAN}"
-echo "IMPORTANT: Please make sure that your system and your packages are up to date (sudo pacman -Syu or yay)."
-echo "You can cancel the installation at any time with CTRL + C"
-echo "If you have already installed a window manager like sway, please backup your .config folder."
+_showImportantMsg "Please make sure that your system and your packages are up to date (sudo pacman -Syu or yay)"
+_showImportantMsg "You can cancel the installation at any time with CTRL + C"
+_showImportantMsg "If you have already installed a window manager like sway, please backup your .config folder"
 
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
-if [ $SCRIPTPATH = "/home/$USER/dotfiles" ]; then
-    echo ""
-    echo "IMPORTANT: You're running the installation script from the installation target directory."
-    echo "Please move the installation folder dotfiles e.g. to ~/Downloads/ and start the script again."
-    echo -e "${YELLOW}"
-    echo "Proceeding is not recommended!"
+if [ $SCRIPTPATH = "$DOTFILES" ]; then
+    _showImportantMsg "You're running the installation script from the installation target directory"
+    _showInfoMsg "Please move the installation folder dotfiles e.g. to ~/Downloads/ and start the script again"
+    _showWarningMsg "Proceeding is not recommended!"
 fi
 
-if [ ! -d ~/dotfiles ];then
+if [ ! -d "$DOTFILES" ]; then
     echo -e "${BLUE}"
-    if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" --default=false;then
-        echo -e "${NOCOLOR}"
-        echo "Installation started."
+    if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" --default=false; then
+        _showInfoMsg "Installation started"
     elif [ $? -eq 130 ]; then
-            exit 130
+        exit 130
     else
-	echo -e "${NOCOLOR}"
-        echo "Installation canceled."
-        exit;
+        _showInfoMsg "Installation canceled"
+        exit
     fi
 else
     echo -e "${BLUE}"
-    if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" --default=false;then
-	echo -e "${NOCOLOR}"
-        echo "Update started."
+    if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" --default=false; then
+        _showInfoMsg "Update started"
     elif [ $? -eq 130 ]; then
-            exit 130
+        exit 130
     else
-	echo -e "${NOCOLOR}"
-        echo "Update canceled."
-        exit;
+        _showInfoMsg "Update canceled"
+        exit
     fi
 fi
-
-echo -e "\n"
-
