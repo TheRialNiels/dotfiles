@@ -10,7 +10,7 @@ echo -e "${NOCOLOR}"
 if sudo pacman -Qs yay >/dev/null; then
     _showInfoMsg "yay is already installed!"
 else
-    _showInfoMsg "yay is not installed. Starting the installation!"
+    _showNormalMsg "yay is not installed. Starting the installation!"
     _installPackagesPacman "base-devel"
 
     SCRIPT=$(realpath "$0")
@@ -22,5 +22,5 @@ else
     makepkg -si
     cd "$temp_path" || return
 
-    _showSuccessMsg "yay has been installed successfully."
+    _showSuccessMsg "yay has been installed successfully"
 fi

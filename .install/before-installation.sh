@@ -20,13 +20,13 @@ sudo pacman -Syu
 echo -e "\n"
 
 # Check for required packages
-_showInfoMsg "Checking that required packages for the installation are installed..."
+_showNormalMsg "Checking that required packages for the installation are installed..."
 _installPackagesPacman "rsync" "gum" "figlet"
 
 # Double check rsync
 if ! command -v rsync &>/dev/null; then
-    _showInfoMsg "Force rsync installation"
+    _showNormalMsg "Force rsync installation"
     sudo pacman -S --noconfirm rsync
 else
-    _showInfoMsg "rsync double checked"
+    _showNormalMsg "rsync double checked"
 fi

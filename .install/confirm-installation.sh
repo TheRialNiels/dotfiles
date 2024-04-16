@@ -20,21 +20,21 @@ fi
 if [ ! -d "$DOTFILES" ]; then
     echo -e "${BLUE}"
     if gum confirm "DO YOU WANT TO START THE INSTALLATION NOW?" --default=false; then
-        _showInfoMsg "Installation started"
+        _showNormalMsg "Installation started"
     elif [ $? -eq 130 ]; then
         exit 130
     else
-        _showInfoMsg "Installation canceled"
+        _showNormalMsg "Installation canceled"
         exit
     fi
 else
     echo -e "${BLUE}"
     if gum confirm "DO YOU WANT TO START THE UPDATE NOW?" --default=false; then
-        _showInfoMsg "Update started"
+        _showNormalMsg "Update started"
     elif [ $? -eq 130 ]; then
         exit 130
     else
-        _showInfoMsg "Update canceled"
+        _showNormalMsg "Update canceled"
         exit
     fi
 fi
