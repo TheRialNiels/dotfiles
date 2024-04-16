@@ -7,46 +7,38 @@ echo -e "${BLUE}"
 figlet "Preparation"
 echo -e "${NOCOLOR}"
 
-if [ -d ~/.config ]; then
-    echo ".config folder already exists."
+if [ -d "$HOME/.config" ]; then
+    _showInfoMsg "$(_changeTextWhite ".config/") folder already exists"
 else
-    mkdir ~/.config
-    echo ".config folder created."
+    mkdir "$HOME/.config"
+    _showSuccessMsg "$(_changeTextWhite ".config/") folder created"
 fi
 
-echo -e "\n"
-echo ":: Preparing temporary folders for the installation."
+_showNormalMsg "Preparing temporary folders for the installation"
 
-if [ ! -d ~/dotfiles-versions ]; then
-    mkdir ~/dotfiles-versions
-    echo ":: ~/dotfiles-versions folder created."
+if [ ! -d "$HOME/dotfiles-versions" ]; then
+    mkdir "$HOME/dotfiles-versions"
+    _showSuccessMsg "$(_changeTextWhite " ~/dotfiles-versions") folder created"
 fi
 
-if [ ! -d ~/dotfiles-versions/$version ]; then
-    mkdir ~/dotfiles-versions/$version
-    echo ":: ~/dotfiles-versions/$version folder created."
+if [ ! -d "$HOME/dotfiles-versions/$VERSION" ]; then
+    mkdir "$HOME/dotfiles-versions/$VERSION"
+    _showSuccessMsg "$(_changeTextWhite " ~/dotfiles-versions/$VERSION") folder created"
 else
-    echo ":: The folder ~/dotfiles-versions/$version already exists from previous installations."
-    rm -rf ~/dotfiles-versions/$version
-    mkdir ~/dotfiles-versions/$version
-    echo ":: Clean build prepared for the installation."
+    _showInfoMsg "The folder $(_changeTextWhite " ~/dotfiles-versions/$VERSION") already exists from previous installations"
+    rm -rf "$HOME/dotfiles-versions/$VERSION"
+    mkdir "$HOME/dotfiles-versions/$VERSION"
+    _showNormalMsg "Clean build prepared for the installation"
 fi
 
-rsync -a -I --exclude-from=${inst_path}includes/excludes.txt . ~/dotfiles-versions/$version/
+rsync -a -I --exclude-from="$INST_PATH/includes/excludes.txt" . "$HOME/dotfiles-versions/$VERSION/"
 
-if [[ $(_isFolderEmpty ~/dotfiles-versions/$version/) == 0 ]] ;then
-    echo -e "${RED}"
-    echo "AN ERROR HAS OCCURED. Preparation of ~/dotfiles-versions/$version/ failed"
-    echo -e "${YELLOW}"
-    echo "Please check that rsync is installad on your system."
-    echo "Execution of rsync -a -I --exclude-from=installation/includes/excludes.txt . ~/dotfiles-versions/$version/ is required."
-    echo -e "${NOCOLOR}"
+if [[ $(_isFolderEmpty "$HOME/dotfiles-versions/$VERSION/") == 0 ]]; then
+    _showErrorMsg "Preparation of $(_changeTextWhite " ~/dotfiles-versions/$VERSION") failed"
+    _showImportantMsg "Please check that rsync is installad on your system"
+    _showImportantMsg "Execution of $(_changeTextWhite "rsync -a -I --exclude-from='$INST_PATH/includes/excludes.txt' . ~/dotfiles-versions/$VERSION") is required"
 
     exit
 fi
 
-echo -e "${GREEN}"
-echo ":: dotfiles $version successfully prepared in ~/dotfiles-versions/$version/"
-echo -e "${NOCOLOR}"
-echo -e "\n"
-
+_showSuccessMsg "dotfiles $VERSION successfully prepared in $(_changeTextWhite " ~/dotfiles-versions/$VERSION/")"
