@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ------------------------------------------------------
 # Update /etc/pacman.conf file
@@ -20,16 +20,13 @@ sudo pacman -Syu
 echo -e "\n"
 
 # Check for required packages
-echo -e ":: Checking that required packages for the installation are installed...\n"
+_changeTextColor "$CYAN" ":: Checking that required packages for the installation are installed..."
 _installPackagesPacman "rsync" "gum" "figlet"
 
 # Double check rsync
-if ! command -v rsync &> /dev/null; then
-    echo ":: Force rsync installation"
+if ! command -v rsync &>/dev/null; then
+    _changeTextColor "$CYAN" ":: Force rsync installation"
     sudo pacman -S --noconfirm rsync
 else
-    echo ":: rsync double checked"
+    _changeTextColor "$CYAN" ":: rsync double checked"
 fi
-
-echo -e "\n"
-
