@@ -24,5 +24,3 @@ else
 
     _showSuccessMsg "yay has been installed successfully."
 fi
-
-echo -e "\n"
