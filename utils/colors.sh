@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# You can get more info about colores here:
+# https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124
+
 export BLACK='\033[1;38;5;0m'
 export RED='\033[1;38;5;196m'
 export GREEN='\033[1;38;5;2m'
@@ -8,6 +11,7 @@ export BLUE='\033[1;38;5;39m'
 export PURPLE='\033[1;38;5;93m'
 export CYAN='\033[1;38;5;51m'
 export GREY='\033[1;38;5;8m'
+export ORANGE='\033[1;38;5;202m'
 export WHITE='\033[1;38;5;231m'
 export NOCOLOR='\033[0m'
 
@@ -18,10 +22,11 @@ export YELLOW_256="226"
 export BLUE_256="39"
 export PURPLE_256="93"
 export CYAN_256="51"
-export WHITE_256="231"
 export GREY_256="8"
+export ORANGE_256="202"
+export WHITE_256="231"
 
-export GUM_CONFIRM_SELECTED_BACKGROUND=$CYAN_256
+export GUM_CONFIRM_SELECTED_BACKGROUND=$BLUE_256
 export GUM_CONFIRM_SELECTED_FOREGROUND=$WHITE_256
 
 export GUM_CHOOSE_CURSOR_FOREGROUND=$CYAN_256
