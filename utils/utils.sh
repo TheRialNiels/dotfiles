@@ -292,6 +292,12 @@ _showWarningMsg() {
     echo -e "${YELLOW}:: WARNING => ${NOCOLOR}${message}\n"
 }
 
+_showImportantMsg() {
+    message="$1"
+
+    echo -e "${ORANGE}:: IMPORTANT => ${NOCOLOR}${message}\n"
+}
+
 _showInfoMsg() {
     message="$1"
 
