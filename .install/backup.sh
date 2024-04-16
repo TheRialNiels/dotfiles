@@ -4,66 +4,42 @@
 # Backup existing dotfiles
 # ------------------------------------------------------
 
-datets=$(date '+%Y%m%d%H%M%S')
-if [ -d ~/dotfiles ] || [ -f ~/.bashrc ] || [ -f ~/.zshrc ]; then
+date_timestamp=$(date '+%Y%m%d%H%M%S')
+if [ -d "$DOTFILES" ]; then
     echo -e "${BLUE}"
     figlet "Backup"
+    echo -e "${NOCOLOR}"
 
-    echo -e "${CYAN}"
-    if [ -d ~/dotfiles ]; then
-        echo ":: The script has detected an existing dotfiles folder and will try to create a backup into the folder:"
-        echo "   ~/dotfiles-versions/backups/$datets"
-    fi
-
-    if [ ! -L ~/.bashrc ] && [ -f ~/.bashrc ]; then
-        echo ":: The script has detected an existing .bashrc file and will try to create a backup to:" 
-        echo "   ~/dotfiles-versions/backups/$datets/.bashrc-old"
-    fi
-
-    if [ ! -L ~/.zshrc ] && [ -f ~/.zshrc ]; then
-        echo ":: The script has detected an existing .zshrc file and will try to create a backup to:" 
-        echo "   ~/dotfiles-versions/backups/$datets/.zshrc-old"
-    fi
+    _showInfoMsg "The script has detected an existing dotfiles folder and will try to create a backup into the folder:"
+    echo -e "\t$(_changeTextColor "$WHITE" "$HOME/dotfiles-versions/backups/$date_timestamp")"
 
     echo -e "${BLUE}"
-    if gum confirm "DO YOU WANT TO CREATE A BACKUP?" --default=false;then
-	echo -e "${CYAN}"
+    if gum confirm "DO YOU WANT TO CREATE A BACKUP?" --default=false; then
+        echo -e "${CYAN}"
 
-        if [ ! -d ~/dotfiles-versions ]; then
-            mkdir ~/dotfiles-versions
-            echo "~/dotfiles-versions created."
+        if [ ! -d "$HOME/dotfiles-versions" ]; then
+            mkdir "$HOME/dotfiles-versions"
+            _showInfoMsg "$(_changeTextColor "$WHITE" "$HOME/dotfiles-versions") created"
         fi
-        if [ ! -d ~/dotfiles-versions/backups ]; then
-            mkdir ~/dotfiles-versions/backups
-            echo "~/dotfiles-versions/backups created"
+        if [ ! -d "$HOME/dotfiles-versions/backups" ]; then
+            mkdir "$HOME/dotfiles-versions/backups"
+            _showInfoMsg "$(_changeTextColor "$WHITE" "$HOME/dotfiles-versions/backups") created"
         fi
-        if [ ! -d ~/dotfiles-versions/backups/$datets ]; then
-            mkdir ~/dotfiles-versions/backups/$datets
-            echo "~/dotfiles-versions/backups/$datets created"
+        if [ ! -d "$HOME/dotfiles-versions/backups/$date_timestamp" ]; then
+            mkdir "$HOME/dotfiles-versions/backups/$date_timestamp"
+            _showInfoMsg "$(_changeTextColor "$WHITE" "$HOME/dotfiles-versions/backups/$date_timestamp") created"
         fi
-        if [ -d ~/dotfiles ]; then
-            rsync -a ~/dotfiles/ ~/dotfiles-versions/backups/$datets/
-            echo ":: Backup of your current dotfiles in ~/dotfiles-versions/backups/$datets created."
-        fi
-        if [ -f ~/.bashrc ]; then
-            cp ~/.bashrc ~/dotfiles-versions/backups/$datets/.bashrc-old
-            echo ":: Existing .bashrc file found in homefolder. .bashrc-old created"
-        fi
-        if [ -f ~/.zshrc ]; then
-            cp ~/.zshrc ~/dotfiles-versions/backups/$datets/.zshrc-old
-            echo ":: Existing .zshrc file found in homefolder. .zshrc-old created"
+        if [ -d "$DOTFILES" ]; then
+            rsync -a "$DOTFILES" "$HOME/dotfiles-versions/backups/$date_timestamp/"
+            _showInfoMsg "Backup of your current dotfiles in $(_changeTextColor "$WHITE" "$HOME/dotfiles-versions/backups/$date_timestamp") created"
         fi
 
-        echo -e "\n"
-        echo ":: PLEASE NOTE: You can create a fresh installation of the dotfiles by removing the folder ~/dotfiles"
-	echo -e "${NOCOLOR}"
+        _showImportantMsg "You can create a fresh installation of the dotfiles by removing the folder $(_changeTextColor "$WHITE" "$HOME/dotfiles")"
     elif [ $? -eq 130 ]; then
         exit 130
     else
-        echo ":: Backup skipped."
+        _showInfoMsg "Backup skipped"
     fi
-    echo ""
 fi
 
 echo -e "${NOCOLOR}"
-
