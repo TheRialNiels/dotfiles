@@ -1,70 +1,61 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-version="$(cat .version/version)"
-utils_path="utils/"
-inst_path=".install/"
-pkg_path="${inst_path}packages/"
-tpl_path="${inst_path}templates/"
+export VERSION="$(cat .version/version)"
+export UTILS_PATH="./utils"
+export INST_PATH="./.install"
+export PKGS_PATH="$INST_PATH/packages"
+export TMPL_PATH="$INST_PATH/templates"
+export DOTFILES="$HOME/dotfiles"
+export HYPR_CONF="$DOTFILES/hypr/conf"
 
 # Load some utils that will be used in the scripts
-source "${utils_path}utils.sh"
-source "${utils_path}colors.sh"
-
-# Check if the script is running with sudo privileges
-#_checkSudo
+source "$UTILS_PATH/utils.sh"
+source "$UTILS_PATH/colors.sh"
 
 # Check some packages before begin with the installation
-source "${inst_path}before-installation.sh"
+source "${INST_PATH}/before-installation.sh"
 
-source "${utils_path}print-title.sh"
+source "${UTILS_PATH}/print-title.sh"
 
-source "${inst_path}confirm-installation.sh"
+source "${INST_PATH}/confirm-installation.sh"
 
-source "${inst_path}yay.sh"
+source "${INST_PATH}/yay.sh"
 
-source "${inst_path}backup.sh"
+source "${INST_PATH}/backup.sh"
 
-source "${inst_path}preparation.sh"
+source "${INST_PATH}/preparation.sh"
 
-source "${inst_path}installer.sh"
+source "${INST_PATH}/installer.sh"
 
-source "${inst_path}remove.sh"
+source "${INST_PATH}/remove.sh"
 
-source "${pkg_path}general-packages.sh"
+source "${PKGS_PATH}/general-packages.sh"
 
-source "${inst_path}install-packages.sh"
+source "${INST_PATH}/install-packages.sh"
 
-source "${pkg_path}hyprland-packages.sh"
+source "${PKGS_PATH}/hyprland-packages.sh"
 
-source "${inst_path}install-packages.sh"
+source "${INST_PATH}/install-packages.sh"
 
-source "${inst_path}zsh.sh"
+source "${INST_PATH}/zsh.sh"
 
-source "${inst_path}wallpapers.sh"
+source "${INST_PATH}/wallpapers.sh"
 
-source "${inst_path}display-manager.sh"
+source "${INST_PATH}/keyboard.sh"
 
-source "${inst_path}restore.sh"
+source "${INST_PATH}/copy.sh"
 
-source "${inst_path}keyboard.sh"
+source "${INST_PATH}/dotfiles.sh"
 
-source "${inst_path}copy.sh"
+source "${INST_PATH}/grub.sh"
 
-source "${inst_path}bashrc.sh"
-
-source "${inst_path}zshrc.sh"
-
-source "${inst_path}grub.sh"
-
-source "${inst_path}cleanup.sh"
+source "${INST_PATH}/cleanup.sh"
 
 echo -e "${BLUE}"
 figlet "Done"
-echo -e "\n"
 
-echo -e "${CYAN}"
-echo "Please reboot your system!"
-echo -e "${NOCOLOR}"
-echo -e "\n"
+echo -e "\n${CYAN}"
+_showInfoMsg "Please reboot your system!"
+echo -e "${NOCOLOR}\n"
 
 sleep 3
