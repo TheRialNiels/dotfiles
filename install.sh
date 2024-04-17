@@ -54,8 +54,6 @@ source "${INST_PATH}/cleanup.sh"
 echo -e "${BLUE}"
 figlet "Done"
 
-echo -e "\n${CYAN}"
 _showInfoMsg "Please reboot your system!"
-echo -e "${NOCOLOR}\n"
 
 sleep 3
