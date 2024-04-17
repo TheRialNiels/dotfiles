@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ------------------------------------------------------
 # Setup
@@ -11,48 +11,34 @@ echo -e "${NOCOLOR}"
 keyboard_layout="us"
 
 _setupKeyboardLayout() {
-    echo ""
-    echo "Start typing = Search, RETURN = Confirm, CTRL-C = Cancel"
+    echo -e "Start typing = Search, RETURN = Confirm, CTRL-C = Cancel\n"
     keyboard_layout=$(localectl list-x11-keymap-layouts | gum filter --height 15 --placeholder "Find your keyboard layout...")
-    echo ""
-    echo ":: Keyboard layout changed to $keyboard_layout"
-    echo ""
+
+    _showSuccessMsg "Keyboard layout changed to $(_changeTextWhite "$keyboard_layout")"
     _confirmKeyboard
 }
 
 _confirmKeyboard() {
-    echo -e "${NOCOLOR}"
-    echo "Current selected keyboard setup:"
-    echo "Keyboard layout: $keyboard_layout"
+    _showNormalMsg "Current keyboard layout: $keyboard_layout"
 
     echo -e "${BLUE}"
-    if gum confirm "DO YOU WANT TO PROCEED WHITH THIS KEYBOARD SETUP?" --affirmative "Proceed" --negative "Change" --default=false;then
+    if gum confirm "DO YOU WANT TO PROCEED WHITH THIS KEYBOARD SETUP?" --affirmative "Proceed" --negative "Change" --default=false; then
         return 0
     elif [ $? -eq 130 ]; then
         exit 130
     else
-	echo -e "${NOCOLOR}"
+        echo -e "${NOCOLOR}"
         _setupKeyboardLayout
     fi
 }
 
-if [ "$restored" == "1" ]; then
-    echo -e "${CYAN}"
-    echo ":: You have already restored your settings into the new installation."
-else
-    _confirmKeyboard
-    
-    cp ${tpl_path}keyboard.conf ~/dotfiles-versions/$version/hypr/conf/keyboard.conf
+_confirmKeyboard
 
-    SEARCH="KEYBOARD_LAYOUT"
-    REPLACE="$keyboard_layout"
-    sed -i "s/$SEARCH/$REPLACE/g" ~/dotfiles-versions/$version/hypr/conf/keyboard.conf
+cp "$TMPL_PATH/keyboard.conf" "$HOME/dotfiles-versions/$VERSION/hypr/conf/keyboard.conf"
 
-    echo -e "\n"
-    echo -e "${CYAN}"
-    echo ":: Keyboard setup updated successfully."
-    echo "PLEASE NOTE: You can update your keyboard layout later in ~/dotfiles/hypr/conf/keyboard.conf"
-fi
+SEARCH="KEYBOARD_LAYOUT"
+REPLACE="$keyboard_layout"
+sed -i "s/$SEARCH/$REPLACE/g" "$HOME/dotfiles-versions/$VERSION/hypr/conf/keyboard.conf"
 
-echo -e "${NOCOLOR}"
-
+_showSuccessMsg "Keyboard setup updated successfully"
+_showInfoMsg "You can update your keyboard layout later in $(_changeTextWhite " ~/dotfiles/hypr/conf/keyboard.conf")"

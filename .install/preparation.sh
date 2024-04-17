@@ -35,7 +35,7 @@ rsync -a -I --exclude-from="$INST_PATH/includes/excludes.txt" . "$HOME/dotfiles-
 
 if [[ $(_isFolderEmpty "$HOME/dotfiles-versions/$VERSION/") == 0 ]]; then
     _showErrorMsg "Preparation of $(_changeTextWhite " ~/dotfiles-versions/$VERSION") failed"
-    _showImportantMsg "Please check that rsync is installad on your system"
+    _showImportantMsg "Please check that rsync is installed on your system"
     _showImportantMsg "Execution of $(_changeTextWhite "rsync -a -I --exclude-from='$INST_PATH/includes/excludes.txt' . ~/dotfiles-versions/$VERSION") is required"
 
     exit
