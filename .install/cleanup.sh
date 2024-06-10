@@ -39,6 +39,8 @@ fi
 # Create default folder structure
 xdg-user-dirs-update
 
+mkdir $HOME/Pictures/Screenshots
+
 echo -e "\n${BLUE}"
 echo "Cleanup done."
 echo -e "${NOCOLOR}\n"
