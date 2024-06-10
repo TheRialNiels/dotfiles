@@ -116,23 +116,31 @@ _installSymLink() {
     symlink="$1"
     linksource="$2"
     linktarget="$3"
+    user="$4"
+    
+    # Determine the command prefix based on the user parameter
+    if [ "$user" = "sudo" ]; then
+        cmd_prefix="sudo"
+    else
+        cmd_prefix=""
+    fi
 
     if [ -L "${symlink}" ]; then
-        rm "${symlink}"
-        ln -s "${linksource}" "${linktarget}"
+        ${cmd_prefix} rm "${symlink}"
+        ${cmd_prefix} ln -s "${linksource}" "${linktarget}"
         _showSuccessMsg "Symlink $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
     else
         if [ -d "${symlink}" ]; then
-            rm -rf "$symlink/"
-            ln -s "${linksource}" "${linktarget}"
+            ${cmd_prefix} rm -rf "$symlink/"
+            ${cmd_prefix} ln -s "${linksource}" "${linktarget}"
             _showSuccessMsg "Symlink for directory $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
         else
             if [ -f "${symlink}" ]; then
-                rm "${symlink}"
-                ln -s "${linksource}" "${linktarget}"
+                ${cmd_prefix} rm "${symlink}"
+                ${cmd_prefix} ln -s "${linksource}" "${linktarget}"
                 _showSuccessMsg "Symlink to file $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
             else
-                ln -s "${linksource}" "${linktarget}"
+                ${cmd_prefix} ln -s "${linksource}" "${linktarget}"
                 _showSuccessMsg "New symlink $(_changeTextWhite "$linksource") -> $(_changeTextWhite "$linktarget") created"
             fi
         fi
