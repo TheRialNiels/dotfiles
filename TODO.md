@@ -7,6 +7,7 @@
 - [x] Config neofetch
 - [x] Config pacseek
 - [x] Config grub
+- [] Config fastfetch
 - [] Config sddm
 - [] Add notifications from firefox and spotify
 - [] Add gpu dashboard
