@@ -69,7 +69,7 @@ if [[ `which wal` ]]; then
         ;;
 
         *)
-            echo "Available Options: default  pywal"
+            echo "Available Options: default pywal"
 		    exit 1
         ;;
     esac
