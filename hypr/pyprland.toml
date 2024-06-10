@@ -22,7 +22,7 @@ hysteresis = 0.25
 
 [scratchpads.volume]
 command = "pavucontrol"
-class = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
 size = "35% 45%"
 animation = "fromTop"
 margin = 60
