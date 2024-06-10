@@ -27,9 +27,9 @@ for index in "${!config_folders[@]}"; do
 
     if [[ $folder == "gtk" ]]; then
         if [ -d "$HOME/dotfiles-versions/$VERSION/$folder" ]; then
-            _installSymLink "$HOME/.config/gtk-2.0" "$HOME/dotfiles/$folder/gtk2.0/" "$HOME/.config"
-            _installSymLink "$HOME/.config/gtk-3.0" "$HOME/dotfiles/$folder/gtk3.0/" "$HOME/.config"
-            _installSymLink "$HOME/.gtkrc-2.0" "$HOME/dotfiles/$folder/.gtkrc-2.0" "$HOME"
+            _installSymLink "$HOME/.config/gtk-2.0" "$HOME/dotfiles/$folder/gtk/gtk2.0/" "$HOME/.config"
+            _installSymLink "$HOME/.config/gtk-3.0" "$HOME/dotfiles/$folder/gtk/gtk3.0/" "$HOME/.config"
+            _installSymLink "$HOME/.gtkrc-2.0" "$HOME/dotfiles/$folder/gtk/.gtkrc-2.0" "$HOME"
         fi
     elif [[ $folder == "zsh" ]]; then
         if [ -d "$HOME/dotfiles-versions/$VERSION/$folder" ]; then
