@@ -17,10 +17,9 @@ export packagesPacman=(
 export packagesYay=(
     "swww"
     "wlogout"
-    "nwg-look"
-    "emote"
     "hypridle"
     "hyprlock"
     "waybar-module-pacman-updates-git"
     "pyprland"
+    "wlr-randr"
 )
