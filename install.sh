@@ -33,6 +33,7 @@ source "${PKGS_PATH}/general-packages.sh"
 
 source "${INST_PATH}/install-packages.sh"
 
+# TODO: Have rustup installed
 source "${PKGS_PATH}/hyprland-packages.sh"
 
 source "${INST_PATH}/install-packages.sh"
