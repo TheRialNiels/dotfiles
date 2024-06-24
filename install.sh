@@ -10,6 +10,7 @@
 
 ## Define Variables
 export VERSION
+export forceInstall
 export DOTFILES_SCRIPT_PATH
 export SCRIPTS_DIR="scripts"
 export INST_PATH="./.install"
@@ -54,3 +55,7 @@ source "$INST_PATH/_4-backup-dotfiles.sh"
 ## 5. Prepare Dotfiles
 # shellcheck source=.install/_5-prepare-dotfiles.sh
 source "$INST_PATH/_5-prepare-dotfiles.sh"
+
+## 6. Dotfiles Packages Option
+# shellcheck source=.install/_6-dotfiles-pkgs-option.sh
+source "$INST_PATH/_6-dotfiles-pkgs-option.sh"
