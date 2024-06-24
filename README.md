@@ -3,8 +3,8 @@
 - <details>
   <summary>General</summary>
   <ul>
-    <li>bat</li>
     <li>base-devel</li>
+    <li>bat</li>
     <li>cmake</li>
     <li>curl</li>
     <li>eza</li>

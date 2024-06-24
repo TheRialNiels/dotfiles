@@ -1,6 +1,7 @@
 #!/user/bin/env bash
 
 export requiredPackagesPacman=(
+    "base-devel"
     "bat"
     "cmake"
     "curl"
