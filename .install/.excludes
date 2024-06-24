@@ -1,0 +1,9 @@
+.git
+.gitignore
+.install
+.shellcheckrc
+CHANGELOG
+install.sh
+LICENSE
+README.md
+scripts

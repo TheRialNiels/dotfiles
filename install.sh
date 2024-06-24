@@ -50,3 +50,7 @@ source "$INST_PATH/_3-install-yay.sh"
 ## 4. Backup Previous Dotfiles
 # shellcheck source=.install/_4-backup-dotfiles.sh
 source "$INST_PATH/_4-backup-dotfiles.sh"
+
+## 5. Prepare Dotfiles
+# shellcheck source=.install/_5-prepare-dotfiles.sh
+source "$INST_PATH/_5-prepare-dotfiles.sh"
