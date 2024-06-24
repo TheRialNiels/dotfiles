@@ -46,3 +46,7 @@ source "$INST_PATH/_2-confirm-installation.sh"
 ## 3. Install Yay
 # shellcheck source=.install/_3-install-yay.sh
 source "$INST_PATH/_3-install-yay.sh"
+
+## 4. Backup Previous Dotfiles
+# shellcheck source=.install/_4-backup-dotfiles.sh
+source "$INST_PATH/_4-backup-dotfiles.sh"

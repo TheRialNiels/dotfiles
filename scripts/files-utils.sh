@@ -11,6 +11,27 @@
 source "$SCRIPTS_DIR/messages-utils.sh"
 
 # -----------------------------------------------------
+# _createDirectoryIfNotExists - Creates a directory if it
+# does not exist.
+#
+# Usage:
+#   _createDirectoryIfNotExists <dir>
+#
+# Parameters:
+#   dir: The directory to create.
+#
+# Example:
+#   _createDirectoryIfNotExists "$HOME/dotfiles-versions"
+# -----------------------------------------------------
+_createDirectoryIfNotExists() {
+    local dir=$1
+    if [ ! -d "$dir" ]; then
+        mkdir -p "$dir"
+        _message "success" "The directory '$dir' was created successfully."
+    fi
+}
+
+# -----------------------------------------------------
 # _replaceLineIfUnchanged - Replaces a line in a file if
 # it is unchanged.
 #
