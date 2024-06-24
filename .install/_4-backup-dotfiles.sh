@@ -8,11 +8,12 @@
 # Made by TheRialNiels
 # -----------------------------------------------------
 
+## Source Utils
 # shellcheck source=../scripts/messages-utils.sh
 source "$SCRIPTS_DIR/messages-utils.sh"
 
-# shellcheck source=../scripts/files-utils.sh
-source "$SCRIPTS_DIR/files-utils.sh"
+# shellcheck source=../scripts/folders-utils.sh
+source "$SCRIPTS_DIR/folders-utils.sh"
 
 dateTimestamp=$(date '+%Y%m%d%H%M%S')
 backupDir="$HOME/dotfiles-versions/backups/$dateTimestamp"

@@ -22,3 +22,6 @@ source "$SCRIPTS_DIR/packages-utils.sh"
 
 # shellcheck source=../scripts/files-utils.sh
 source "$SCRIPTS_DIR/files-utils.sh"
+
+# shellcheck source=../scripts/folders-utils.sh
+source "$SCRIPTS_DIR/folders-utils.sh"
