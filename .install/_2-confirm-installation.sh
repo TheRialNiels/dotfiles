@@ -14,7 +14,7 @@ source "$SCRIPTS_DIR/source-utils.sh"
 _message "important" "Please make sure that your system and your packages are up to date ('sudo pacman -Syu' or 'yay')"
 _message "important" "You can cancel the installation at any time with 'CTRL + C'"
 
-## 3.1 Check if the script is running from dotfiles folder
+## Check if the script is running from dotfiles folder
 SCRIPT=$(realpath "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
@@ -24,7 +24,7 @@ if [ "$SCRIPTPATH" = "$DOTFILES" ]; then
     _message "warn" "Proceeding is not recommended!"
 fi
 
-## 3.2 Check if the dotfiles folder already exists
+## Check if the dotfiles folder already exists
 if [ ! -d "$DOTFILES" ]; then
     msg="DO YOU WANT TO START THE INSTALLATION?"
     if gum confirm "$msg" --default=false; then

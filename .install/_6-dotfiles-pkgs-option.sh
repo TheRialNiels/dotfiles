@@ -12,7 +12,7 @@
 # shellcheck source=../scripts/messages-utils.sh
 source "$SCRIPTS_DIR/messages-utils.sh"
 
-## Print Packages header
+## Print Dotfiles Packages Title
 echo -e "${BLUE}"
 figlet "Dotfiles Packages"
 echo -e "${NOCOLOR}"

@@ -18,6 +18,7 @@ source "$SCRIPTS_DIR/folders-utils.sh"
 dateTimestamp=$(date '+%Y%m%d%H%M%S')
 backupDir="$HOME/dotfiles-versions/backups/$dateTimestamp"
 
+## Check if dotfiles folder exists
 if [ -d "$DOTFILES" ]; then
     echo -e "${BLUE}"
     figlet "Backup"
@@ -30,6 +31,7 @@ if [ -d "$DOTFILES" ]; then
         _createDirectoryIfNotExists "$HOME/dotfiles-versions/backups"
         _createDirectoryIfNotExists "$backupDir"
 
+        # Check if dotfiles folder exists and create a backup
         if [ -d "$DOTFILES" ]; then
             rsync -a "$DOTFILES" "$backupDir/"
             _message "success" "Backup of your current dotfiles in '$backupDir' created"

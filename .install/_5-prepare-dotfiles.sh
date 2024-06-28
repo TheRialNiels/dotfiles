@@ -14,7 +14,7 @@ source "$SCRIPTS_DIR/messages-utils.sh"
 # shellcheck source=../scripts/folders-utils.sh
 source "$SCRIPTS_DIR/folders-utils.sh"
 
-## Print Preparation header
+## Print Prepare Dotfiles Title
 echo -e "${BLUE}"
 figlet "Prepare Dotfiles"
 echo -e "${NOCOLOR}"
@@ -35,7 +35,7 @@ if [ ! -d "$HOME/dotfiles-versions" ]; then
     _message "success" "The 'dotfiles-versions/' folder was created successfully."
 fi
 
-# Create version-specific directory, handle existing directory
+## Create version-specific directory, handle existing directory
 if [ ! -d "$HOME/dotfiles-versions/$VERSION" ]; then
     mkdir "$HOME/dotfiles-versions/$VERSION"
     _message "success" "The 'dotfiles-versions/$VERSION' folder was created successfully."

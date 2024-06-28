@@ -10,10 +10,12 @@
 # shellcheck source=../scripts/source-utils.sh
 source "$SCRIPTS_DIR/source-utils.sh"
 
+## Print Install yay Title
 echo -e "${BLUE}"
 figlet "Install yay"
 echo -e "${NOCOLOR}"
 
+## Check if yay is already installed
 if sudo pacman -Qs yay >/dev/null; then
     _message "info" "'yay' is already installed!"
 else
