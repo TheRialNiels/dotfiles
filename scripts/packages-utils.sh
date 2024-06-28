@@ -40,23 +40,24 @@ _checkIsInstalledWith() {
     # Check if the package is installed using the specified package manager
     if [[ "$packageManager" == "yay" ]]; then
         if yay -Qq "$package" &>/dev/null; then
-            echo "0" # true
+            echo 0 # true
             return
         else
-            echo "1" # false
+            echo 1 # false
             return
         fi
     elif [[ "$packageManager" == "pacman" ]]; then
         if pacman -Qq "$package" &>/dev/null; then
-            echo "0" # true
+            echo 0 # true
             return
         else
-            echo "1" # false
+            echo 1 # false
             return
         fi
     else
         _message "error" "Invalid package manager '${packageManager}'"
-        return 1
+        echo 1 # false
+        return
     fi
 }
 
@@ -76,7 +77,7 @@ _checkIsInstalledWith() {
 # -----------------------------------------------------
 _installPackagesWith() {
     local packageManager=$1
-    shift  # Remove the first argument, so that "$@" contains only package names
+    shift # Remove the first argument, so that "$@" contains only package names
 
     # Initialize an array to hold the names of packages that need to be installed
     packagesToInstall=()
@@ -84,7 +85,7 @@ _installPackagesWith() {
     # Loop through all the arguments passed to the function (package names)
     for package in "$@"; do
         # Check if the package is already installed based on the package manager
-        if _checkIsInstalledWith "$packageManager" "$package"; then
+        if [[ $(_checkIsInstalledWith "$packageManager" "$package") == 0 ]]; then
             _message "info" "Package '${package}' is already installed"
         else
             packagesToInstall+=("${package}")
@@ -92,7 +93,7 @@ _installPackagesWith() {
     done
 
     # Check if there are any packages that need to be installed
-    if [[ ${#packagesToInstall[@]} -eq 0 ]]; then
+    if [[ ${#packagesToInstall[@]} == 0 ]]; then
         _message "info" "All ${packageManager} packages are already installed"
         return
     else
@@ -105,7 +106,7 @@ _installPackagesWith() {
             fi
 
             # Check if the package was installed successfully
-            if [[ $? -eq 0 ]]; then
+            if [[ $? == 0 ]]; then
                 _message "success" "Package '${package}' installed successfully"
             else
                 _message "error" "Failed to install package '${package}'"
