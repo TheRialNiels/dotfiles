@@ -59,3 +59,7 @@ source "$INST_PATH/_5-prepare-dotfiles.sh"
 ## 6. Dotfiles Packages Option
 # shellcheck source=.install/_6-dotfiles-pkgs-option.sh
 source "$INST_PATH/_6-dotfiles-pkgs-option.sh"
+
+## 7. Check Existing Packages (Uninstall If Necessary)
+# shellcheck source=.install/_7-check-existing-pkgs.sh
+source "$INST_PATH/_7-check-existing-pkgs.sh"
