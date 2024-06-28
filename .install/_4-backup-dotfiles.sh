@@ -38,5 +38,6 @@ if [ -d "$DOTFILES" ]; then
         _message "important" "You can create a fresh installation of the dotfiles by removing the folder '~/dotfiles' and running the installation script again"
     else
         _message "info" "Backup canceled!"
+        exit 0
     fi
 fi
