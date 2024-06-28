@@ -38,10 +38,10 @@ if [[ "$MODE" == "prod" ]]; then
         fi
     else
         _message "info" "Installing required packages..."
-        _installPackagesWithPacman "curl" "cmake"
+        _installPackagesWith "pacman" "curl" "cmake"
 
         _message "info" "Installing rustup..."
-        _installPackagesWithPacman "rustup"
+        _installPackagesWith "pacman" "rustup"
 
         _message "info" "Installing Rust toolchain..."
         rustup default stable
@@ -76,7 +76,7 @@ if [[ "$MODE" == "prod" ]]; then
     # shellcheck source="../.install/packages/required-packages.sh"
     source "$PACKAGES_DIR/required-packages.sh"
 
-    _installPackagesWithPacman "${requiredPackagesPacman[@]}"
+    _installPackagesWith "pacman" "${requiredPackagesPacman[@]}"
 
     ## 1.4 Update /etc/pacman.conf file
     _message "info" "Updating /etc/pacman.conf file..."

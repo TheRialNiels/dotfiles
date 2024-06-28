@@ -18,7 +18,7 @@ if sudo pacman -Qs yay >/dev/null; then
     _message "info" "'yay' is already installed!"
 else
     _message "info" "'yay is not installed'. Starting the installation..."
-    _installPackagesWithPacman "base-devel"
+    _installPackagesWith "pacman" "base-devel"
 
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")
