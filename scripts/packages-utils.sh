@@ -40,15 +40,19 @@ _checkIsInstalledWith() {
     # Check if the package is installed using the specified package manager
     if [[ "$packageManager" == "yay" ]]; then
         if yay -Qq "$package" &>/dev/null; then
-            return 0 # true
+            echo "0" # true
+            return
         else
-            return 1 # false
+            echo "1" # false
+            return
         fi
     elif [[ "$packageManager" == "pacman" ]]; then
         if pacman -Qq "$package" &>/dev/null; then
-            return 0 # true
+            echo "0" # true
+            return
         else
-            return 1 # false
+            echo "1" # false
+            return
         fi
     else
         _message "error" "Invalid package manager '${packageManager}'"
