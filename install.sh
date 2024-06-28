@@ -18,7 +18,7 @@ export PACKAGES_DIR="$INST_PATH/packages"
 export DOTFILES="$HOME/dotfiles"
 
 VERSION="$(cat .version)"
-#DOTFILES_SCRIPT_PATH="$(dirname "$(realpath "$0")")"
+DOTFILES_SCRIPT_PATH="$(dirname "$(realpath "$0")")"
 
 ## Define Mode
 export MODE
@@ -63,3 +63,15 @@ source "$INST_PATH/_6-dotfiles-pkgs-option.sh"
 ## 7. Check Existing Packages (Uninstall If Necessary)
 # shellcheck source=.install/_7-check-existing-pkgs.sh
 source "$INST_PATH/_7-check-existing-pkgs.sh"
+
+## 8. Install General Packages
+# shellcheck source=.install/_8-install-general-pkgs.sh
+source "$INST_PATH/_8-install-general-pkgs.sh"
+
+## 9. Install Hyprland Packages
+# shellcheck source=.install/_9-install-hyprland-pkgs.sh
+source "$INST_PATH/_9-install-hyprland-pkgs.sh"
+
+## 10. Change Shell to Zsh
+# shellcheck source=.install/_10-change-to-zsh.sh
+source "$INST_PATH/_10-change-to-zsh.sh"
