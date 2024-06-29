@@ -75,3 +75,7 @@ source "$INST_PATH/_9-install-hyprland-pkgs.sh"
 ## 10. Change Shell to Zsh
 # shellcheck source=.install/_10-change-to-zsh.sh
 source "$INST_PATH/_10-change-to-zsh.sh"
+
+## 11. Set Wallpaper Cache Files
+# shellcheck source=.install/_11-set-wallpaper.sh
+source "$INST_PATH/_11-set-wallpaper.sh"
