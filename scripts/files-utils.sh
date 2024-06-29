@@ -57,3 +57,26 @@ _replaceLineIfUnchanged() {
         _message "error" "The line was not found."
     fi
 }
+
+# -----------------------------------------------------
+# _createCacheFile - Creates a cache file if it does not
+# exist.
+#
+# Usage:
+#   _createCacheFile <filePath> <content>
+#
+# Parameters:
+#   filePath: The path to the file to create.
+#   content: The content to write to the file.
+#
+# Example:
+#   _createCacheFile "$HOME/.cache/file" "Hello, World!"
+# -----------------------------------------------------
+_createCacheFile() {
+    local filePath=$1
+    local content=$2
+    if [ ! -f "$filePath" ]; then
+        echo "$content" > "$filePath"
+        _message "success" "'$(basename "$filePath")' created"
+    fi
+}
