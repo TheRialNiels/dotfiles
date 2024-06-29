@@ -15,6 +15,7 @@ export DOTFILES_SCRIPT_PATH
 export SCRIPTS_DIR="scripts"
 export INST_PATH="./.install"
 export PACKAGES_DIR="$INST_PATH/packages"
+export TMPL_PATH="$INST_PATH/templates"
 export DOTFILES="$HOME/dotfiles"
 
 VERSION="$(cat .version)"
@@ -79,3 +80,7 @@ source "$INST_PATH/_10-change-to-zsh.sh"
 ## 11. Set Wallpaper Cache Files
 # shellcheck source=.install/_11-set-wallpaper.sh
 source "$INST_PATH/_11-set-wallpaper.sh"
+
+## 12. Set Keyboard Layout
+# shellcheck source=.install/_12-set-keyboard-layout.sh
+source "$INST_PATH/_12-set-keyboard-layout.sh"
