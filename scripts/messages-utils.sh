@@ -4,8 +4,6 @@
 #
 # This script contains functions to display messages
 # with different colors and styles.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # -----------------------------------------------------

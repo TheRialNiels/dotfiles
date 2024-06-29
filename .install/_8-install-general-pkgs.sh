@@ -3,8 +3,6 @@
 # Install General Packages
 #
 # This script installs the general packages.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

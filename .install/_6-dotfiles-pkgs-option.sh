@@ -4,8 +4,6 @@
 #
 # This script prompts the user to choose between
 # reinstalling all packages or installing new packages only.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

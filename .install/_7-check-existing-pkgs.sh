@@ -4,8 +4,6 @@
 #
 # This script checks if some packages are already installed
 # to uninstall them before installing the new ones.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

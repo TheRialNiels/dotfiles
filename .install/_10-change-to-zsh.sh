@@ -3,8 +3,6 @@
 # Change to Zsh
 #
 # This script changes the default shell to Zsh.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

@@ -4,8 +4,6 @@
 #
 # This script sources all the required files for the
 # dotfiles to work properly.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/colors.sh

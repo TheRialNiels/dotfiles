@@ -3,8 +3,6 @@
 # Install yay
 #
 # This script installs yay on the system.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/source-utils.sh

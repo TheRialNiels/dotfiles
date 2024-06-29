@@ -4,8 +4,6 @@
 #
 # This script contains functions to check if a package
 # is installed and to install packages using pacman.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/messages-utils.sh

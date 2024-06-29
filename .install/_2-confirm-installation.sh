@@ -4,8 +4,6 @@
 #
 # This script asks the user if they want to start the
 # installation or update the dotfiles.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/source-utils.sh

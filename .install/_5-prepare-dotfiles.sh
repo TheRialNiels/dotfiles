@@ -3,8 +3,6 @@
 # Prepare Dotfiles
 #
 # This script prepares the dotfiles for installation.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

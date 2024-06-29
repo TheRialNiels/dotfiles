@@ -4,8 +4,6 @@
 #
 # This script creates a backup of the current dotfiles
 # folder.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

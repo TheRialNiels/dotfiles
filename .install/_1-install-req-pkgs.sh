@@ -4,8 +4,6 @@
 #
 # This script installs the required packages for the
 # dotfiles.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/messages-utils.sh

@@ -4,8 +4,6 @@
 #
 # This script contains general functions that can be
 # used in other scripts.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # -----------------------------------------------------

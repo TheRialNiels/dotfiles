@@ -3,8 +3,6 @@
 # Print Title
 #
 # This script prints the title of the dotfiles.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 clear

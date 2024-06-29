@@ -3,8 +3,6 @@
 # Folders Utils
 #
 # This script contains functions to work with folders.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/messages-utils.sh

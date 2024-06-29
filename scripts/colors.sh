@@ -3,8 +3,6 @@
 # Colors
 #
 # This script contains the colors used in the scripts.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 export BLACK='\033[1;38;5;0m'    # Hex: #000000

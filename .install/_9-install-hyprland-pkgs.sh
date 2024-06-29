@@ -3,8 +3,6 @@
 # Install Hyprland Packages
 #
 # This script installs the hyprland packages.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 ## Source Utils

@@ -3,8 +3,6 @@
 # Files Utils
 #
 # This script contains functions to work with files.
-#
-# Made by TheRialNiels
 # -----------------------------------------------------
 
 # shellcheck source=../scripts/messages-utils.sh
