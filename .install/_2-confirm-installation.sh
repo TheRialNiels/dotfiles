@@ -28,7 +28,7 @@ if [ ! -d "$DOTFILES" ]; then
     if gum confirm "$msg" --default=false; then
         _message "info" "Starting installation..."
     else
-        _message "info" "Installation canceled!"
+        _message "error" "Installation canceled!"
         exit 0
     fi
 else
@@ -36,7 +36,7 @@ else
     if gum confirm "$msg" --default=false; then
         _message "info" "Starting update..."
     else
-        _message "info" "Update canceled!"
+        _message "error" "Update canceled!"
         exit 0
     fi
 fi
