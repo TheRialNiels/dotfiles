@@ -58,6 +58,10 @@ _message() {
         color=$ORANGE
         prefix="IMPORTANT"
         ;;
+    normal)
+        color=$WHITE
+        prefix=""
+        ;;
     *)
         _warn "Invalid message type."
         _normal "Valid message types are: success, error, warn, info, important."
@@ -67,6 +71,13 @@ _message() {
 
     # Replace words inside single quotes with the appropriate color
     message=$(echo -e "$message" | sd "'([^']*)'" "${BLUE}\$1${WHITE}")
+
+    # Check if the prefix is "normal"
+    if [[ -z "$prefix" ]]; then
+        # Print the formatted message
+        echo -e "\n${color}::: => ${WHITE}${message}${NOCOLOR}\n"
+        return
+    fi
 
     # Print the formatted message
     echo -e "\n${color}::: ${prefix} => ${WHITE}${message}${NOCOLOR}\n"
