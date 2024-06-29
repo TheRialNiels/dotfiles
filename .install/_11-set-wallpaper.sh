@@ -2,7 +2,7 @@
 # -----------------------------------------------------
 # Set Wallpaper
 #
-# This script sets the wallpaper for the desktop
+# This script sets the wallpaper cache files.
 # -----------------------------------------------------
 
 ## Source Utils
