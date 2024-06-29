@@ -59,6 +59,49 @@ _replaceLineIfUnchanged() {
 }
 
 # -----------------------------------------------------
+# _replaceWordIfUnchanged - Replaces a word in a file if
+# it is unchanged.
+#
+# Usage:
+#   _replaceWordIfUnchanged <file> <oldWord> <newWord>
+#
+# Parameters:
+#   file: The file to modify.
+#   oldWord: The word to replace.
+#   newWord: The new word to insert.
+#
+# Example:
+#   _replaceWordIfUnchanged "file.txt" "old" "new"
+#   _replaceWordIfUnchanged "file.txt" "old" "new" true
+# -----------------------------------------------------
+_replaceWordIfUnchanged() {
+    local file=$1
+    local oldWord=$2
+    local newWord=$3
+    local runAsSudo=$4
+
+    local sd_cmd="sd -s"
+
+    # If the runAsSudo parameter is set to true, prepend sudo to the commands
+    if [[ "$runAsSudo" == true ]]; then
+        rg_cmd="sudo $rg_cmd"
+        sd_cmd="sudo $sd_cmd"
+    fi
+
+    # If the line is present, replace it with the new line (newLine) using sd
+    $sd_cmd "$oldWord" "$newWord" "$file"
+
+    # Check if the line was successfully replaced
+    # shellcheck disable=SC2181
+    if [[ $? -eq 0 ]]; then
+        msg="The word '$oldWord' was replaced with '$newWord' successfully in '$file'."
+        _message "success" "$msg"
+    else
+        _message "error" "The word was not modified."
+    fi
+}
+
+# -----------------------------------------------------
 # _createCacheFile - Creates a cache file if it does not
 # exist.
 #
