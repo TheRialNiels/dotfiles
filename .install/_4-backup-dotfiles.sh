@@ -24,7 +24,8 @@ if [ -d "$DOTFILES" ]; then
 
     _message "info" "The script has detected an existing dotfiles folder and will try to create a backup into the folder: '$backupDir'"
 
-    if gum confirm "DO YOU WANT TO CREATE A BACKUP?" --default=false; then
+    msg="DO YOU WANT TO CREATE A BACKUP?"
+    if gum confirm "$msg" --default=false; then
         _createDirectoryIfNotExists "$HOME/dotfiles-versions"
         _createDirectoryIfNotExists "$HOME/dotfiles-versions/backups"
         _createDirectoryIfNotExists "$backupDir"
