@@ -21,7 +21,7 @@ THEMES_DIR="$HOME/grub2-themes"
 ## Check if the theme is already installed
 if [ -d "$THEMES_DIR" ]; then
     _message "info" "The Grub theme '$THEME_NAME' is already installed."
-    exit 0 # Exit with success code
+    return
 fi
 
 ## Clone the repository
