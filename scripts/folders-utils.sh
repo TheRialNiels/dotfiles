@@ -26,6 +26,8 @@ _createDirectoryIfNotExists() {
     if [ ! -d "$dir" ]; then
         mkdir -p "$dir"
         _message "success" "The directory '$dir' was created successfully."
+    else
+        _message "info" "The directory '$dir' already exists."
     fi
 }
 
