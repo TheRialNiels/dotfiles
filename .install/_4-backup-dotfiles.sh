@@ -37,8 +37,10 @@ if [ -d "$DOTFILES" ]; then
         fi
 
         _message "important" "You can create a fresh installation of the dotfiles by removing the folder '~/dotfiles' and running the installation script again"
+    elif [ $? -eq 130 ]; then
+        _message "error" "Backup canceled!"
+        exit 130 # Exit with cancel code
     else
-        _message "info" "Backup canceled!"
-        exit 0
+        _message "warn" "Backup declined!"
     fi
 fi
