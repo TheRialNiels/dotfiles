@@ -57,5 +57,5 @@ elif [ $? -eq 130 ]; then
 else
     # User declined the installation
     _message "error" "Copying of prepared dotfiles declined!"
-    exit 0 # Exit with success code
+    exit 1 # Exit with error code
 fi
