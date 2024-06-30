@@ -88,3 +88,15 @@ source "$INST_PATH/_12-set-keyboard-layout.sh"
 ## 13. Copy Dotfiles
 # shellcheck source=.install/_13-copy-dotfiles.sh
 source "$INST_PATH/_13-copy-dotfiles.sh"
+
+## 14. Create Symbolic Links
+# shellcheck source=.install/_14-create-symlinks.sh
+#source "$INST_PATH/_14-create-symlinks.sh"
+
+## 15. Set Up Grub Theme
+# shellcheck source=.install/_15-set-grub-theme.sh
+source "$INST_PATH/_15-set-grub-theme.sh"
+
+## 16. Clean Up Installation
+# shellcheck source=.install/_16-clean-up-installation.sh
+#source "$INST_PATH/_16-clean-up-installation.sh"
