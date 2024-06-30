@@ -26,7 +26,7 @@ source "$SCRIPTS_DIR/folders-utils.sh"
 
 ## Display information messages based on the existence of DOTFILES
 if [ ! -d "$DOTFILES" ]; then
-    _message "important" "The script will now remove existing directories and files from '~/.config' and copy your prepared configuration from '~/dotfiles-versions/$VERSION' to '~/dotfiles'"
+    _message "important" "The script will now remove existing directories and files from '~/.config' and copy your prepared configuration from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles'"
     _message "important" "Symbolic links will then be created from '~/dotfiles' into your '~/.config' directory"
 else
     _message "important" "The script will overwrite existing files but will not remove additional files or folders from your custom configuration."
@@ -39,17 +39,17 @@ if gum confirm "$msg"; then
     _createDirectoryIfNotExists "$DOTFILES"
 
     # Use rsync to copy dotfiles
-    rsync -avhp -I "$HOME/dotfiles-versions/$VERSION/" "$DOTFILES/"
+    rsync -avhp -I "$HOME/dotfiles-versions/$VERSION/dotfiles/" "$DOTFILES/"
 
     # Check if rsync was unsuccessful
     if [[ $(_isFolderEmpty "$DOTFILES/") == 1 ]]; then
-        _message "error" "Copying prepared dotfiles from '~/dotfiles-versions/$VERSION/' to '~/dotfiles/' failed"
+        _message "error" "Copying prepared dotfiles from '~/dotfiles-versions/$VERSION/dotfiles/' to '~/dotfiles/' failed"
         _message "error" "Please check that 'rsync' is installed on your system"
         exit 1 # Exit with error code
     fi
 
     # Show success message
-    _message "success" "All files from '~/dotfiles-versions/$VERSION/' to '~/dotfiles/' copied successfully"
+    _message "success" "All files from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles/' copied successfully"
 elif [ $? -eq 130 ]; then
     # User cancelled the installation
     _message "error" "Copying of prepared dotfiles cancelled!"
