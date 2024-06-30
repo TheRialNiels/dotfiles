@@ -84,3 +84,7 @@ source "$INST_PATH/_11-set-wallpaper.sh"
 ## 12. Set Keyboard Layout
 # shellcheck source=.install/_12-set-keyboard-layout.sh
 source "$INST_PATH/_12-set-keyboard-layout.sh"
+
+## 13. Copy Dotfiles
+# shellcheck source=.install/_13-copy-dotfiles.sh
+source "$INST_PATH/_13-copy-dotfiles.sh"
