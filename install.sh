@@ -99,7 +99,7 @@ source "$INST_PATH/_14-create-symlinks.sh"
 source "$INST_PATH/_15-set-grub-theme.sh"
 
 ## 16. Clean Up Installation
-# shellcheck source=.install/_16-clean-up-installation.sh
+# shellcheck source=.install/_16-cleanup-installation.sh
 source "$INST_PATH/_16-cleanup-installation.sh"
 
 ## Show Finish Title
