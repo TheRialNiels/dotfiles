@@ -51,3 +51,26 @@ _setupKeyboardLayout() {
     _message "success" "Keyboard layout changed to '$keyboardLayout'"
     _confirmKeyboardLayout
 }
+
+# -----------------------------------------------------
+# _enableServices - Enables services using systemctl.
+#
+# Usage:
+#   _enableServices <service1> <service2> ...
+# -----------------------------------------------------
+_enableServices() {
+    for service in "$@"; do
+        if systemctl is-active --quiet "$service"; then
+            _message "info" "'$service' is already running"
+        else
+            sudo systemctl enable --now "$service"
+
+            # shellcheck disable=SC2181
+            if [ $? -ne 0 ]; then
+                _message "error" "Failed to activate '$service'"
+            else
+                _message "success" "'$service' activated successfully."
+            fi
+        fi
+    done
+}

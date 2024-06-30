@@ -15,6 +15,7 @@ export DOTFILES_SCRIPT_PATH
 export SCRIPTS_DIR="scripts"
 export INST_PATH="./.install"
 export PACKAGES_DIR="$INST_PATH/packages"
+export SERVICES_DIR="$INST_PATH/services"
 export TMPL_PATH="$INST_PATH/templates"
 export DOTFILES="$HOME/dotfiles"
 
@@ -100,4 +101,8 @@ source "$INST_PATH/_15-set-grub-theme.sh"
 
 ## 16. Clean Up Installation
 # shellcheck source=.install/_16-clean-up-installation.sh
-#source "$INST_PATH/_16-clean-up-installation.sh"
+source "$INST_PATH/_16-cleanup-installation.sh"
+
+## Show Finish Title
+# shellcheck source=scripts/print-finish-title.sh
+source "$SCRIPTS_DIR/print-finish-title.sh"
