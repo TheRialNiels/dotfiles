@@ -15,5 +15,6 @@
     <li>rsync</li>
     <li>rustup</li>
     <li>sd</li>
+    <li>zsh</li>
   </ul>
   </details>
