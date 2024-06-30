@@ -89,6 +89,7 @@ source "$INST_PATH/_12-set-keyboard-layout.sh"
 # shellcheck source=.install/_13-copy-dotfiles.sh
 source "$INST_PATH/_13-copy-dotfiles.sh"
 
+# TODO: Create a script to create symbolic links
 ## 14. Create Symbolic Links
 # shellcheck source=.install/_14-create-symlinks.sh
 #source "$INST_PATH/_14-create-symlinks.sh"
