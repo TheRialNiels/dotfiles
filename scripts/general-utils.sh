@@ -18,6 +18,45 @@ _updateSystem() {
 }
 
 # -----------------------------------------------------
+# _createSymlink - Creates a symbolic link.
+#
+# Usage:
+#   _createSymlink <symlink> <linkSource> <linkTarget> [user]
+#
+# Parameters:
+#   symlink     : The symlink to create.
+#   linkSource  : The source of the symlink.
+#   linkTarget  : The target of the symlink.
+#   user        : The user to create the symlink.
+#
+# Example:
+#   _createSymlink "$HOME/.config/gtk-2.0" "$HOME/dotfiles/gtk/gtk2.0/" "$HOME/.config"
+# -----------------------------------------------------
+_createSymlink() {
+    symlink="$1"
+    linkSource="$2"
+    linkTarget="$3"
+    user="$4"
+
+    cmd_prefix=""
+    [ "$user" = "sudo" ] && cmd_prefix="sudo"
+
+    if [ -L "$symlink" ] || [ -d "$symlink" ] || [ -f "$symlink" ]; then
+        $cmd_prefix rm -rf "$symlink"
+    fi
+
+    $cmd_prefix ln -s "$linkSource" "$linkTarget"
+
+    # shellcheck disable=SC2181
+    if [ $? -ne 0 ]; then
+        _message "error" "Failed to create symlink '$linkSource' -> '$linkTarget'"
+        exit 1 # Exit with error
+    fi
+
+    _message "success" "Symlink '$linkSource' -> '$linkTarget' created"
+}
+
+# -----------------------------------------------------
 # _confirmKeyboardLayout - Confirms the keyboard layout.
 # -----------------------------------------------------
 _confirmKeyboardLayout() {
