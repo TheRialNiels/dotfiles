@@ -104,10 +104,66 @@ _installPackagesWith() {
             fi
 
             # Check if the package was installed successfully
+            # shellcheck disable=SC2181
             if [[ $? == 0 ]]; then
                 _message "success" "Package '${package}' installed successfully"
             else
                 _message "error" "Failed to install package '${package}'"
+            fi
+        done
+    fi
+}
+
+# -----------------------------------------------------
+# _removePackagesWith - Removes packages using yay or pacman.
+#
+# Usage:
+#   _removePackagesWith <packageManager> <packageName> [<packageName> ...]
+#
+# Parameters:
+#   packageManager: The package manager to use ("yay" or "pacman").
+#   packageName: The name of the package to remove.
+#
+# Example:
+#   _removePackagesWith "yay" "vim" "git"
+#   _removePackagesWith "pacman" "vim" "git"
+# -----------------------------------------------------
+_removePackagesWith() {
+    local packageManager=$1
+    shift # Remove the first argument, so that "$@" contains only package names
+
+    # Initialize an array to hold the names of packages that need to be removed
+    packagesToRemove=()
+
+    # Loop through all the arguments passed to the function (package names)
+    for package in "$@"; do
+        # Check if the package is installed based on the package manager
+        if [[ $(_checkIsInstalledWith "$packageManager" "$package") == 0 ]]; then
+            packagesToRemove+=("${package}")
+        else
+            _message "info" "Package '${package}' is not installed"
+        fi
+    done
+
+    # Check if there are any packages that need to be removed
+    if [[ ${#packagesToRemove[@]} == 0 ]]; then
+        _message "info" "All ${packageManager} packages are already removed"
+        return
+    else
+        _message "info" "Removing ${packageManager} packages..."
+        for package in "${packagesToRemove[@]}"; do
+            if [[ "$packageManager" == "yay" ]]; then
+                yay -R --noconfirm "$package"
+            elif [[ "$packageManager" == "pacman" ]]; then
+                sudo pacman -R --noconfirm "$package"
+            fi
+
+            # Check if the package was removed successfully
+            # shellcheck disable=SC2181
+            if [[ $? == 0 ]]; then
+                _message "success" "Package '${package}' removed successfully"
+            else
+                _message "error" "Failed to remove package '${package}'"
             fi
         done
     fi
