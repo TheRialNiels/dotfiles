@@ -38,13 +38,17 @@ _createDirectoryIfNotExists() {
 # Parameters:
 #   folder: The folder to check.
 #
+# Returns:
+#   0 if the folder is not empty.
+#   1 if the folder is empty.
+#
 # Example:
 #   _isFolderEmpty "$HOME/dotfiles-versions/$VERSION/"
 # -----------------------------------------------------
 _isFolderEmpty() {
     if [ -z "$(ls -A "$1")" ]; then
-        echo 1
+        echo 1 # Folder is empty
     else
-        echo 0
+        echo 0 # Folder is not empty
     fi
 }
