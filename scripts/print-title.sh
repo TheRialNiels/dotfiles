@@ -25,7 +25,5 @@ if [[ "$mode" == "dev" ]]; then
     figlet -f small -t -c "Dev Mode"
     echo -e "${NOCOLOR}"
 
-    _message "important" "Running in 'development mode'."
-    _message "important" "Exisiting dotfiles will not be modified."
-    _message "important" "Symlinks will not be created."
+    _message "important" "Running in 'development mode'"
 fi
