@@ -7,7 +7,7 @@
     <li>bat</li>
     <li>cmake</li>
     <li>curl</li>
-    <li>eza</li>
+    <li>exa</li>
     <li>fd</li>
     <li>figlet</li>
     <li>fzf</li>
