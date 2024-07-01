@@ -35,21 +35,25 @@ fi
 
 msg="DO YOU WANT TO INSTALL PREPARED DOTFILES NOW?"
 if gum confirm "$msg"; then
-    # Create DOTFILES directory if it doesn't exist
-    _createDirectoryIfNotExists "$DOTFILES"
+    if [ ! $mode == "dev" ]; then
+        # Create DOTFILES directory if it doesn't exist
+        _createDirectoryIfNotExists "$DOTFILES"
 
-    # Use rsync to copy dotfiles
-    rsync -avhp -I "$HOME/dotfiles-versions/$VERSION/dotfiles/" "$DOTFILES/"
+        # Use rsync to copy dotfiles
+        rsync -avhp -I "$HOME/dotfiles-versions/$VERSION/dotfiles/" "$DOTFILES/"
 
-    # Check if rsync was unsuccessful
-    if [[ $(_isFolderEmpty "$DOTFILES/") == 1 ]]; then
-        _message "error" "Copying prepared dotfiles from '~/dotfiles-versions/$VERSION/dotfiles/' to '~/dotfiles/' failed"
-        _message "error" "Please check that 'rsync' is installed on your system"
-        exit 1 # Exit with error code
+        # Check if rsync was unsuccessful
+        if [[ $(_isFolderEmpty "$DOTFILES/") == 1 ]]; then
+            _message "error" "Copying prepared dotfiles from '~/dotfiles-versions/$VERSION/dotfiles/' to '~/dotfiles/' failed"
+            _message "error" "Please check that 'rsync' is installed on your system"
+            exit 1 # Exit with error code
+        fi
+
+        # Show success message
+        _message "success" "All files from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles/' copied successfully"
+    else
+        _message "important" "Skipping copying of prepared dotfiles in 'dev' mode"
     fi
-
-    # Show success message
-    _message "success" "All files from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles/' copied successfully"
 elif [ $? -eq 130 ]; then
     # User cancelled the installation
     _message "error" "Copying of prepared dotfiles cancelled!"

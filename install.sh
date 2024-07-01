@@ -22,17 +22,15 @@ export DOTFILES="$HOME/dotfiles"
 VERSION="$(cat .version)"
 DOTFILES_SCRIPT_PATH="$(dirname "$(realpath "$0")")"
 
-## Define Mode
-export MODE
-if [[ "$1" == "dev" ]]; then
-    MODE="dev"
-else
-    MODE="prod"
-fi
-
 ## Source Utils
 # shellcheck source=scripts/source-utils.sh
 source "$SCRIPTS_DIR/source-utils.sh"
+
+## Define Mode
+export mode="prod"
+if [[ "$1" == "dev" ]]; then
+    mode="dev"
+fi
 
 ## 1. Install Required Packages
 # shellcheck source=.install/_1-install-req-pkgs.sh

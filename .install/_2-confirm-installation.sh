@@ -20,6 +20,10 @@ if [ "$SCRIPTPATH" = "$DOTFILES" ]; then
     _message "important" "You're running the installation script from the installation target directory"
     _message "important" "Please move the installation folder dotfiles e.g. to ~/Downloads/ and start the script again"
     _message "warn" "Proceeding is not recommended!"
+
+    if [ ! "$mode" == "dev" ]; then
+        exit
+    fi
 fi
 
 ## Check if the dotfiles folder already exists
