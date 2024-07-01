@@ -37,3 +37,24 @@ else
     sudo chsh -s /bin/zsh
     _message "success" "Default shell for the root user changed to 'zsh'."
 fi
+
+## Check if Zap Command is installed
+if [[ ! -d "$HOME/.local/share/zap" ]]; then
+    ## Install Zap, ZSH plugin manager to current user
+    zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 && echo -e "\n"
+
+    ## Create a symlink for the root user
+    _message "info" "Creating a symlink of 'Zap (ZSH plugin manager)' for the root user..."
+    _message "normal" "Insert the password to access to root user in order to create symlink for 'Zap (ZSH plugin manager)'"
+
+    su -c "ln -s /home/$(whoami)/.zap /root/.zap && echo -e '\n'"
+
+    ## Check if the symlink was created
+    if [[ -L /root/.zap ]]; then
+        _message "success" "Symlink created for 'Zap (ZSH plugin manager)'."
+    else
+        _message "error" "Symlink could not be created for 'Zap (ZSH plugin manager)'."
+    fi
+else
+    _message "info" "'Zap (ZSH plugin manager)' is already installed."
+fi
