@@ -22,31 +22,40 @@ configFolders=(
     "kitty"
     "zsh"
 )
-if [ ! $mode == "dev" ]; then
-    # Iterate over each configuration folder
-    for folder in "${configFolders[@]}"; do
-        folder_path="$HOME/dotfiles-versions/$VERSION/dotfiles/$folder"
-        
-        if [ -d "$folder_path" ]; then
-            case $folder in
-                "gtk")
-                    _createSymlink "$HOME/.config/gtk-2.0" "$HOME/dotfiles/$folder/gtk/gtk2.0/" "$HOME/.config"
-                    _createSymlink "$HOME/.config/gtk-3.0" "$HOME/dotfiles/$folder/gtk/gtk3.0/" "$HOME/.config"
-                    _createSymlink "$HOME/.gtkrc-2.0" "$HOME/dotfiles/$folder/gtk/.gtkrc-2.0" "$HOME"
-                    ;;
-                "zsh")
-                    _createSymlink "$HOME/.zshenv" "$HOME/dotfiles/$folder/.zshenv" "$HOME"
-                    _createSymlink "$HOME/.zshrc" "$HOME/dotfiles/$folder/.zshrc" "$HOME"
-                    # Uncomment the following lines if needed to fix root symlinks
-                    # _createSymlink "/root/.zshenv" "$HOME/dotfiles/$folder/zsh/.zshenv" "/root" "sudo"
-                    # _createSymlink "/root/.zshrc" "$HOME/dotfiles/$folder/zsh/.zshrc" "/root" "sudo"
-                    ;;
-                *)
-                    _createSymlink "$HOME/.config/$folder" "$HOME/dotfiles/$folder/" "$HOME/.config"
-                    ;;
-            esac
-        fi
-    done
-else
-    _message "important" "Skipping creation of symlinks in 'dev' mode"
-fi
+
+# Iterate over each configuration folder
+for folder in "${configFolders[@]}"; do
+    # Define the path of the folder
+    case $mode in
+    "dev")
+        folderPath="$DOTFILES_SCRIPT_PATH/dotfiles/$folder"
+        ;;
+    "prod")
+        folderPath="$HOME/dotfiles/$folder"
+        ;;
+    esac
+
+    savedFolderPath="$HOME/dotfiles-versions/$VERSION/dotfiles/$folder"
+
+    if [ -d "$savedFolderPath" ]; then
+        case $folder in
+        "gtk")
+            # Create symlinks for GTK configuration files
+            _createSymlink "$HOME/.config/gtk-2.0" "$folderPath/gtk2.0/" "$HOME/.config"
+            _createSymlink "$HOME/.config/gtk-3.0" "$folderPath/gtk3.0/" "$HOME/.config"
+            _createSymlink "$HOME/.gtkrc-2.0" "$folderPath/.gtkrc-2.0" "$HOME"
+            ;;
+        "zsh")
+            # Create symlinks for ZSH configuration files
+            _createSymlink "$HOME/.zshenv" "$folderPath/.zshenv" "$HOME"
+            _createSymlink "$HOME/.zshrc" "$folderPath/.zshrc" "$HOME"
+            # Uncomment the following lines if needed to fix root symlinks
+            # _createSymlink "/root/.zshenv" "$folderPath/.zshenv" "/root" "sudo"
+            # _createSymlink "/root/.zshrc" "$folderPath/.zshrc" "/root" "sudo"
+            ;;
+        *)
+            _createSymlink "$HOME/.config/$folder" "$folderPath/" "$HOME/.config"
+            ;;
+        esac
+    fi
+done
