@@ -19,15 +19,20 @@ source "$SCRIPTS_DIR/general-utils.sh"
 # shellcheck source=../scripts/files-utils.sh
 source "$SCRIPTS_DIR/files-utils.sh"
 
-## Default layout and variants
-keyboardLayout="us"
+## Check script mode
+if [ ! $mode == "dev" ]; then
+    ## Default layout and variants
+    keyboardLayout="us"
 
-_confirmKeyboardLayout
+    _confirmKeyboardLayout
 
-configFile="$HOME/dotfiles-versions/$VERSION/dotfiles/hypr/config/keyboard.conf"
-cp "$TMPL_PATH/keyboard.conf" "$configFile"
+    configFile="$HOME/dotfiles-versions/$VERSION/dotfiles/hypr/config/keyboard.conf"
+    cp "$TMPL_PATH/keyboard.conf" "$configFile"
 
-_replaceWordIfUnchanged "$configFile" "KEYBOARD_LAYOUT" "$keyboardLayout"
+    _replaceWordIfUnchanged "$configFile" "KEYBOARD_LAYOUT" "$keyboardLayout"
 
-_message "success" "Keyboard layout set to '$keyboardLayout'"
-_message "info" "You can update your keyboard layout later in '~/dotfiles/hypr/conf/keyboard.conf'"
+    _message "success" "Keyboard layout set to '$keyboardLayout'"
+    _message "info" "You can update your keyboard layout later in '~/dotfiles/hypr/conf/keyboard.conf'"
+else
+    _message "important" "Skipping setting of keyboard layout in 'dev' mode"
+fi
