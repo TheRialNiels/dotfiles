@@ -5,7 +5,7 @@ export requiredPackagesPacman=(
     "bat"
     "cmake"
     "curl"
-    "eza"
+    "exa"
     "fd"
     "figlet"
     "gum"
