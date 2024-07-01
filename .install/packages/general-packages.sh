@@ -1,8 +1,9 @@
 #!/user/bin/env bash
 
 export generalPackagesPacman=(
-    "bat"
+    "fzf"
     "neovim"
+    "starship"
     "ttf-hack-nerd"
     "vim"
     "zsh"
