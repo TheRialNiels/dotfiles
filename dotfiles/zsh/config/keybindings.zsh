@@ -16,8 +16,8 @@ bindkey "^[[F"      end-of-line        # End
 bindkey "^[[3~"     delete-char        # Supr
 bindkey "^[[1;3C"   forward-word       # Alt+ArrowRight
 bindkey "^[[1;3D"   backward-word      # Alt+ArrowLeft
-bindkey "^L"        forward-word       # Alt+ArrowRight
-bindkey "^H"        backward-word      # Alt+ArrowLeft
+#TODO bindkey "^L"        forward-word       # Alt+ArrowRight
+#TODO bindkey "^H"        backward-word      # Alt+ArrowLeft
 
 ## ----------------------------
 ## Zsh-Autosuggestions Plugin
