@@ -9,9 +9,9 @@ export requiredPackagesPacman=(
     "fd"
     "figlet"
     "gum"
+    "python"
     "ripgrep"
     "rsync"
     "rustup"
     "sd"
-    "python"
 )

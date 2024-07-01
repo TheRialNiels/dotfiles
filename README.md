@@ -11,10 +11,15 @@
     <li>fd</li>
     <li>figlet</li>
     <li>gum</li>
+    <li>neovim</li>
+    <li>python</li>
     <li>ripgrep</li>
     <li>rsync</li>
     <li>rustup</li>
     <li>sd</li>
+    <li>ttf-hack-nerd</li>
+    <li>vim</li>
+    <li>waybar</li>
     <li>zsh</li>
   </ul>
   </details>
