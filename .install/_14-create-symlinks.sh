@@ -35,8 +35,8 @@ if [ ! $mode == "dev" ]; then
                     _createSymlink "$HOME/.gtkrc-2.0" "$HOME/dotfiles/$folder/gtk/.gtkrc-2.0" "$HOME"
                     ;;
                 "zsh")
-                    _createSymlink "$HOME/.zshenv" "$HOME/dotfiles/$folder/zsh/.zshenv" "$HOME"
-                    _createSymlink "$HOME/.zshrc" "$HOME/dotfiles/$folder/zsh/.zshrc" "$HOME"
+                    _createSymlink "$HOME/.zshenv" "$HOME/dotfiles/$folder/.zshenv" "$HOME"
+                    _createSymlink "$HOME/.zshrc" "$HOME/dotfiles/$folder/.zshrc" "$HOME"
                     # Uncomment the following lines if needed to fix root symlinks
                     # _createSymlink "/root/.zshenv" "$HOME/dotfiles/$folder/zsh/.zshenv" "/root" "sudo"
                     # _createSymlink "/root/.zshrc" "$HOME/dotfiles/$folder/zsh/.zshrc" "/root" "sudo"
