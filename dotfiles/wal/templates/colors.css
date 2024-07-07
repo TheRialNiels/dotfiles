@@ -1,0 +1,27 @@
+@define-color foreground {foreground};
+@define-color background {background};
+@define-color cursor {cursor};
+
+@define-color blackL {color0};
+@define-color blackD {color8};
+
+@define-color redL {color1};
+@define-color redD {color9};
+
+@define-color greenL {color2};
+@define-color greenD {color10};
+
+@define-color yellowL {color3};
+@define-color yellowD {color11};
+
+@define-color blueL {color4};
+@define-color blueD {color12};
+
+@define-color magentaL {color5};
+@define-color magentaD {color13};
+
+@define-color cyanL {color6};
+@define-color cyanD {color14};
+
+@define-color whiteL {color7};
+@define-color whiteD {color15};
