@@ -64,29 +64,29 @@ source "$INST_PATH/_6-dotfiles-pkgs-option.sh"
 # shellcheck source=.install/_7-check-existing-pkgs.sh
 source "$INST_PATH/_7-check-existing-pkgs.sh"
 
-## 8. Install General Packages
-# shellcheck source=.install/_8-install-general-pkgs.sh
-source "$INST_PATH/_8-install-general-pkgs.sh"
+## 8. Install Packages
+# shellcheck source=.install/_8-install-pkgs.sh
+source "$INST_PATH/_8-install-pkgs.sh"
 
-## 9. Install Hyprland Packages
-# shellcheck source=.install/_9-install-hyprland-pkgs.sh
-source "$INST_PATH/_9-install-hyprland-pkgs.sh"
+## 9. Change Shell to Zsh
+# shellcheck source=.install/_9-change-to-zsh.sh
+source "$INST_PATH/_9-change-to-zsh.sh"
 
-## 10. Change Shell to Zsh
-# shellcheck source=.install/_10-change-to-zsh.sh
-source "$INST_PATH/_10-change-to-zsh.sh"
+## 10. Set Wallpaper Cache Files
+# shellcheck source=.install/_10-set-wallpaper.sh
+source "$INST_PATH/_10-set-wallpaper.sh"
 
-## 11. Set Wallpaper Cache Files
-# shellcheck source=.install/_11-set-wallpaper.sh
-source "$INST_PATH/_11-set-wallpaper.sh"
+## 11. Set Keyboard Layout
+# shellcheck source=.install/_11-set-keyboard-layout.sh
+source "$INST_PATH/_11-set-keyboard-layout.sh"
 
-## 12. Set Keyboard Layout
-# shellcheck source=.install/_12-set-keyboard-layout.sh
-source "$INST_PATH/_12-set-keyboard-layout.sh"
+## 12. Copy Dotfiles
+# shellcheck source=.install/_12-copy-dotfiles.sh
+source "$INST_PATH/_12-copy-dotfiles.sh"
 
-## 13. Copy Dotfiles
-# shellcheck source=.install/_13-copy-dotfiles.sh
-source "$INST_PATH/_13-copy-dotfiles.sh"
+## 13. Init Pywal
+# shellcheck source=.install/_13-init-pywal.sh
+source "$INST_PATH/_13-init-pywal.sh"
 
 ## 14. Create Symbolic Links
 # shellcheck source=.install/_14-create-symlinks.sh

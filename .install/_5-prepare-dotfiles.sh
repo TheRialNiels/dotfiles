@@ -55,4 +55,16 @@ if [[ $(_isFolderEmpty "$HOME/dotfiles-versions/$VERSION/") == 1 ]]; then
     exit 1 # Return error
 fi
 
+## Create a python virtual environment
+if [ ! -d "$HOME/venv" ]; then
+    python3 -m venv "$HOME/venv"
+    _message "success" "Python virtual environment created successfully"
+
+    ## Activate the virtual environment
+    source "$HOME/venv/bin/activate"
+    _message "info" "Python virtual environment activated"
+else
+    _message "info" "Python virtual environment already exists"
+fi
+
 _message "success" "Preparation of ' ~/dotfiles-versions/$VERSION' successful"
