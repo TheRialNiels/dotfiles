@@ -3,3 +3,7 @@
 export hyprlandPackagesPacman=(
     "waybar"
 )
+
+export hyprlandPackagesYay=(
+    "swww"
+)
