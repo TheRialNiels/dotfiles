@@ -19,6 +19,11 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 export WORDCHARS=${WORDCHARS//[\/]} # remove / from wordchars so that / is a seperator when deleting complete words
 
 ## ----------------------------
+## Python Virtual Environment
+## ----------------------------
+source "$HOME/venv/bin/activate"
+
+## ----------------------------
 ## Starship
 ## ----------------------------
 eval "$(starship init zsh)"
