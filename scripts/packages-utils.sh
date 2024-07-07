@@ -11,13 +11,13 @@ source "$SCRIPTS_DIR/messages-utils.sh"
 
 # -----------------------------------------------------
 # _checkIsInstalledWith - Checks if a package is installed
-# using yay or pacman.
+# using yay, pacman, or pip.
 #
 # Usage:
 #   _checkIsInstalledWith <packageManager> <packageName>
 #
 # Parameters:
-#   packageManager: The package manager to use ("yay" or "pacman").
+#   packageManager: The package manager to use ("yay", "pacman", or "pip").
 #   packageName: The name of the package to check.
 #
 # Returns:
@@ -52,6 +52,14 @@ _checkIsInstalledWith() {
             echo 1 # false
             return
         fi
+    elif [[ "$packageManager" == "pip" ]]; then
+        if pip show "$package" &>/dev/null; then
+            echo 0 # true
+            return
+        else
+            echo 1 # false
+            return
+        fi
     else
         _message "error" "Invalid package manager '${packageManager}'"
         echo 1 # false
@@ -60,18 +68,19 @@ _checkIsInstalledWith() {
 }
 
 # -----------------------------------------------------
-# _installPackagesWith - Installs packages using yay or pacman.
+# _installPackagesWith - Installs packages using yay, pacman or pip.
 #
 # Usage:
 #   _installPackagesWith <packageManager> <packageName> [<packageName> ...]
 #
 # Parameters:
-#   packageManager: The package manager to use ("yay" or "pacman").
+#   packageManager: The package manager to use ("yay", "pacman" or "pip").
 #   packageName: The name of the package to install.
 #
 # Example:
 #   _installPackagesWith "yay" "vim" "git"
 #   _installPackagesWith "pacman" "vim" "git"
+#   _installPackagesWith "pip" "requests" "flask"
 # -----------------------------------------------------
 _installPackagesWith() {
     local packageManager=$1
@@ -101,6 +110,8 @@ _installPackagesWith() {
                 yay -S --noconfirm "$package"
             elif [[ "$packageManager" == "pacman" ]]; then
                 sudo pacman -S --noconfirm "$package"
+            elif [[ "$packageManager" == "pip" ]]; then
+                pip install "$package"
             fi
 
             # Check if the package was installed successfully
@@ -115,18 +126,19 @@ _installPackagesWith() {
 }
 
 # -----------------------------------------------------
-# _removePackagesWith - Removes packages using yay or pacman.
+# _removePackagesWith - Removes packages using yay, pacman or pip.
 #
 # Usage:
 #   _removePackagesWith <packageManager> <packageName> [<packageName> ...]
 #
 # Parameters:
-#   packageManager: The package manager to use ("yay" or "pacman").
+#   packageManager: The package manager to use ("yay", "pacman" or "pip").
 #   packageName: The name of the package to remove.
 #
 # Example:
 #   _removePackagesWith "yay" "vim" "git"
 #   _removePackagesWith "pacman" "vim" "git"
+#   _removePackagesWith "pip" "requests" "flask"
 # -----------------------------------------------------
 _removePackagesWith() {
     local packageManager=$1
@@ -156,6 +168,8 @@ _removePackagesWith() {
                 yay -R --noconfirm "$package"
             elif [[ "$packageManager" == "pacman" ]]; then
                 sudo pacman -R --noconfirm "$package"
+            elif [[ "$packageManager" == "pip" ]]; then
+                pip uninstall -y "$package"
             fi
 
             # Check if the package was removed successfully
