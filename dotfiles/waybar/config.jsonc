@@ -5,21 +5,19 @@
   "height": 32, // Height of the bar
   "width": 0, // Full width
   "margin": "5 5 0", // Margin from the top of the screen (top horizontal bottom)
-  "spacing": 0, // Gap between modules
-  "exclusive": true, // Only show the active window's modules
+  "spacing": 10, // Gap between modules
+  "exclusive": true, // Request exclusive zone from the compositor
   "fixed-center": true, // Center block is fixed to the center
   "passthrough": false, // Pass mouse events to the window below
+  "reload_style_on_change": true, // Reload the style when the configuration changes
 
   // List of additional config files to include
-  "include": [
-    "$DOTFILES/waybar/modules/modules.jsonc"
-  ],
+  "include": ["$DOTFILES/waybar/modules/modules.jsonc"],
 
   // Choose the order of the modules
-  "modules-left": [],
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+
   "modules-center": [],
-  "modules-right": [
-    "clock",
-    "custom/power"
-  ]
+
+  "modules-right": ["clock", "custom/power"]
 }

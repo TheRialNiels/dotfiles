@@ -1,9 +1,11 @@
 {
   "include": [
     // Common Modules
+    "$DOTFILES/waybar/modules/common/workspaces.jsonc",
     "$DOTFILES/waybar/modules/common/clock.jsonc",
 
     // Custom Modules
+    "$DOTFILES/waybar/modules/custom/launcher.jsonc",
     "$DOTFILES/waybar/modules/custom/power.jsonc"
 
     // Group Modules

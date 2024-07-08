@@ -1,0 +1,27 @@
+@define-color foreground #c6c7c4;
+@define-color background #101212;
+@define-color cursor #c6c7c4;
+
+@define-color blackL #101212;
+@define-color blackD #8a8b89;
+
+@define-color redL #4B5451;
+@define-color redD #4B5451;
+
+@define-color greenL #5B6562;
+@define-color greenD #5B6562;
+
+@define-color yellowL #6C746F;
+@define-color yellowD #6C746F;
+
+@define-color blueL #7B817A;
+@define-color blueD #7B817A;
+
+@define-color magentaL #86867A;
+@define-color magentaD #86867A;
+
+@define-color cyanL #7A8584;
+@define-color cyanD #7A8584;
+
+@define-color whiteL #c6c7c4;
+@define-color whiteD #c6c7c4;

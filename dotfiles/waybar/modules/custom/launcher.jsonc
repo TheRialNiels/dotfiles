@@ -1,0 +1,7 @@
+{
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false
+    // TODO "on-click": ""
+  }
+}

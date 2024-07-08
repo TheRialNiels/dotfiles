@@ -1,0 +1,46 @@
+/* ================================================ **
+** Waybar Styles
+** ================================================ */
+
+/* ========================= **
+** Import Colors
+** ========================= */
+@import "./colors.css";
+
+/* ========================= **
+** General
+** ========================= */
+* {
+  font-family: "Symbols Nerd Font", "Hack Nerd Font";
+  font-size: 13px;
+}
+
+/* ========================= **
+** Waybar Bar
+** ========================= */
+#waybar {
+  background-color: @background;
+  color: @foreground;
+  border: 0.05rem solid @blackD;
+  border-radius: 0.25rem;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+/* ========================= **
+** Waybar Left Modules
+** ========================= */
+#workspaces {
+  background-color: transparent;
+  margin: 0.45rem 0;
+}
+
+/* ========================= **
+** Common Modules Styling
+** ========================= */
+@import "./modules/common/style/common-style.css";
+
+/* ========================= **
+** Custom Modules Styling
+** ========================= */
+@import "./modules/custom/style/custom-style.css";
