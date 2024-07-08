@@ -17,50 +17,38 @@ else
     echo -e "${NOCOLOR}"
 fi
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
+## Display information messages based on the existence of DOTFILES
+if [ ! -d "$DOTFILES" ]; then
+    _message "important" "The script will now remove existing directories and files from '~/.config' and copy your prepared configuration from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles'"
+    _message "important" "Symbolic links will then be created from '~/dotfiles' into your '~/.config' directory"
+else
+    _message "important" "The script will overwrite existing files but will not remove additional files or folders from your custom configuration."
+    _message "important" "PLEASE BACKUP YOUR EXISTING CONFIGURATIONS in '~/.config' IF NEEDED!"
+fi
 
-# shellcheck source=../scripts/folders-utils.sh
-source "$SCRIPTS_DIR/folders-utils.sh"
+msg="DO YOU WANT TO INSTALL PREPARED DOTFILES NOW?"
+if gum confirm "$msg"; then
+    # Create DOTFILES directory if it doesn't exist
+    _createDirectoryIfNotExists "$DOTFILES"
 
-## Check script mode
-if [ ! $mode == "dev" ]; then
-    ## Display information messages based on the existence of DOTFILES
-    if [ ! -d "$DOTFILES" ]; then
-        _message "important" "The script will now remove existing directories and files from '~/.config' and copy your prepared configuration from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles'"
-        _message "important" "Symbolic links will then be created from '~/dotfiles' into your '~/.config' directory"
-    else
-        _message "important" "The script will overwrite existing files but will not remove additional files or folders from your custom configuration."
-        _message "important" "PLEASE BACKUP YOUR EXISTING CONFIGURATIONS in '~/.config' IF NEEDED!"
-    fi
+    # Use rsync to copy dotfiles
+    rsync -avhp -I "$HOME/dotfiles-versions/$VERSION/dotfiles/" "$DOTFILES/"
 
-    msg="DO YOU WANT TO INSTALL PREPARED DOTFILES NOW?"
-    if gum confirm "$msg"; then
-        # Create DOTFILES directory if it doesn't exist
-        _createDirectoryIfNotExists "$DOTFILES"
-
-        # Use rsync to copy dotfiles
-        rsync -avhp -I "$HOME/dotfiles-versions/$VERSION/dotfiles/" "$DOTFILES/"
-
-        # Check if rsync was unsuccessful
-        if [[ $(_isFolderEmpty "$DOTFILES/") == 1 ]]; then
-            _message "error" "Copying prepared dotfiles from '~/dotfiles-versions/$VERSION/dotfiles/' to '~/dotfiles/' failed"
-            _message "error" "Please check that 'rsync' is installed on your system"
-            exit 1 # Exit with error code
-        fi
-
-        # Show success message
-        _message "success" "All files from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles/' copied successfully"
-    elif [ $? -eq 130 ]; then
-        # User cancelled the installation
-        _message "error" "Copying of prepared dotfiles cancelled!"
-        exit 130 # Exit with cancel code
-    else
-        # User declined the installation
-        _message "error" "Copying of prepared dotfiles declined!"
+    # Check if rsync was unsuccessful
+    if [[ $(_isFolderEmpty "$DOTFILES/") == 1 ]]; then
+        _message "error" "Copying prepared dotfiles from '~/dotfiles-versions/$VERSION/dotfiles/' to '~/dotfiles/' failed"
+        _message "error" "Please check that 'rsync' is installed on your system"
         exit 1 # Exit with error code
     fi
+
+    # Show success message
+    _message "success" "All files from '~/dotfiles-versions/$VERSION/dotfiles' to '~/dotfiles/' copied successfully"
+elif [ $? -eq 130 ]; then
+    # User cancelled the installation
+    _message "error" "Copying of prepared dotfiles cancelled!"
+    exit 130 # Exit with cancel code
 else
-    _message "important" "Skipping copying of prepared dotfiles in 'dev' mode"
+    # User declined the installation
+    _message "error" "Copying of prepared dotfiles declined!"
+    exit 1 # Exit with error code
 fi
