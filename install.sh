@@ -13,6 +13,7 @@ export VERSION
 export forceInstall
 export DOTFILES_SCRIPT_PATH
 export SCRIPTS_DIR="scripts"
+export DOTFILES_SCRIPTS_DIR="./dotfiles/_scripts"
 export INST_PATH="./.install"
 export PACKAGES_DIR="$INST_PATH/packages"
 export SERVICES_DIR="$INST_PATH/services"
