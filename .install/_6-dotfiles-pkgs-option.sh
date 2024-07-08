@@ -6,10 +6,6 @@
 # reinstalling all packages or installing new packages only.
 # -----------------------------------------------------
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
 ## Print Dotfiles Packages Title
 echo -e "${BLUE}"
 figlet "Dotfiles Packages"

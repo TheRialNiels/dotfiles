@@ -9,13 +9,6 @@ echo -e "${BLUE}"
 figlet "Symlinks"
 echo -e "${NOCOLOR}"
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/general-utils.sh
-source "$SCRIPTS_DIR/general-utils.sh"
-
 # List of configuration folders
 configFolders=(
     "hypr"

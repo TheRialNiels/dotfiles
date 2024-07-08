@@ -9,10 +9,6 @@ echo -e "${BLUE}"
 figlet "Grub"
 echo -e "${NOCOLOR}"
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
 ## Variables
 REPO_URL="https://github.com/vinceliuice/grub2-themes.git"
 THEME_NAME="vimix"

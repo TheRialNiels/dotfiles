@@ -6,13 +6,6 @@
 # to uninstall them before installing the new ones.
 # -----------------------------------------------------
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/packages-utils.sh
-source "$SCRIPTS_DIR/packages-utils.sh"
-
 ## Remove Rofi
 if [[ $(_checkIsInstalledWith "pacman" "rofi") == 0 ]]; then
     sudo pacman -Rns rofi --noconfirm

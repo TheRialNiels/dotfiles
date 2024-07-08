@@ -9,16 +9,6 @@ echo -e "${BLUE}"
 figlet "Keyboard"
 echo -e "${NOCOLOR}"
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/general-utils.sh
-source "$SCRIPTS_DIR/general-utils.sh"
-
-# shellcheck source=../scripts/files-utils.sh
-source "$SCRIPTS_DIR/files-utils.sh"
-
 ## Check script mode
 if [ ! $mode == "dev" ]; then
     ## Default layout and variants

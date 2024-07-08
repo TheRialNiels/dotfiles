@@ -10,19 +10,6 @@ echo -e "${BLUE}"
 figlet "Cleanup"
 echo -e "${NOCOLOR}"
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/general-utils.sh
-source "$SCRIPTS_DIR/general-utils.sh"
-
-# shellcheck source=../scripts/packages-utils.sh
-source "$SCRIPTS_DIR/packages-utils.sh"
-
-# shellcheck source=../scripts/folders-utils.sh
-source "$SCRIPTS_DIR/folders-utils.sh"
-
 ## Check for ttf-ms-fonts
 if [[ $(_checkIsInstalledWith "pacman" "ttf-ms-fonts") == 0 ]]; then
     _message "warning" "The script has detected ttf-ms-fonts. This can cause conflicts with icons in Waybar."
@@ -34,7 +21,7 @@ if [[ $(_checkIsInstalledWith "pacman" "ttf-ms-fonts") == 0 ]]; then
 fi
 
 ## Source Required Services
-# shellcheck source=../services/services.sh
+# shellcheck source=./services/required-services.sh
 source "$SERVICES_DIR/required-services.sh"
 
 # Check or enable required services

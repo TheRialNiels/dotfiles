@@ -6,9 +6,6 @@
 # installation or update the dotfiles.
 # -----------------------------------------------------
 
-# shellcheck source=../scripts/source-utils.sh
-source "$SCRIPTS_DIR/source-utils.sh"
-
 _message "important" "Please make sure that your system and your packages are up to date ('sudo pacman -Syu' or 'yay')"
 _message "important" "You can cancel the installation at any time with 'CTRL + C'"
 

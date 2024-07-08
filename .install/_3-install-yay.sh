@@ -5,9 +5,6 @@
 # This script installs yay on the system.
 # -----------------------------------------------------
 
-# shellcheck source=../scripts/source-utils.sh
-source "$SCRIPTS_DIR/source-utils.sh"
-
 ## Print Install yay Title
 echo -e "${BLUE}"
 figlet "Install yay"

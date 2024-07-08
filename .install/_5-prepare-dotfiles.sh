@@ -5,13 +5,6 @@
 # This script prepares the dotfiles for installation.
 # -----------------------------------------------------
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/folders-utils.sh
-source "$SCRIPTS_DIR/folders-utils.sh"
-
 ## Print Prepare Dotfiles Title
 echo -e "${BLUE}"
 figlet "Prepare Dotfiles"

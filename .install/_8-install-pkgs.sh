@@ -5,13 +5,6 @@
 # This script installs the general packages.
 # -----------------------------------------------------
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/packages-utils.sh
-source "$SCRIPTS_DIR/packages-utils.sh"
-
 # shellcheck source=./packages/general-packages.sh
 source "$PACKAGES_DIR/general-packages.sh"
 

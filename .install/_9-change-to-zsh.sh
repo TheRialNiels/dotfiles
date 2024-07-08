@@ -5,13 +5,6 @@
 # This script changes the default shell to Zsh.
 # -----------------------------------------------------
 
-## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/packages-utils.sh
-source "$SCRIPTS_DIR/packages-utils.sh"
-
 ## Print Change to Zsh Title
 echo -e "${BLUE}"
 figlet "zsh"

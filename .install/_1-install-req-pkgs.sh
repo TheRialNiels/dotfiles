@@ -6,15 +6,6 @@
 # dotfiles.
 # -----------------------------------------------------
 
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
-
-# shellcheck source=../scripts/general-utils.sh
-source "$SCRIPTS_DIR/general-utils.sh"
-
-# shellcheck source=../scripts/packages-utils.sh
-source "$SCRIPTS_DIR/packages-utils.sh"
-
 # Check if the mode is prod
 if [[ "$MODE" == "prod" ]]; then
     ## 1.1 Update System
