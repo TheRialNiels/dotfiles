@@ -12,6 +12,7 @@
     <li>fd</li>
     <li>figlet</li>
     <li>fzf</li>
+    <li>imagemagick</li>
     <li>gum</li>
     <li>neovim</li>
     <li>pastel</li>

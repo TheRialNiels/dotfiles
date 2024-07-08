@@ -2,6 +2,7 @@
 
 export generalPackagesPacman=(
     "fzf"
+    "imagemagick"
     "neovim"
     "pastel"
     "python-pip"
