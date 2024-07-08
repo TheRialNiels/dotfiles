@@ -14,6 +14,7 @@
     <li>fzf</li>
     <li>gum</li>
     <li>neovim</li>
+    <li>pastel</li>
     <li>python-pip</li>
     <li>python</li>
     <li>pywal</li>
@@ -24,6 +25,7 @@
     <li>starship</li>
     <li>swww</li>
     <li>ttf-hack-nerd</li>
+    <li>ttf-nerd-fonts-symbols</li>
     <li>vim</li>
     <li>waybar</li>
     <li>zsh</li>
