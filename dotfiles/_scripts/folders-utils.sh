@@ -5,9 +5,6 @@
 # This script contains functions to work with folders.
 # -----------------------------------------------------
 
-# shellcheck source=./messages-utils.sh
-source "./messages-utils.sh"
-
 # -----------------------------------------------------
 # _createDirectoryIfNotExists - Creates a directory if it
 # does not exist.
@@ -73,14 +70,14 @@ _checkWallpapers() {
 
     if [[ -d "$path" ]]; then
         # Check if the directory is empty
-        if _isFolderEmpty "$path"; then
+        if [[ $(_isFolderEmpty "$path") == 1 ]]; then
             notify-send "There are no wallpapers in: $path"
-            exit
+            exit 1 # Return error
         fi
     else
         # Create the directory and notify the user to add wallpapers
         mkdir -p "$path"
         notify-send "Put some wallpapers in: $path"
-        exit
+        exit 1 # Return error
     fi
 }
