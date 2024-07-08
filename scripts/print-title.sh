@@ -6,7 +6,7 @@
 # -----------------------------------------------------
 
 ## Source Utils
-# shellcheck source=../scripts/messages-utils.sh
+# shellcheck source=../dotfiles/_scripts/messages-utils.sh
 source "$SCRIPTS_DIR/messages-utils.sh"
 
 clear

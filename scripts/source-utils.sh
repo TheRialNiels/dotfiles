@@ -1,25 +1,21 @@
 #!/usr/bin/env bash
-# -----------------------------------------------------
-# Source Utils
-#
-# This script sources all the required files for the
-# dotfiles to work properly.
-# -----------------------------------------------------
 
-# shellcheck source=../scripts/colors.sh
+## Source Utils
+
+# shellcheck source=./colors.sh
 source "$SCRIPTS_DIR/colors.sh"
 
-# shellcheck source=../scripts/messages-utils.sh
-source "$SCRIPTS_DIR/messages-utils.sh"
+# shellcheck source=../dotfiles/_scripts/messages-utils.sh
+source "$DOTFILES_SCRIPTS_DIR/messages-utils.sh"
 
-# shellcheck source=../scripts/general-utils.sh
-source "$SCRIPTS_DIR/general-utils.sh"
+# shellcheck source=../dotfiles/_scripts/general-utils.sh
+source "$DOTFILES_SCRIPTS_DIR/general-utils.sh"
 
-# shellcheck source=../scripts/packages-utils.sh
-source "$SCRIPTS_DIR/packages-utils.sh"
+# shellcheck source=../dotfiles/_scripts/packages-utils.sh
+source "$DOTFILES_SCRIPTS_DIR/packages-utils.sh"
 
-# shellcheck source=../scripts/files-utils.sh
-source "$SCRIPTS_DIR/files-utils.sh"
+# shellcheck source=../dotfiles/_scripts/folders-utils.sh
+source "$DOTFILES_SCRIPTS_DIR/folders-utils.sh"
 
-# shellcheck source=../scripts/folders-utils.sh
-source "$SCRIPTS_DIR/folders-utils.sh"
+# shellcheck source=../dotfiles/_scripts/files-utils.sh
+source "$DOTFILES_SCRIPTS_DIR/files-utils.sh"
