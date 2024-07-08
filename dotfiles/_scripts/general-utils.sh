@@ -6,9 +6,6 @@
 # used in other scripts.
 # -----------------------------------------------------
 
-# shellcheck source=./messages-utils.sh
-source "./messages-utils.sh"
-
 # -----------------------------------------------------
 # _updateSystem - Updates the system using pacman.
 # -----------------------------------------------------
@@ -112,4 +109,33 @@ _enableServices() {
             fi
         fi
     done
+}
+
+# -----------------------------------------------------
+# _applyTheme - Applies a theme using wal.
+#
+# Usage:
+#   _applyTheme <imgPath> <notiMsg>
+#
+# Parameters:
+#   imgPath : The path to the image.
+#   notiMsg : The notification message.
+#
+# Example:
+#   _applyTheme "$HOME/Pictures/Wallpapers/wallpaper.jpg" "Applying theme..."
+# -----------------------------------------------------
+_applyTheme() {
+    local imgPath="$1"
+    local notiMsg="$2"
+
+    notify-send "$notiMsg"
+    wal -qnei "$imgPath"
+
+    # Check if the theme was applied successfully
+    # shellcheck disable=SC2181
+    if [ $? -eq 0 ]; then
+        notify-send "Theme applied successfully."
+    else
+        notify-send "Failed to apply the theme."
+    fi
 }
