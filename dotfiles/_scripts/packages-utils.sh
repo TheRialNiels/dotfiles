@@ -6,9 +6,6 @@
 # is installed and to install packages using pacman.
 # -----------------------------------------------------
 
-# shellcheck source=./messages-utils.sh
-source "./messages-utils.sh"
-
 # -----------------------------------------------------
 # _checkIsInstalledWith - Checks if a package is installed
 # using yay, pacman, or pip.
