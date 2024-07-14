@@ -1,8 +1,8 @@
 {
   "include": [
-    "$DOTFILES/waybar/modules/group/temperature/temperature-cpu.jsonc",
-    "$DOTFILES/waybar/modules/group/temperature/temperature-gpu.jsonc",
-    "$DOTFILES/waybar/modules/group/temperature/temperature-nvme.jsonc"
+    "$DOTFILES/waybar/modules/group/temperature/cpu.jsonc",
+    "$DOTFILES/waybar/modules/group/temperature/gpu.jsonc",
+    "$DOTFILES/waybar/modules/group/temperature/nvme.jsonc"
   ],
 
   "group/temperatureGroup": {
