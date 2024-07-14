@@ -30,9 +30,11 @@
 /* ========================= **
 ** Waybar Left Modules
 ** ========================= */
-#workspaces {
+#custom-launcher,
+#workspaces,
+#temperatureGroup {
   background-color: transparent;
-  margin: 0.45rem 0;
+  margin: 0.45rem 5 0.45rem 0;
 }
 
 /* ========================= **
@@ -44,3 +46,8 @@
 ** Custom Modules Styling
 ** ========================= */
 @import "./modules/custom/style/custom-style.css";
+
+/* ========================= **
+** Group Modules Styling
+** ========================= */
+@import "./modules/group/style/group-style.css";

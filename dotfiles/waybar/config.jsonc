@@ -15,7 +15,7 @@
   "include": ["$DOTFILES/waybar/modules/modules.jsonc"],
 
   // Choose the order of the modules
-  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "group/temperatureGroup"],
 
   "modules-center": [],
 
