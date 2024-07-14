@@ -4,20 +4,26 @@
 #workspaces button {
     all: initial;
     box-shadow: inset 0 -3px transparent;
-    background-color: @blackD;
+    background-color: @backgroundAlt;
+    color: @foregroundAlt;
+    box-shadow: inset 0 -0.25px @foregroundAlt2;
     padding: 0.25rem 0.5rem;
     margin: 0 5 0 0;
     border-radius: 0.25rem;
 }
 
-#workspaces button.visible {
-}
-
 #workspaces button.empty {
-    background-color: @blackD;
+    box-shadow: none;
+    color: @foregroundAlt2;
 }
 
 #workspaces button.active {
-    background-color: @foreground;
-    color: @background;
+    color: @foreground;
+    box-shadow: inset 0 -0.75px @foregroundAlt;
+}
+
+#workspaces button:hover {
+    background-color: @backgroundAlt2;
+    color: @foregroundAlt2;
+    box-shadow: inset 0 -0.75px @foreground;
 }

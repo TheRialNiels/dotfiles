@@ -5,10 +5,9 @@
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "default": "",
-      "empty": "",
-      "active": "",
-      "urgent": ""
+      "default": "",
+      "empty": "󱓻",
+      "active": ""
     },
     "persistent_workspaces": {
       "DP-2": [1, 2, 3],

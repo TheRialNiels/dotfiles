@@ -21,7 +21,7 @@
 #waybar {
   background-color: @background;
   color: @foreground;
-  border: 0.05rem solid @blackD;
+  border: 0.05rem solid @backgroundAlt;
   border-radius: 0.25rem;
   transition-property: background-color;
   transition-duration: 0.5s;
