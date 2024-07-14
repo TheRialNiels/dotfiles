@@ -1,0 +1,21 @@
+{
+  "include": [
+    "$DOTFILES/waybar/modules/group/temperature/temperature-cpu.jsonc",
+    "$DOTFILES/waybar/modules/group/temperature/temperature-gpu.jsonc",
+    "$DOTFILES/waybar/modules/group/temperature/temperature-nvme.jsonc"
+  ],
+
+  "group/temperatureGroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "temperature#Nvme",
+      "temperature#Nvme2",
+      "custom/dot-separator",
+      "temperature#Cpu",
+      "temperature#Cpu2",
+      "custom/dot-separator",
+      "temperature#Gpu",
+      "temperature#Gpu2"
+    ]
+  }
+}

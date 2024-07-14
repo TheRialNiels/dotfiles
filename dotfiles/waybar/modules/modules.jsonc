@@ -1,13 +1,15 @@
 {
   "include": [
+    // Custom Modules
+    "$DOTFILES/waybar/modules/custom/separators.jsonc",
+    "$DOTFILES/waybar/modules/custom/launcher.jsonc",
+    "$DOTFILES/waybar/modules/custom/power.jsonc",
+
     // Common Modules
     "$DOTFILES/waybar/modules/common/workspaces.jsonc",
     "$DOTFILES/waybar/modules/common/clock.jsonc",
 
-    // Custom Modules
-    "$DOTFILES/waybar/modules/custom/launcher.jsonc",
-    "$DOTFILES/waybar/modules/custom/power.jsonc"
-
     // Group Modules
-  ]
+    "$DOTFILES/waybar/modules/group/temperature.jsonc"
+  ],
 }

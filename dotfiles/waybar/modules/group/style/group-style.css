@@ -1,0 +1,32 @@
+#temperature {
+  background-color: @backgroundAlt;
+  color: @foreground;
+  padding: 0.25rem 0.5rem;
+  margin: 0 5 0 0;
+}
+
+#temperature.Nvme,
+#temperature.Cpu,
+#temperature.Gpu {
+  margin-right: 0;
+  padding-right: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+#temperature.Nvme2,
+#temperature.Cpu2,
+#temperature.Gpu2 {
+  margin-right: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+#temperature.Cpu.critical,
+#temperature.Cpu2.critical,
+#temperature.Gpu.critical,
+#temperature.Gpu2.critical,
+#temperature.Nvme.critical,
+#temperature.Nvme2.critical {
+  color: @redL;
+}
