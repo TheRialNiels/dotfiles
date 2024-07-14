@@ -12,6 +12,10 @@
     border-radius: 0.25rem;
 }
 
+#workspaces button:last-child {
+    margin-right: 0;
+}
+
 #workspaces button.empty {
     box-shadow: none;
     color: @foregroundAlt2;
