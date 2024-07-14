@@ -5,9 +5,11 @@ wallpaper="{wallpaper}"
 # Special
 background='{background}'
 backgroundAlt='{background}'
+backgroundAlt2='{background}'
 
 foreground='{foreground}'
 foregroundAlt='{foreground}'
+foregroundAlt2='{foreground}'
 
 cursor='{cursor}'
 

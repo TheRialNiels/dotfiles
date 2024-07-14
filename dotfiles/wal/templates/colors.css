@@ -1,8 +1,10 @@
 @define-color background {background};
 @define-color backgroundAlt {background};
+@define-color backgroundAlt2 {background};
 
 @define-color foreground {foreground};
 @define-color foregroundAlt {foreground};
+@define-color foregroundAlt2 {foreground};
 
 @define-color cursor {cursor};
 
