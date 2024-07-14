@@ -1,8 +1,10 @@
 @define-color background #101212;
 @define-color backgroundAlt #282d2d;
+@define-color backgroundAlt2 #1c1f1f;
 
 @define-color foreground #c6c7c4;
 @define-color foregroundAlt #adaeaa;
+@define-color foregroundAlt2 #b9bab7;
 
 @define-color cursor #c6c7c4;
 
