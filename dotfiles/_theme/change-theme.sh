@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 ## Define Variables
-SCRIPTS_DIR="../_scripts"
+SCRIPTS_DIR="$DOTFILES/_scripts"
 PATH_WALL="$DOTFILES/wallpapers"
 PATH_TMPL="$DOTFILES/wal/templates"
 PATH_PYWAL="$HOME/.cache/wal"
 
 ## Theme Variables
-CURRENT_THEME="./current-theme.sh"
+CURRENT_THEME="$DOTFILES/_theme/current-theme.sh"
 PYWAL_THEME="$HOME/.cache/wal/colors.sh"
 
 ## Wallpapers Variables
@@ -70,29 +70,30 @@ esac
 
 ## Get and generate the current theme
 cat "$PYWAL_THEME" >"$CURRENT_THEME"
+
+# shellcheck source=./current-theme.sh
 source "$CURRENT_THEME"
 
 altBackground="$(pastel color "$background" | pastel lighten 0.10 | pastel format hex)"
+altBackground2="$(pastel gradient -n 3 "$background" "$altBackground" | pastel format hex | awk 'NR==2')"
 altForeground="$(pastel color "$foreground" | pastel darken 0.10 | pastel format hex)"
+altForeground2="$(pastel gradient -n 3 "$foreground" "$altForeground" | pastel format hex | awk 'NR==2')"
 
 ## Replace the theme colors in the template files
 _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "foregroundAlt='$foreground'" "foregroundAlt='$altForeground'"
+_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "foregroundAlt2='$foreground'" "foregroundAlt2='$altForeground2'"
 _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "backgroundAlt='$background'" "backgroundAlt='$altBackground'"
+_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "backgroundAlt2='$background'" "backgroundAlt2='$altBackground2'"
 
 _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color foregroundAlt $foreground;" "@define-color foregroundAlt $altForeground;"
+_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color foregroundAlt2 $foreground;" "@define-color foregroundAlt2 $altForeground2;"
 _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color backgroundAlt $background;" "@define-color backgroundAlt $altBackground;"
+_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color backgroundAlt2 $background;" "@define-color backgroundAlt2 $altBackground2;"
 
 _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$foregroundAlt = rgb(${foreground:1:6})" "\$foregroundAlt = rgb(${altForeground:1:6})"
+_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$foregroundAlt2 = rgb(${foreground:1:6})" "\$foregroundAlt2 = rgb(${altForeground2:1:6})"
 _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$backgroundAlt = rgb(${background:1:6})" "\$backgroundAlt = rgb(${altBackground:1:6})"
-
-mode=$2
+_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$backgroundAlt2 = rgb(${background:1:6})" "\$backgroundAlt2 = rgb(${altBackground2:1:6})"
 
 ## Copy the generated theme depending on the mode
-case $mode in
-dev)
-    cp "$PATH_PYWAL/colors.css" "../waybar/colors.css"
-    ;;
-*)
-    cp "$PATH_PYWAL/colors.css" "$DOTFILES/waybar/colors.css"
-    ;;
-esac
+cp "$PATH_PYWAL/colors.css" "$DOTFILES/waybar/colors.css"
