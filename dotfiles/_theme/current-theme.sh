@@ -5,9 +5,11 @@ wallpaper="/home/test/Downloads/dotfiles/dotfiles/wallpapers/default.jpg"
 # Special
 background='#101212'
 backgroundAlt='#101212'
+backgroundAlt2='#101212'
 
 foreground='#c6c7c4'
 foregroundAlt='#c6c7c4'
+foregroundAlt2='#c6c7c4'
 
 cursor='#c6c7c4'
 
