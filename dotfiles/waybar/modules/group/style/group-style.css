@@ -1,6 +1,7 @@
 #temperature,
 #cpu,
-#memory {
+#memory,
+#disk {
   background-color: @backgroundAlt;
   color: @foreground;
   padding: 0.25rem 0.5rem;
@@ -11,7 +12,9 @@
 #temperature.Cpu,
 #temperature.Gpu,
 #cpu.Icon,
-#memory.Icon {
+#memory.Icon,
+#disk.Root,
+#disk.Home {
   margin-right: 0;
   padding-right: 0;
   border-top-left-radius: 0.25rem;
@@ -22,7 +25,9 @@
 #temperature.Cpu2,
 #temperature.Gpu2,
 #cpu.Text,
-#memory.Text {
+#memory.Text,
+#disk.Root2,
+#disk.Home2 {
   margin-right: 0;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;

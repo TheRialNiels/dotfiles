@@ -19,7 +19,8 @@
     "custom/launcher",
     "hyprland/workspaces",
     "group/temperatureGroup",
-    "group/hardwareGroup"
+    "group/hardwareGroup",
+    "group/storageGroup"
   ],
 
   "modules-center": [],

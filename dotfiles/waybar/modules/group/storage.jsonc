@@ -1,0 +1,17 @@
+{
+  "include": [
+    "$DOTFILES/waybar/modules/group/storage/root.jsonc",
+    "$DOTFILES/waybar/modules/group/storage/home.jsonc"
+  ],
+
+  "group/storageGroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "disk#Root",
+      "disk#Root2",
+      "custom/dot-separator",
+      "disk#Home",
+      "disk#Home2"
+    ]
+  }
+}

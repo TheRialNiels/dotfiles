@@ -33,7 +33,8 @@
 #custom-launcher,
 #workspaces,
 #temperatureGroup,
-#hardwareGroup {
+#hardwareGroup,
+#storageGroup {
   background-color: transparent;
   margin: 0.45rem 5 0.45rem 0;
 }

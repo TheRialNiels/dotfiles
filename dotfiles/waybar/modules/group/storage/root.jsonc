@@ -1,0 +1,12 @@
+{
+  "disk#Root": {
+    "interval": 30,
+    "format": " 󰷔",
+    "tooltip-format": "{used} used of {total} on Root ({percentage_used}%)"
+  },
+  "disk#Root2": {
+    "interval": 30,
+    "format": "{free}",
+    "tooltip-format": "{used} used of {total} on Root ({percentage_used}%)"
+  }
+}
