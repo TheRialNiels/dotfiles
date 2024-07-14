@@ -1,4 +1,6 @@
-#temperature {
+#temperature,
+#cpu,
+#memory {
   background-color: @backgroundAlt;
   color: @foreground;
   padding: 0.25rem 0.5rem;
@@ -7,7 +9,9 @@
 
 #temperature.Nvme,
 #temperature.Cpu,
-#temperature.Gpu {
+#temperature.Gpu,
+#cpu.Icon,
+#memory.Icon {
   margin-right: 0;
   padding-right: 0;
   border-top-left-radius: 0.25rem;
@@ -16,7 +20,9 @@
 
 #temperature.Nvme2,
 #temperature.Cpu2,
-#temperature.Gpu2 {
+#temperature.Gpu2,
+#cpu.Text,
+#memory.Text {
   margin-right: 0;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
@@ -28,5 +34,5 @@
 #temperature.Gpu2.critical,
 #temperature.Nvme.critical,
 #temperature.Nvme2.critical {
-  color: @redL;
+  color: @yellowL;
 }

@@ -10,6 +10,7 @@
     "$DOTFILES/waybar/modules/common/clock.jsonc",
 
     // Group Modules
-    "$DOTFILES/waybar/modules/group/temperature.jsonc"
+    "$DOTFILES/waybar/modules/group/temperature.jsonc",
+    "$DOTFILES/waybar/modules/group/hardware.jsonc"
   ],
 }

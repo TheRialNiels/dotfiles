@@ -1,0 +1,10 @@
+{
+  "cpu#Icon": {
+    "interval": 5,
+    "format": ""
+  },
+  "cpu#Text": {
+    "interval": 5,
+    "format": "{usage}%"
+  }
+}

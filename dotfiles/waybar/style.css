@@ -32,7 +32,8 @@
 ** ========================= */
 #custom-launcher,
 #workspaces,
-#temperatureGroup {
+#temperatureGroup,
+#hardwareGroup {
   background-color: transparent;
   margin: 0.45rem 5 0.45rem 0;
 }

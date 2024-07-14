@@ -1,0 +1,17 @@
+{
+  "include": [
+    "$DOTFILES/waybar/modules/group/hardware/cpu.jsonc",
+    "$DOTFILES/waybar/modules/group/hardware/ram.jsonc"
+  ],
+
+  "group/hardwareGroup": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu#Icon",
+      "cpu#Text",
+      "custom/dot-separator",
+      "memory#Icon",
+      "memory#Text"
+    ]
+  }
+}
