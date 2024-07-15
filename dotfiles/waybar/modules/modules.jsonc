@@ -11,7 +11,6 @@
     // Group Modules
     "$DOTFILES/waybar/modules/group/temperature.jsonc",
     "$DOTFILES/waybar/modules/group/hardware.jsonc",
-    "$DOTFILES/waybar/modules/group/storage.jsonc",
-    "$DOTFILES/waybar/modules/group/power.jsonc"
+    "$DOTFILES/waybar/modules/group/storage.jsonc"
   ]
 }
