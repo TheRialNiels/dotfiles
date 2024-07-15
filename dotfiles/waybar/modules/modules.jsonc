@@ -3,7 +3,6 @@
     // Custom Modules
     "$DOTFILES/waybar/modules/custom/separators.jsonc",
     "$DOTFILES/waybar/modules/custom/launcher.jsonc",
-    "$DOTFILES/waybar/modules/custom/power.jsonc",
 
     // Common Modules
     "$DOTFILES/waybar/modules/common/workspaces.jsonc",
@@ -12,6 +11,7 @@
     // Group Modules
     "$DOTFILES/waybar/modules/group/temperature.jsonc",
     "$DOTFILES/waybar/modules/group/hardware.jsonc",
-    "$DOTFILES/waybar/modules/group/storage.jsonc"
+    "$DOTFILES/waybar/modules/group/storage.jsonc",
+    "$DOTFILES/waybar/modules/group/power.jsonc"
   ]
 }

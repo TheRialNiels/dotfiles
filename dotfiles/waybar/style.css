@@ -13,6 +13,7 @@
 * {
   font-family: "Symbols Nerd Font", "Hack Nerd Font";
   font-size: 13px;
+  font-weight: bold;
 }
 
 /* ========================= **
@@ -37,6 +38,18 @@
 #storageGroup {
   background-color: transparent;
   margin: 0.45rem 5 0.45rem 0;
+}
+
+/* ========================= **
+** Waybar Center Modules
+** ========================= */
+
+/* ========================= **
+** Waybar Right Modules
+** ========================= */
+#powerGroup {
+  background-color: transparent;
+  margin: 0.45rem 0 0.45rem 5;
 }
 
 /* ========================= **

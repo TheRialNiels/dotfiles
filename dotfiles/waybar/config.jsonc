@@ -25,5 +25,5 @@
 
   "modules-center": [],
 
-  "modules-right": ["clock", "custom/power"]
+  "modules-right": ["group/powerGroup"]
 }
