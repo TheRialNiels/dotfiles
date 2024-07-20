@@ -160,8 +160,44 @@ _replaceLineInTemplate() {
 _createCacheFile() {
     local filePath=$1
     local content=$2
+
     if [ ! -f "$filePath" ]; then
         echo "$content" >"$filePath"
-        _message "success" "'$(basename "$filePath")' created"
+
+        # Check if the file was successfully created
+        if [ -f "$filePath" ]; then
+            _message "success" "'$(basename "$filePath")' created"
+        else
+            _message "error" "Failed to create '$(basename "$filePath")'"
+        fi
+    fi
+}
+
+# -----------------------------------------------------
+# _updateWallpaperCacheFiles - Updates the wallpaper
+# cache files.
+#
+# Usage:
+#   _updateWallpaperCacheFiles <pathWall>
+#
+# Parameters:
+#   pathWall: The path to the wallpaper.
+#
+# Example:
+#   _updateWallpaperCacheFiles "$HOME/Pictures/Wallpapers/wallpaper.jpg"
+# -----------------------------------------------------
+_updateWallpaperCacheFiles() {
+    local cache_wall="$HOME/.cache/wallpaper/current_wallpaper"
+    local cache_wall_rasi="$HOME/.cache/wallpaper/current_wallpaper.rasi"
+    local path_wall=$1
+
+    echo "$path_wall" >"$cache_wall"
+    echo "* { current-image: url(\"$path_wall\", height); }" >"$cache_wall_rasi"
+
+    # Check if the file was updated successfully
+    if [ -f "$cache_wall" ]; then
+        _message "success" "'$(basename "$cache_wall")' updated"
+    else
+        _message "error" "Failed to update '$(basename "$cache_wall")'"
     fi
 }
