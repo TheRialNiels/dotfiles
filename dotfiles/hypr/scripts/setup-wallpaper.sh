@@ -8,10 +8,7 @@
 cacheWall="$HOME/.cache/wallpaper/current_wallpaper"
 wallpaper=$(cat "$cacheWall")
 
-## Set Wallpaper
-folderPath="$HOME/dotfiles/wallpapers"
-
-if [ -f "$folderPath/$wallpaper" ]; then
+if [ -f "$wallpaper" ]; then
     transition_type="wipe"
     # transition_type="outer"
     # transition_type="random"
