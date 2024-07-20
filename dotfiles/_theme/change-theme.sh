@@ -2,6 +2,7 @@
 
 ## Define Variables
 SCRIPTS_DIR="$DOTFILES/_scripts"
+HYPR_SCRIPTS_DIR="$DOTFILES/hypr/scripts"
 PATH_WALL="$DOTFILES/wallpapers"
 PATH_TMPL="$DOTFILES/wal/templates"
 PATH_PYWAL="$HOME/.cache/wal"
@@ -39,6 +40,7 @@ _createCacheFile "$CACHE_WALL_RASI" "* { current-image: url(\"$DEFAULT_WALL\", h
 
 ## Verify that pywal is installed
 if ! command -v wal &>/dev/null; then
+    notify-send "Pywal is not installed. Please install it before running this script."
     _message "error" "'Pywal' is not installed. Please install it before running this script."
     exit 1
 fi
@@ -49,6 +51,12 @@ case $1 in
 
     _applyTheme "$DEFAULT_WALL_IMG" "$notiMsg"
 
+    # Update the wallpaper cache files
+    _updateWallpaperCacheFiles "$DEFAULT_WALL_IMG"
+
+    # Setup the new wallpaper
+    bash "$HYPR_SCRIPTS_DIR/setup-wallpaper.sh" "$DEFAULT_WALL_IMG"
+
     # Convert jpg image extension to png image extension
     #TODO convert "$DEFAULT_WALL_IMG" "$LOCK_SCREEN_WALL"
     ;;
@@ -58,6 +66,12 @@ case $1 in
     notiMsg="Applying random theme..."
 
     _applyTheme "$selectedWallpaper" "$notiMsg"
+
+    # Update the wallpaper cache files
+    _updateWallpaperCacheFiles "$selectedWallpaper"
+
+    # Setup the new wallpaper
+    bash "$HYPR_SCRIPTS_DIR/setup-wallpaper.sh" "$selectedWallpaper" &
 
     # Convert jpg image extension to png image extension
     #TODO convert "$selectedWallpaper" "$LOCK_SCREEN_WALL"
