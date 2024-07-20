@@ -2,5 +2,4 @@
 
 export pythonPackagesPip=(
     "colorz"
-    "pywal"
 )
