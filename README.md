@@ -12,13 +12,13 @@
     <li>fd</li>
     <li>figlet</li>
     <li>fzf</li>
-    <li>imagemagick</li>
     <li>gum</li>
+    <li>imagemagick</li>
     <li>neovim</li>
     <li>pastel</li>
     <li>python-pip</li>
+    <li>python-pywal</li>
     <li>python</li>
-    <li>pywal</li>
     <li>ripgrep</li>
     <li>rsync</li>
     <li>rustup</li>
@@ -28,6 +28,7 @@
     <li>ttf-hack-nerd</li>
     <li>ttf-nerd-fonts-symbols</li>
     <li>vim</li>
+    <li>waybar-module-pacman-updates-git</li>
     <li>waybar</li>
     <li>zsh</li>
   </ul>
