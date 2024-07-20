@@ -3,14 +3,19 @@
     // Custom Modules
     "$DOTFILES/waybar/modules/custom/separators.jsonc",
     "$DOTFILES/waybar/modules/custom/launcher.jsonc",
+    "$DOTFILES/waybar/modules/custom/updates.jsonc",
+    "$DOTFILES/waybar/modules/custom/theme.jsonc",
 
     // Common Modules
     "$DOTFILES/waybar/modules/common/workspaces.jsonc",
     "$DOTFILES/waybar/modules/common/clock.jsonc",
+    "$DOTFILES/waybar/modules/common/network.jsonc",
+    "$DOTFILES/waybar/modules/common/pulseaudio.jsonc",
 
     // Group Modules
     "$DOTFILES/waybar/modules/group/temperature.jsonc",
     "$DOTFILES/waybar/modules/group/hardware.jsonc",
-    "$DOTFILES/waybar/modules/group/storage.jsonc"
+    "$DOTFILES/waybar/modules/group/storage.jsonc",
+    "$DOTFILES/waybar/modules/group/clock.jsonc"
   ]
 }

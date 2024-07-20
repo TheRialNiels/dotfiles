@@ -2,7 +2,7 @@
 {
   "layer": "top", // Bar is displayed on top of the screen
   "position": "top", // Bar is displayed at the top of the screen
-  "height": 32, // Height of the bar
+  "height": 35, // Height of the bar
   "width": 0, // Full width
   "margin": "5 5 0", // Margin from the top of the screen (top horizontal bottom)
   "spacing": 10, // Gap between modules
@@ -25,5 +25,11 @@
 
   "modules-center": [],
 
-  "modules-right": []
+  "modules-right": [
+    "custom/theme",
+    "custom/updates",
+    "pulseaudio",
+    "network",
+    "group/clockGroup"
+  ]
 }

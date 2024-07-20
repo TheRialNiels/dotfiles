@@ -1,0 +1,13 @@
+{
+  "network": {
+    "interval": 5,
+    "format-wifi": "󰖩 {essid}",
+    "format-linked": " {ifname} (No IP)",
+    "format-ethernet": "   󰕒 {bandwidthUpBits}      󰇚 {bandwidthDownBits}",
+    "format-disconnected": "󰯡 Disconnected",
+    "format-disabled": "󰅛 Disabled",
+    "format-alt": "󰩠 {ipaddr}/{cidr}",
+    "tooltip-format": " {ifname} via {gwaddr}"
+    //TODO "on-click": "$DOTFILES/hypr/scripts/rofi_network"
+  }
+}

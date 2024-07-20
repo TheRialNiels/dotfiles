@@ -1,0 +1,8 @@
+{
+  "custom/theme": {
+    "format": "󰸉",
+    "tooltip": false,
+    "on-click": "$DOTFILES/_theme/change-theme.sh -r",
+    "on-click-right": "$DOTFILES/_theme/change-theme.sh -d"
+  }
+}

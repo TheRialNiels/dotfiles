@@ -1,0 +1,10 @@
+{
+  "include": [
+    "$DOTFILES/waybar/modules/group/clock/clock.jsonc"
+  ],
+
+  "group/clockGroup": {
+    "orientation": "horizontal",
+    "modules": ["clock#Icon", "clock#Text"]
+  }
+}
