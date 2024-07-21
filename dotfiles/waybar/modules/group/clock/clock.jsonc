@@ -12,10 +12,10 @@
     "calendar": {
       "on-scroll": 1,
       "format": {
-        "months": "<span color='#b2babf'><b>{}</b></span>",
-        "days": "<span color='#5A676E'>{}</span>",
-        "weekdays": "<span color='#b2babf'><b>{}</b></span>",
-        "today": "<span color='#b2babf'><b>{}</b></span>"
+        "months": "<span color='#adaeaa'><b>{}</b></span>",
+        "days": "<span color='#4B5451'>{}</span>",
+        "weekdays": "<span color='#adaeaa'><b>{}</b></span>",
+        "today": "<span color='#adaeaa'><b>{}</b></span>"
       }
     },
     "actions": {
