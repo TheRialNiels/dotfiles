@@ -11,6 +11,7 @@ echo -e "${NOCOLOR}"
 
 # List of configuration folders
 configFolders=(
+    "dunst"
     "hypr"
     "kitty"
     "zsh"
