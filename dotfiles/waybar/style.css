@@ -16,6 +16,17 @@
   font-weight: bold;
 }
 
+tooltip {
+  background-color: @background;
+  border: 0.05rem solid @backgroundAlt;
+  border-radius: 0.25rem;
+}
+
+tooltip label {
+  color: @foregroundAlt;
+  font-size: medium;
+}
+
 /* ========================= **
 ** Waybar Bar
 ** ========================= */
