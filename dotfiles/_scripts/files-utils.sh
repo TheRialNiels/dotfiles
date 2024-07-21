@@ -144,6 +144,45 @@ _replaceLineInTemplate() {
 }
 
 # -----------------------------------------------------
+# _replaceHexColor - Replaces a hexadecimal color in a
+# specific line of the file
+#
+# Usage:
+#   _replaceHexColor <file> <lineNumber> <newColor>
+#
+# Parameters:
+#   file: The file to modify.
+#   lineNumber: The line number to replace.
+#   newColor: The new color to insert.
+#
+# Example:
+#   _replaceHexColor "file.txt" 10 "#FFFFFF"
+# -----------------------------------------------------
+_replaceHexColor() {
+    local file=$1
+    local lineNumber=$2
+    local newColor=$3
+
+    # Extract the line from the file
+    local line=$(sed -n "${lineNumber}p" "$file")
+
+    # Replace the color in the line
+    local newLine=$(echo "$line" | sed -E "s/#([0-9A-Fa-f]{6})/$newColor/g")
+
+    # Replace the line in the file
+    sd -s "$line" "$newLine" "$file"
+
+    # Check if the line was successfully replaced
+    # shellcheck disable=SC2181
+    if [[ $? -eq 0 ]]; then
+        msg="The color in line $lineNumber was replaced with '$newColor' successfully in '$file'."
+        _message "success" "$msg"
+    else
+        _message "error" "The color was not modified."
+    fi
+}
+
+# -----------------------------------------------------
 # _createCacheFile - Creates a cache file if it does not
 # exist.
 #
