@@ -98,22 +98,11 @@ altForeground="$(pastel color "$foreground" | pastel darken 0.10 | pastel format
 altForeground2="$(pastel gradient -n 3 "$foreground" "$altForeground" | pastel format hex | awk 'NR==2')"
 
 ## Replace the theme colors in the template files
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "foregroundAlt='$foreground'" "foregroundAlt='$altForeground'"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "foregroundAlt2='$foreground'" "foregroundAlt2='$altForeground2'"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "backgroundAlt='$background'" "backgroundAlt='$altBackground'"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.sh" "backgroundAlt2='$background'" "backgroundAlt2='$altBackground2'"
-
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color foregroundAlt $foreground;" "@define-color foregroundAlt $altForeground;"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color foregroundAlt2 $foreground;" "@define-color foregroundAlt2 $altForeground2;"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color backgroundAlt $background;" "@define-color backgroundAlt $altBackground;"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.css" "@define-color backgroundAlt2 $background;" "@define-color backgroundAlt2 $altBackground2;"
-
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$foregroundAlt = rgb(${foreground:1:6})" "\$foregroundAlt = rgb(${altForeground:1:6})"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$foregroundAlt2 = rgb(${foreground:1:6})" "\$foregroundAlt2 = rgb(${altForeground2:1:6})"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$backgroundAlt = rgb(${background:1:6})" "\$backgroundAlt = rgb(${altBackground:1:6})"
-_replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$backgroundAlt2 = rgb(${background:1:6})" "\$backgroundAlt2 = rgb(${altBackground2:1:6})"
+_replaceColorsInTemplates "$PATH_TMPL" "$PATH_PYWAL" "$background" "$altBackground" "$altBackground2" "$foreground" "$altForeground" "$altForeground2"
 
 ## Copy the generated theme depending on the mode
 cp "$PATH_PYWAL/colors.css" "$DOTFILES/waybar/colors.css"
 
 _applyWaybarTheme "$color1" "$altForeground"
+
+_applyDunstTheme "$background" "$altBackground" "$foreground" "$altBackground2" "$color1" "$color6"
