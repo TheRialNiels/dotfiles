@@ -2,6 +2,7 @@
 
 ## Define Variables
 SCRIPTS_DIR="$DOTFILES/_scripts"
+THEME_DIR="$DOTFILES/_theme"
 HYPR_SCRIPTS_DIR="$DOTFILES/hypr/scripts"
 PATH_WALL="$DOTFILES/wallpapers"
 PATH_TMPL="$DOTFILES/wal/templates"
@@ -29,6 +30,9 @@ source "$SCRIPTS_DIR/folders-utils.sh"
 
 # shellcheck source=../_scripts/files-utils.sh
 source "$SCRIPTS_DIR/files-utils.sh"
+
+# shellcheck source=./utils.sh
+source "$THEME_DIR/utils.sh"
 
 _checkWallpapers "$PATH_WALL"
 
@@ -111,3 +115,5 @@ _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$backgroundAlt
 
 ## Copy the generated theme depending on the mode
 cp "$PATH_PYWAL/colors.css" "$DOTFILES/waybar/colors.css"
+
+_applyWaybarTheme "$color1" "$altForeground"
