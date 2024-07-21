@@ -14,6 +14,7 @@ configFolders=(
     "dunst"
     "hypr"
     "kitty"
+    "starship"
     "zsh"
 )
 
@@ -48,6 +49,10 @@ for folder in "${configFolders[@]}"; do
             # Uncomment the following lines if needed to fix root symlinks
             # _createSymlink "/root/.zshenv" "$folderPath/.zshenv" "/root" "sudo"
             # _createSymlink "/root/.zshrc" "$folderPath/.zshrc" "/root" "sudo"
+            ;;
+        "starship")
+            # Create symlinks for Starship configuration files
+            _createSymlink "$HOME/.config/starship.toml" "$folderPath/starship.toml" "$HOME/.config"
             ;;
         *)
             _createSymlink "$HOME/.config/$folder" "$folderPath/" "$HOME/.config"
