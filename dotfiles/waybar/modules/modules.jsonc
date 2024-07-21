@@ -8,7 +8,6 @@
 
     // Common Modules
     "$DOTFILES/waybar/modules/common/workspaces.jsonc",
-    "$DOTFILES/waybar/modules/common/clock.jsonc",
     "$DOTFILES/waybar/modules/common/network.jsonc",
     "$DOTFILES/waybar/modules/common/pulseaudio.jsonc",
 
