@@ -26,11 +26,11 @@ _message "info" "Installing general packages..."
 if [[ "$forceInstall" == "1" ]]; then
     _message "info" "Forcing installation of packages..."
     _installPackagesWith "pacman" "${generalPackagesPacman[@]}"
-    _installPackagesWith "yay" "${generalPackagesYay[@]}"
+    #_installPackagesWith "yay" "${generalPackagesYay[@]}"
 else
     _message "info" "Installing only missing packages..."
     _installPackagesWith "pacman" "${generalPackagesPacman[@]}"
-    _installPackagesWith "yay" "${generalPackagesYay[@]}"
+    #_installPackagesWith "yay" "${generalPackagesYay[@]}"
 fi
 
 _message "success" "General packages installed."

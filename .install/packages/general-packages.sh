@@ -14,6 +14,5 @@ export generalPackagesPacman=(
     "zsh"
 )
 
-export generalPackagesYay=(
-    "waybar-module-pacman-updates-git"
-)
+#export generalPackagesYay=(    
+#)
