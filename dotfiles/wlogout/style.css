@@ -1,4 +1,4 @@
-@import url('$HOME/dotfiles/wlogout/colors.css');
+@import url('$HOME/.cache/wal/colors.css');
 
 * {
     background-image: none;
@@ -7,7 +7,7 @@
 }
 
 window {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 button {
@@ -26,11 +26,11 @@ button {
 
 button:focus,
 button:hover {
-    background-color: @background-alt1;
+    background-color: @backgroundAlt;
     background-size: 25%;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
-    border: 2px solid @background-alt2;
+    border: 2px solid @backgroundAlt2;
 }
 
 button:focus {
@@ -39,7 +39,7 @@ button:focus {
 
 #lock {
     background-image: image(
-        url("$HOME/dotfiles/wlogout/icons/lock.svg"),
+        url("$DOTFILES/wlogout/icons/lock.svg"),
         url("/usr/share/wlogout/icons/lock.png"),
         url("/usr/local/share/wlogout/icons/lock.png")
     );
@@ -49,7 +49,7 @@ button:focus {
 
 #reboot {
     background-image: image(
-        url("$HOME/dotfiles/wlogout/icons/reboot.svg"),
+        url("$DOTFILES/wlogout/icons/reboot.svg"),
         url("/usr/share/wlogout/icons/reboot.png"),
         url("/usr/local/share/wlogout/icons/reboot.png")
     );
@@ -59,7 +59,7 @@ button:focus {
 
 #shutdown {
     background-image: image(
-        url("$HOME/dotfiles/wlogout/icons/shutdown.svg"),
+        url("$DOTFILES/wlogout/icons/shutdown.svg"),
         url("/usr/share/wlogout/icons/shutdown.png"),
         url("/usr/local/share/wlogout/icons/shutdown.png")
     );
@@ -68,7 +68,7 @@ button:focus {
 
 #logout {
     background-image: image(
-        url("$HOME/dotfiles/wlogout/icons/logout.svg"),
+        url("$DOTFILES/wlogout/icons/logout.svg"),
         url("/usr/share/wlogout/icons/logout.png"),
         url("/usr/local/share/wlogout/icons/logout.png")
     );
@@ -77,7 +77,7 @@ button:focus {
     
 #suspend {
     background-image: image(
-        url("$HOME/dotfiles/wlogout/icons/suspend.svg"),
+        url("$DOTFILES/wlogout/icons/suspend.svg"),
         url("/usr/share/wlogout/icons/suspend.png"),
         url("/usr/local/share/wlogout/icons/suspend.png")
     );
@@ -88,7 +88,7 @@ button:focus {
 
 #hibernate {
     background-image: image(
-        url("$HOME/dotfiles/wlogout/icons/hibernate.svg"),
+        url("$DOTFILES/wlogout/icons/hibernate.svg"),
         url("/usr/share/wlogout/icons/hibernate.png"),
         url("/usr/local/share/wlogout/icons/hibernate.png")
     );
