@@ -16,6 +16,7 @@
     <li>hypridle</li>
     <li>hyprlock</li>
     <li>imagemagick</li>
+    <li>jq</li>
     <li>neovim</li>
     <li>pastel</li>
     <li>python-pip</li>
