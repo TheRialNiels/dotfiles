@@ -13,6 +13,8 @@
     <li>figlet</li>
     <li>fzf</li>
     <li>gum</li>
+    <li>hypridle</li>
+    <li>hyprlock</li>
     <li>imagemagick</li>
     <li>neovim</li>
     <li>pastel</li>
@@ -30,6 +32,8 @@
     <li>vim</li>
     <li>waybar-module-pacman-updates-git</li>
     <li>waybar</li>
+    <li>wlogout</li>
+    <li>xdg-desktop-portal-hyprland</li>
     <li>zsh</li>
   </ul>
   </details>
