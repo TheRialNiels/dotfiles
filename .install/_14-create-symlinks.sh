@@ -15,6 +15,7 @@ configFolders=(
     "hypr"
     "kitty"
     "starship"
+    "wlogout"
     "zsh"
 )
 
