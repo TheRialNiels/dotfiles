@@ -110,4 +110,6 @@ _applyHyprlockTheme "$altForeground"
 
 _applyWaybarTheme "$color1" "$altForeground"
 
+_applyWlogoutTheme "$altForeground2"
+
 notify-send "Theme applied successfully."

@@ -60,13 +60,27 @@ _applyDunstTheme() {
 
     ## Reload the dunst
     pkill dunst &
-    dunts &
+    dunst &
 }
 
 _applyHyprlockTheme() {
     local placeholderTextColor="$1"
 
     _replaceHexColor "$DOTFILES/hypr/hyprlock.conf" "47" "$placeholderTextColor"
+}
+
+_applyWlogoutTheme() {
+    local foregroundColor="$1"
+
+    _replaceHexColor "$DOTFILES/wlogout/icons/hibernate.svg" "11" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/lock.svg" "11" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/lock.svg" "14" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/logout.svg" "15" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/logout.svg" "22" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/reboot.svg" "11" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/shutdown.svg" "11" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/shutdown.svg" "14" "$foregroundColor"
+    _replaceHexColor "$DOTFILES/wlogout/icons/suspend.svg" "6" "$foregroundColor"
 }
 
 _applyWaybarTheme() {
