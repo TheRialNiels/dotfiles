@@ -43,19 +43,6 @@ _replaceColorsInTemplates() {
     _replaceLineInTemplate "$PATH_TMPL" "$PATH_PYWAL" "colors.conf" "\$backgroundAlt2 = rgb(${background:1:6})" "\$backgroundAlt2 = rgb(${altBackground2:1:6})"
 }
 
-_applyWaybarTheme() {
-    local primaryColor="$1"
-    local secondaryColor="$2"
-
-    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "15" "$secondaryColor"
-    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "16" "$primaryColor"
-    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "17" "$secondaryColor"
-    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "18" "$secondaryColor"
-
-    ## Reload the waybar
-    $DOTFILES/waybar/launch.sh
-}
-
 _applyDunstTheme() {
     local background="$1"
     local altBackground="$2"
@@ -74,4 +61,23 @@ _applyDunstTheme() {
     ## Reload the dunst
     pkill dunst &
     dunts &
+}
+
+_applyHyprlockTheme() {
+    local placeholderTextColor="$1"
+
+    _replaceHexColor "$DOTFILES/hypr/hyprlock.conf" "47" "$placeholderTextColor"
+}
+
+_applyWaybarTheme() {
+    local primaryColor="$1"
+    local secondaryColor="$2"
+
+    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "15" "$secondaryColor"
+    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "16" "$primaryColor"
+    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "17" "$secondaryColor"
+    _replaceHexColor "$WAYBAR_DIR/modules/group/clock/clock.jsonc" "18" "$secondaryColor"
+
+    ## Reload the waybar
+    $DOTFILES/waybar/launch.sh
 }

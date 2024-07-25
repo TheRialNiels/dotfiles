@@ -3,7 +3,8 @@
 ## Define Variables
 SCRIPTS_DIR="$DOTFILES/_scripts"
 THEME_DIR="$DOTFILES/_theme"
-HYPR_SCRIPTS_DIR="$DOTFILES/hypr/scripts"
+HYPR_DIR="$DOTFILES/hypr"
+HYPR_SCRIPTS_DIR="$HYPR_DIR/scripts"
 PATH_WALL="$DOTFILES/wallpapers"
 PATH_TMPL="$DOTFILES/wal/templates"
 PATH_PYWAL="$HOME/.cache/wal"
@@ -13,7 +14,7 @@ CURRENT_THEME="$DOTFILES/_theme/current-theme.sh"
 PYWAL_THEME="$HOME/.cache/wal/colors.sh"
 
 ## Wallpapers Variables
-# TODO LOCK_SCREEN_WALL="$DIR/.settings/lock-screen.png"
+LOCK_SCREEN_WALL="$HYPR_DIR/lockscreen.png"
 CACHE_WALL_CURR="$HOME/.cache/current_wallpaper"
 CACHE_WALL_RASI="$HOME/.cache/current_wallpaper.rasi"
 DEFAULT_WALL_IMG="$PATH_WALL/default.jpg"
@@ -62,7 +63,7 @@ case $1 in
     bash "$HYPR_SCRIPTS_DIR/setup-wallpaper.sh" "$DEFAULT_WALL_IMG"
 
     # Convert jpg image extension to png image extension
-    #TODO convert "$DEFAULT_WALL_IMG" "$LOCK_SCREEN_WALL"
+    convert "$DEFAULT_WALL_IMG" "$LOCK_SCREEN_WALL"
     ;;
 
 -r | --random)
@@ -78,7 +79,7 @@ case $1 in
     bash "$HYPR_SCRIPTS_DIR/setup-wallpaper.sh" "$selectedWallpaper" &
 
     # Convert jpg image extension to png image extension
-    #TODO convert "$selectedWallpaper" "$LOCK_SCREEN_WALL"
+    convert "$selectedWallpaper" "$LOCK_SCREEN_WALL"
     ;;
 
 *)
@@ -103,6 +104,10 @@ _replaceColorsInTemplates "$PATH_TMPL" "$PATH_PYWAL" "$background" "$altBackgrou
 ## Copy the generated theme depending on the mode
 cp "$PATH_PYWAL/colors.css" "$DOTFILES/waybar/colors.css"
 
+_applyDunstTheme "$background" "$altBackground" "$foreground" "$altBackground2" "$color1" "$color6"
+
+_applyHyprlockTheme "$altForeground"
+
 _applyWaybarTheme "$color1" "$altForeground"
 
-_applyDunstTheme "$background" "$altBackground" "$foreground" "$altBackground2" "$color1" "$color6"
+notify-send "Theme applied successfully."
