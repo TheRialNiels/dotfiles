@@ -25,7 +25,7 @@ export y_mgn=$(( y_mon * 20 / hypr_scale ))
 export x_hvr=$(( x_mon * 12 / hypr_scale ))
 export y_hvr=$(( y_mon * 15 / hypr_scale ))
 export x_fcs=$(( x_mon * 12 / hypr_scale ))
-export y_fcs=$(( y_mon * 18 / hypr_scale ))
+export y_fcs=$(( y_mon * 16 / hypr_scale ))
 
 ## Scale font size
 export fntSize=$(( y_mon * 2 / 100 ))
