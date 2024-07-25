@@ -215,6 +215,7 @@ _replaceHexColor() {
     if [[ $? -eq 0 ]]; then
         msg="The color in line $lineNumber was replaced with '$newColor' successfully in '$file'."
         _message "success" "$msg"
+        sleep 0.1
     else
         _message "error" "The color was not modified."
     fi
