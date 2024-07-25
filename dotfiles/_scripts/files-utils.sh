@@ -144,6 +144,44 @@ _replaceLineInTemplate() {
 }
 
 # -----------------------------------------------------
+# _replaceLineNumberInFile - Replaces a line number in a
+# file.
+#
+# Usage:
+#   _replaceLineNumberInFile <file> <lineNumber> <newLine>
+#
+# Parameters:
+#   file: The file to modify.
+#   lineNumber: The line number to replace.
+#   newLine: The new line to insert.
+#
+# Example:
+#   _replaceLineNumberInFile "file.txt" 10 "new line"
+# -----------------------------------------------------
+_replaceLineNumberInFile() {
+    local file=$1
+    local lineNumber=$2
+    local newLine=$3
+
+    # Interpret special characters like \n or \t in newLine
+    newLine=$(echo -e "$newLine")
+
+    # Prepare newLine for use in sed, escaping special characters
+    newLineEscaped=$(printf '%s\n' "$newLine" | sed -e 's/[\/&]/\\&/g')
+
+    # Replace the line in the file using sed
+    sed -i "${lineNumber}s/.*/$newLineEscaped/" "$file"
+
+    # Check if the line was successfully replaced
+    if [[ $? -eq 0 ]]; then
+        msg="The line at $lineNumber was replaced with '$newLine' successfully in '$file'."
+        echo "success: $msg"
+    else
+        echo "error: The line was not modified."
+    fi
+}
+
+# -----------------------------------------------------
 # _replaceHexColor - Replaces a hexadecimal color in a
 # specific line of the file
 #
