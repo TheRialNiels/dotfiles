@@ -134,8 +134,8 @@ _applyTheme() {
     # Check if the theme was applied successfully
     # shellcheck disable=SC2181
     if [ $? -eq 0 ]; then
-        notify-send "Theme applied successfully."
+        notify-send "Color scheme applied successfully."
     else
-        notify-send "Failed to apply the theme."
+        notify-send "Failed to apply color scheme."
     fi
 }
