@@ -15,5 +15,9 @@ export generalPackagesPacman=(
     "zsh"
 )
 
-#export generalPackagesYay=(    
-#)
+export generalPackagesYay=(
+    "python-clickgen"
+    "bibata-cursor-theme"
+    "nwg-look-bin"
+    "pacseek"
+)
