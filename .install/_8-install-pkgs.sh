@@ -14,6 +14,25 @@ source "$PACKAGES_DIR/hyprland-packages.sh"
 # shellcheck source=./packages/python-packages.sh
 source "$PACKAGES_DIR/python-packages.sh"
 
+## Print Install Python Packages Title
+echo -e "${BLUE}"
+figlet "Python Packages"
+echo -e "${NOCOLOR}"
+
+## Install Python Packages
+_message "info" "Installing python packages..."
+
+## Check forceInstall flag
+if [[ "$forceInstall" == "1" ]]; then
+    _message "info" "Forcing installation of packages..."
+    _installPackagesWith "pip" "${pythonPackagesPip[@]}"
+else
+    _message "info" "Installing only missing packages..."
+    _installPackagesWith "pip" "${pythonPackagesPip[@]}"
+fi
+
+_message "success" "Python packages installed."
+
 ## Print Install General Packages Title
 echo -e "${BLUE}"
 figlet "General Packages"
@@ -26,11 +45,11 @@ _message "info" "Installing general packages..."
 if [[ "$forceInstall" == "1" ]]; then
     _message "info" "Forcing installation of packages..."
     _installPackagesWith "pacman" "${generalPackagesPacman[@]}"
-    #_installPackagesWith "yay" "${generalPackagesYay[@]}"
+    _installPackagesWith "yay" "${generalPackagesYay[@]}"
 else
     _message "info" "Installing only missing packages..."
     _installPackagesWith "pacman" "${generalPackagesPacman[@]}"
-    #_installPackagesWith "yay" "${generalPackagesYay[@]}"
+    _installPackagesWith "yay" "${generalPackagesYay[@]}"
 fi
 
 _message "success" "General packages installed."
@@ -55,22 +74,3 @@ else
 fi
 
 _message "success" "Hyprland packages installed."
-
-## Print Install Python Packages Title
-echo -e "${BLUE}"
-figlet "Python Packages"
-echo -e "${NOCOLOR}"
-
-## Install Python Packages
-_message "info" "Installing python packages..."
-
-## Check forceInstall flag
-if [[ "$forceInstall" == "1" ]]; then
-    _message "info" "Forcing installation of packages..."
-    _installPackagesWith "pip" "${pythonPackagesPip[@]}"
-else
-    _message "info" "Installing only missing packages..."
-    _installPackagesWith "pip" "${pythonPackagesPip[@]}"
-fi
-
-_message "success" "Python packages installed."
