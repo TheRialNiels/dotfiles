@@ -23,10 +23,11 @@ export generalPackagesPacman=(
 )
 
 export generalPackagesYay=(
-    "python-clickgen"
     "bibata-cursor-theme"
     "nwg-look-bin"
     "pacseek"
+    "python-clickgen"
+    "tofi"
 )
 
 #"qt5-wayland"

@@ -41,6 +41,7 @@
     <li>setuptools (pip)</li>
     <li>starship</li>
     <li>swww</li>
+    <li>tofi</li>
     <li>ttf-hack-nerd</li>
     <li>ttf-nerd-fonts-symbols</li>
     <li>vim</li>
