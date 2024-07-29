@@ -12,6 +12,7 @@ echo -e "${NOCOLOR}"
 # List of configuration folders
 configFolders=(
     "dunst"
+    "gtk"
     "hypr"
     "kitty"
     "starship"
