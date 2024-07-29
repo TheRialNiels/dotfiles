@@ -6,6 +6,7 @@ padding-left = 33%
 padding-top = 33%
 result-spacing = 25
 num-results = 5
+hide-cursor = true
 
 font = Hack Nerd Font
 font-size = 24
