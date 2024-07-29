@@ -38,8 +38,8 @@ for folder in "${configFolders[@]}"; do
         case $folder in
         "gtk")
             # Create symlinks for GTK configuration files
-            _createSymlink "$HOME/.config/gtk-3.0" "$folderPath/gtk3.0/" "$HOME/.config"
-            _createSymlink "$HOME/.config/gtk-4.0" "$folderPath/gtk4.0/" "$HOME/.config"
+            _createSymlink "$HOME/.config/gtk-3.0" "$folderPath/gtk-3.0/" "$HOME/.config"
+            _createSymlink "$HOME/.config/gtk-4.0" "$folderPath/gtk-4.0/" "$HOME/.config"
             _createSymlink "$HOME/.config/xsettingsd" "$folderPath/xsettingsd/" "$HOME/.config"
             _createSymlink "$HOME/.gtkrc-2.0" "$folderPath/.gtkrc-2.0" "$HOME"
             _createSymlink "$HOME/.Xresources" "$folderPath/.Xresources" "$HOME"
