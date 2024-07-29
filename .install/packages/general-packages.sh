@@ -1,12 +1,15 @@
 #!/user/bin/env bash
 
 export generalPackagesPacman=(
+    "brightnessctl"
     "fluent-gtk-theme"
     "fzf"
     "imagemagick"
     "jq"
     "neovim"
+    "pamixer"
     "pastel"
+    "pipewire"
     "polkit-kde-agent"
     "python-pip"
     "python-pywal"

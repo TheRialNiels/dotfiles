@@ -6,6 +6,7 @@
     <li>base-devel</li>
     <li>bat</li>
     <li>bibata-cursor-theme</li>
+    <li>brightnessctl</li>
     <li>build (pip)</li>
     <li>cmake</li>
     <li>colorz (pip)</li>
@@ -25,7 +26,9 @@
     <li>neovim</li>
     <li>nwg-look-bin</li>
     <li>pacseek</li>
+    <li>pamixer</li>
     <li>pastel</li>
+    <li>pipewire</li>
     <li>polkit-kde-agent</li>
     <li>python-clickgen</li>
     <li>python-pip</li>
