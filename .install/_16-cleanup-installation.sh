@@ -41,3 +41,15 @@ if command -v xdg-user-dir &>/dev/null; then
     PICTURES_DIR=$(xdg-user-dir PICTURES)
     _createDirectoryIfNotExists "$PICTURES_DIR/Screenshots"
 fi
+
+## Install Fluent Icons Theme if it doesn't exist
+if [[ ! -d "$HOME/.local/share/icons/Fluent" ]]; then
+    _message "info" "Installing Fluent Icons Theme..."
+    git clone https://github.com/vinceliuice/Fluent-icon-theme.git /tmp/Fluent-icon-theme
+    cd /tmp/Fluent-icon-theme || exit
+    ./install.sh -a
+    cd ..
+    rm -rf /tmp/Fluent-icon-theme
+    cd "$DOTFILES_SCRIPT_PATH" || exit
+    _message "success" "Fluent Icons Theme installed."
+fi
