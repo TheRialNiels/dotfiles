@@ -1,6 +1,7 @@
 - [x] Config grub
 - [x] Config hyprland config files
 - [] Config waybar
+- [] Add script to autodetect sensors
 - [] Config kitty
 - [] Config zsh
 - [] Config starship
