@@ -14,6 +14,7 @@
     <li>exa</li>
     <li>fd</li>
     <li>figlet</li>
+    <li>fluent-gtk-theme</li>
     <li>fzf</li>
     <li>gum</li>
     <li>hypridle</li>
@@ -25,6 +26,7 @@
     <li>nwg-look-bin</li>
     <li>pacseek</li>
     <li>pastel</li>
+    <li>polkit-kde-agent</li>
     <li>python-clickgen</li>
     <li>python-pip</li>
     <li>python-pywal</li>
@@ -42,8 +44,10 @@
     <li>waybar-module-pacman-updates-git</li>
     <li>waybar</li>
     <li>wheel (pip)</li>
+    <li>wireplumber</li>
     <li>wlogout</li>
     <li>xdg-desktop-portal-hyprland</li>
+    <li>xdg-user-dirs</li>
     <li>zsh</li>
   </ul>
   </details>
