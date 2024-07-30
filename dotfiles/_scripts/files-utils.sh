@@ -141,6 +141,8 @@ _replaceLineInTemplate() {
     fi
 
     _replaceLineIfUnchanged "$cacheFile" "$oldLine" "$newLine"
+
+    sleep 0.1
 }
 
 # -----------------------------------------------------
@@ -219,6 +221,8 @@ _replaceHexColor() {
     else
         _message "error" "The color was not modified."
     fi
+
+    sleep 0.1
 }
 
 # -----------------------------------------------------
