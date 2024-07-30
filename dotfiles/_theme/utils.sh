@@ -83,6 +83,16 @@ _applyWlogoutTheme() {
     _replaceHexColor "$DOTFILES/wlogout/icons/suspend.svg" "6" "$foregroundColor"
 }
 
+_applyTofiTheme() {
+    local textColor="$1"
+    local backgroundColor="$2"
+    local selectionColor="$3"
+    
+    _replaceHexColor "$DOTFILES/tofi/colors" "1" "$textColor"
+    _replaceHexColor "$DOTFILES/tofi/colors" "2" "$backgroundColor"
+    _replaceHexColor "$DOTFILES/tofi/colors" "3" "$selectionColor"
+}
+
 _applyWaybarTheme() {
     local primaryColor="$1"
     local secondaryColor="$2"
