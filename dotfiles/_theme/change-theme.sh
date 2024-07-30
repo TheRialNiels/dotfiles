@@ -108,8 +108,10 @@ _applyDunstTheme "$background" "$altBackground" "$foreground" "$altBackground2" 
 
 _applyHyprlockTheme "$altForeground"
 
-_applyWaybarTheme "$color1" "$altForeground"
-
 _applyWlogoutTheme "$altForeground2"
+
+_applyTofiTheme "$altForeground" "$background" "$color1"
+
+_applyWaybarTheme "$color1" "$altForeground"
 
 notify-send "Theme applied successfully."

@@ -11,9 +11,6 @@ hide-cursor = true
 font = Hack Nerd Font
 font-size = 24
 
-text-color = #4e4e5f
-
 prompt-text = " : "
 
-background-color = #11111bd9
-selection-color = #83A4E7
+include = ./colors
