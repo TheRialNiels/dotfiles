@@ -2,6 +2,7 @@
 
 export generalPackagesPacman=(
     "brightnessctl"
+    "cliphist"
     "fluent-gtk-theme"
     "fzf"
     "imagemagick"
@@ -23,10 +24,10 @@ export generalPackagesPacman=(
 )
 
 export generalPackagesYay=(
+    "python-clickgen"
     "bibata-cursor-theme"
     "nwg-look-bin"
     "pacseek"
-    "python-clickgen"
     "tofi"
 )
 

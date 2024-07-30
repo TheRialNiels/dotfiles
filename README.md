@@ -8,6 +8,7 @@
     <li>bibata-cursor-theme</li>
     <li>brightnessctl</li>
     <li>build (pip)</li>
+    <li>cliphist</li>
     <li>cmake</li>
     <li>colorz (pip)</li>
     <li>colorz (pip)</li>
@@ -20,6 +21,7 @@
     <li>gum</li>
     <li>hypridle</li>
     <li>hyprlock</li>
+    <li>hyprpicker</li>
     <li>imagemagick</li>
     <li>installer (pip)</li>
     <li>jq</li>

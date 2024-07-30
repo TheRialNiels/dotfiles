@@ -8,6 +8,7 @@ export hyprlandPackagesPacman=(
 export hyprlandPackagesYay=(
     "hypridle"
     "hyprlock"
+    "hyprpicker"
     "swww"
     "waybar-module-pacman-updates-git"
     "wlogout"
