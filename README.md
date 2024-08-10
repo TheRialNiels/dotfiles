@@ -18,6 +18,7 @@
     <li>figlet</li>
     <li>fluent-gtk-theme</li>
     <li>fzf</li>
+    <li>grimblast</li>
     <li>gum</li>
     <li>hypridle</li>
     <li>hyprlock</li>
@@ -42,6 +43,7 @@
     <li>sd</li>
     <li>setuptools (pip)</li>
     <li>starship</li>
+    <li>swappy</li>
     <li>swww</li>
     <li>tofi</li>
     <li>ttf-hack-nerd</li>

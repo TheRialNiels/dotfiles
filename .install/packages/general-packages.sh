@@ -15,6 +15,7 @@ export generalPackagesPacman=(
     "python-pip"
     "python-pywal"
     "starship"
+    "swappy"
     "ttf-hack-nerd"
     "ttf-nerd-fonts-symbols"
     "vim"
@@ -26,6 +27,7 @@ export generalPackagesPacman=(
 export generalPackagesYay=(
     "python-clickgen"
     "bibata-cursor-theme"
+    "grimblast"
     "nwg-look-bin"
     "pacseek"
     "tofi"
