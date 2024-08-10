@@ -26,6 +26,21 @@ export LS_COLORS="${LS_COLORS}:su=30;41:ow=30;42:st=30;44:"
 export DOTFILES=$HOME/dotfiles
 
 ## ----------------------------
+## Default Pictures Directory
+## ----------------------------
+export XDG_PICTURES_DIR=$(xdg-user-dir PICTURES)
+
+## ----------------------------
+## Default Screenshots Directory
+## ----------------------------
+export XDG_SCREENSHOTS_DIR="${XDG_PICTURES_DIR}/Screenshots"
+
+## ----------------------------
+## Grimblast Editor
+## ----------------------------
+export GRIMBLAST_EDITOR=swappy
+
+## ----------------------------
 ## Zsh Variable
 ## ----------------------------
 export ZSH=$DOTFILES/zsh
