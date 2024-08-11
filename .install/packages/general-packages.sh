@@ -21,6 +21,7 @@ export generalPackagesPacman=(
     "vim"
     "wireplumber"
     "xdg-user-dirs"
+    "yazi"
     "zsh"
 )
 

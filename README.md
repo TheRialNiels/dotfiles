@@ -56,6 +56,7 @@
     <li>wlogout</li>
     <li>xdg-desktop-portal-hyprland</li>
     <li>xdg-user-dirs</li>
+    <li>yazi</li>
     <li>zsh</li>
   </ul>
   </details>
