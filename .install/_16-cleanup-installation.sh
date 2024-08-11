@@ -53,3 +53,10 @@ if [[ ! -d "$HOME/.local/share/icons/Fluent" ]]; then
     cd "$DOTFILES_SCRIPT_PATH" || exit
     _message "success" "Fluent Icons Theme installed."
 fi
+
+## Define Dotfiles Env Variabl
+if [[ "$mode" == "dev" ]]; then
+    _replaceLineNumberInFile "$DOTFILES_SCRIPT_PATH/dotfiles/zsh/.zshenv" "26" "export DOTFILES=$DOTFILES_SCRIPT_PATH/dotfiles"
+else
+    _replaceLineNumberInFile "$DOTFILES_SCRIPT_PATH/dotfiles/zsh/.zshenv" "26" "export DOTFILES=$HOME/dotfiles"
+fi
