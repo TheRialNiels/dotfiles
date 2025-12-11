@@ -1,17 +1,11 @@
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
 
-HISTFILE=~/.histfile
-HISTSIZE=1000000
-SAVEHIST=1000000
+# All the default aliases and functions
+source ~/dotfiles/zshrc/zsh/rc
 
-setopt beep nomatch
-unsetopt autocd extendedglob
-
-bindkey -v
-
-zstyle :compinstall filename '${HOME}/.zshrc'
-
-autoload -Uz compinit
-compinit
+# Add your own exports, aliases, and functions here.
+#
+# Make an alias for invoking commands you use constantly
+# alias p='python'
 
