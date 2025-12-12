@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 # All the default aliases and functions
-source ~/dotfiles/zshrc/zsh/rc
+source ~/dotfiles/zshrc/.config/zsh/rc
 
 # Add your own exports, aliases, and functions here.
 #
