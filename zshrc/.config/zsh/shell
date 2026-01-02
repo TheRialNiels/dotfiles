@@ -1,0 +1,40 @@
+# History Control
+
+HISTFILE="$HOME/.histfile"
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# Append to history immediately
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+# Share history across sessions
+setopt SHARE_HISTORY
+# Ignore duplicate commands and commands starting with spaces
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+
+
+# Shell Behavior
+
+setopt BEEP
+# setopt NOMATCH
+# unsetopt AUTO_CD EXTENDED_GLOB
+# Use vim mode
+bindkey -v
+
+
+# Autocompletion
+
+# Required for compinit
+# zstyle :compinstall filename "$HOME/.zshrc"
+autoload -Uz compinit
+compinit
+
+
+# Custom PATH
+export PATH="$HOME/.local/share/omarchy/bin:$PATH"
+
+
+# Disable Command Hashing (Bash `set +h`)
+setopt NO_HASH_CMDS
+

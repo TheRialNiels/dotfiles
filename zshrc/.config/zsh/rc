@@ -1,0 +1,8 @@
+source ~/dotfiles/zshrc/.config/zsh/shell
+source ~/dotfiles/zshrc/.config/zsh/aliases
+source ~/dotfiles/zshrc/.config/zsh/init
+source ~/dotfiles/zshrc/.config/zsh/functions
+source ~/dotfiles/zshrc/.config/zsh/envs
+source ~/dotfiles/zshrc/.config/zsh/keybindings
+[[ $- == *i* ]] && source ~/dotfiles/zshrc/.config/zsh/inputrc
+
