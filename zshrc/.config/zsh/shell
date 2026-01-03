@@ -23,12 +23,9 @@ setopt BEEP
 bindkey -v
 
 
-# Autocompletion
-
 # Required for compinit
-# zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 
 # Custom PATH
