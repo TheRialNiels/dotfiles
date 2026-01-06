@@ -107,7 +107,7 @@ return {
       provider = {
         snacks = {
           win = {
-            position = "left",
+            position = "right",
           },
         },
       },
