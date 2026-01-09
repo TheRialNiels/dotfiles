@@ -37,7 +37,11 @@ layout {
         datetime_timezone "America/Mexico_City"
       }
     }
-    children
-  }
 
+    children
+
+    pane size=1 borderless=true {
+      plugin location="status-bar"
+    }
+  }
 }
