@@ -19,3 +19,9 @@ vim.opt.textwidth = 80
 
 -- Automatically insert newlines when typing past the textwidth limit
 vim.opt.formatoptions:append("t")
+
+-- Search ignoring case
+vim.opt.ignorecase = true
+
+-- Disable 'ignorecase' option if the search pattern contains uppercase characters
+vim.opt.smartcase = true
