@@ -17,9 +17,6 @@ vim.opt.list = false
 -- Set the maximum line length
 vim.opt.textwidth = 80
 
--- Automatically insert newlines when typing past the textwidth limit
-vim.opt.formatoptions:append("t")
-
 -- Search ignoring case
 vim.opt.ignorecase = true
 
