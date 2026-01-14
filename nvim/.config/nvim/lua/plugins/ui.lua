@@ -194,7 +194,7 @@ return {
         twilight = { enabled = true }, -- Enable twilight integration
       },
     },
-    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } }, -- Keybinding to toggle Zen Mode
+    keys = { { "<leader>zm", "<cmd>ZenMode<cr>", desc = "Zen Mode" } }, -- Keybinding to toggle Zen Mode
   },
 
   -- Plugin: snacks.nvim
