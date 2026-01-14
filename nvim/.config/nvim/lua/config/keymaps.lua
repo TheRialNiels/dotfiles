@@ -26,6 +26,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Telescope projects
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Projects" })
+
 ----- Tmux Navigation ------
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
