@@ -40,8 +40,8 @@ layout {
 
     children
 
-    pane size=1 borderless=true {
-      plugin location="status-bar"
-    }
+    // pane size=1 borderless=true {
+    //   plugin location="status-bar"
+    // }
   }
 }
