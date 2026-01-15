@@ -1,7 +1,5 @@
 -- Configure Node.js before loading plugins
-pcall(function()
-  require("config.nodejs").setup({ silent = true })
-end)
+require("config.nodejs").setup({ silent = true })
 
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
