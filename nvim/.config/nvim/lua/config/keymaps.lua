@@ -30,7 +30,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Projects" })
 
 ----- Tmux Navigation ------
-local nvim_tmux_nav = require("nvim-tmux-navigation")
+local ok, nvim_tmux_nav = pcall(require, "nvim-tmux-navigation")
+if not ok then
+  return
+end
 
 vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft) -- Navigate to the left pane
 vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown) -- Navigate to the bottom pane

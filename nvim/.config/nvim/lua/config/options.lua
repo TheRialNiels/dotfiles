@@ -27,7 +27,9 @@ vim.opt.smartcase = true
 vim.opt.foldmethod = "expr"
 
 -- Let Tree-sitter decide fold levels based on the syntax tree
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+pcall(function()
+  vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+end)
 
 -- Keep all folds open by default (do not start with everything folded)
 vim.opt.foldlevel = 99
