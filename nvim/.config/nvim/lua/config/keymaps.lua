@@ -13,6 +13,22 @@ vim.keymap.set({ "i", "n", "v" }, "<C-c>", [[<C-\><C-n>]])
 -- Screen Keys
 vim.keymap.set({ "n" }, "<leader>uk", "<cmd>Screenkey<CR>")
 
+-- Fold
+vim.keymap.set("n", "<leader>zz", "za", { desc = "Toggle fold" })
+
+-- Scroll down half a page and center the cursor
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
+
+-- Scroll up half a page and center the cursor
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+
+-- Keep search results centered
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Telescope projects
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Projects" })
+
 ----- Tmux Navigation ------
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
