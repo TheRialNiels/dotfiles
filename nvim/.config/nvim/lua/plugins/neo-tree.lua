@@ -10,5 +10,19 @@ return {
         },
       },
     },
+    window = {
+      mappings = {
+        -- Disable default hkl
+        ["h"] = "noop",
+        ["k"] = "noop",
+        ["l"] = "noop",
+
+        -- New movement keys
+        ["j"] = "close_node",
+        ["ñ"] = "open",
+
+        ["P"] = { "toggle_preview", config = { use_float = false } },
+      },
+    },
   },
 }

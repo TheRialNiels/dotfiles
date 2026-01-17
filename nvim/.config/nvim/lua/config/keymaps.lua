@@ -4,6 +4,26 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local opts = { noremap = true, silent = true }
+
+-- Disable default hjkl movement
+vim.keymap.set({ "n", "v" }, "h", "<Nop>", opts)
+vim.keymap.set({ "n", "v" }, "j", "<Nop>", opts)
+vim.keymap.set({ "n", "v" }, "k", "<Nop>", opts)
+vim.keymap.set({ "n", "v" }, "l", "<Nop>", opts)
+
+-- New movement keys
+vim.keymap.set({ "n", "v" }, "j", "h", opts) -- left
+vim.keymap.set({ "n", "v" }, "k", "j", opts) -- down
+vim.keymap.set({ "n", "v" }, "l", "k", opts) -- up
+vim.keymap.set({ "n", "v" }, "ñ", "l", opts) -- right
+
+-- Operator-pending mode
+vim.keymap.set("o", "j", "h", opts)
+vim.keymap.set("o", "k", "j", opts)
+vim.keymap.set("o", "l", "k", opts)
+vim.keymap.set("o", "ñ", "l", opts)
+
 -- Map Ctrl+b in insert mode to delete to the end of the word without leaving insert mode
 vim.keymap.set("i", "<C-b>", "<C-o>de")
 
