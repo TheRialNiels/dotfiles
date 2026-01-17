@@ -214,6 +214,30 @@ return {
     opts = {
       notifier = {},
       image = {},
+      win = {
+        input = {
+          keys = {
+            -- Disable h
+            ["h"] = false,
+
+            -- New movement keys
+            ["<c-k>"] = { "list_down", mode = { "i", "n" } },
+            ["<c-l>"] = { "list_up", mode = { "i", "n" } },
+          },
+        },
+        list = {
+          keys = {
+            -- Disable h
+            ["h"] = false,
+
+            -- New movement keys
+            ["<c-k>"] = "list_down",
+            ["<c-l>"] = "list_up",
+            ["k"] = "list_down",
+            ["l"] = "list_up",
+          },
+        },
+      },
       picker = {
         hidden = true,
         exclude = {

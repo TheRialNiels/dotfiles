@@ -9,6 +9,9 @@ return {
           ".git",
         },
       },
+      mappings = {
+        ["f"] = "fuzzy_filter",
+      },
     },
     window = {
       mappings = {
