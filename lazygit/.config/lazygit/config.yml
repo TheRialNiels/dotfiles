@@ -1,0 +1,13 @@
+keybinding:
+  universal:
+    nextItem-alt: k
+    prevItem-alt: l
+    scrollLeft: J
+    scrollRight: Ñ
+    nextBlock-alt: k
+    prevBlock-alt: l
+    scrollDownMain-alt1: K
+    scrollUpMain-alt1: L
+  commits:
+    moveDownCommit: <c-k>
+    moveUpCommit: <c-l>
