@@ -11,7 +11,7 @@ keybinds clear-defaults=true {
         bind "down" { MoveFocus "down"; }
         bind "up" { MoveFocus "up"; }
         bind "right" { MoveFocus "right"; }
-        bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
+        bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
         bind "j" { MoveFocus "left"; }
@@ -20,9 +20,7 @@ keybinds clear-defaults=true {
         bind "ñ" { MoveFocus "right"; }
         bind "n" { NewPane; SwitchToMode "locked"; }
         bind "p" { SwitchToMode "normal"; }
-        bind "J" { NewPane "left"; SwitchToMode "locked"; }
         bind "K" { NewPane "down"; SwitchToMode "locked"; }
-        bind "L" { NewPane "up"; SwitchToMode "locked"; }
         bind "Ñ" { NewPane "right"; SwitchToMode "locked"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "x" { CloseFocus; SwitchToMode "locked"; }
@@ -152,8 +150,10 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocus "up"; }
         bind "Alt ñ" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
+        bind "Alt x" { CloseFocus; SwitchToMode "locked"; }
+        bind "Alt X" { CloseTab; SwitchToMode "locked"; }
         bind "Alt y" {
-            LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij_forgot.wasm" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
                 floating true
                 "brake pane left" "ctrl + g + t + ["
                 "brake pane right" "ctrl + g + t + ]"
@@ -164,8 +164,8 @@ keybinds clear-defaults=true {
                 "choose lower pane" "ctrl + g + p + k"
                 "choose right pane" "ctrl + g + p + l"
                 "choose upper pane" "ctrl + g + p + ñ"
-                "close pane" "ctrl + g + p + x"
-                "close tab" "ctrl + g + t + x"
+                "close pane" "Alt + x || ctrl + g + p + x"
+                "close tab" "Alt + X || ctrl + g + t + x"
                 "decrease pane left" "ctrl + g + n + J"
                 "decrease pane bottom" "ctrl + g + n + K"
                 "decrease pane top" "ctrl + g + n + L"
@@ -184,10 +184,12 @@ keybinds clear-defaults=true {
                 "move pane to top" "ctrl + g + h + L"
                 "move pane to right" "ctrl + g + h + Ñ"
                 "new pane" "Alt + n || ctrl + g + p + n"
+                "new pane right" "ctrl + g + p + ñ"
+                "new pane down" "ctrl + g + p + k"
                 "new tab" "ctrl + g + t + n"
                 "open session manager" "ctrl + g + o + w"
                 "quit zellij" "ctrl + g + q"
-                "rename pane" "ctrl + g + p + c"
+                "rename pane" "ctrl + g + p + r"
                 "rename tab" "ctrl + g + t + r"
                 search "ctrl + g + s + s"
                 "sync tab" "ctrl + g + t + s"
@@ -278,7 +280,7 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    zjstatus location="file:$HOME/.config/zellij/plugins/zjstatus.wasm"
+    zjstatus location="file:~/.config/zellij/plugins/zjstatus.wasm"
 }
 
 // Plugins to load in the background when a new session starts
