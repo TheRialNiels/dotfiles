@@ -235,8 +235,8 @@ return {
               -- New movement keys
               ["<c-k>"] = { "list_down", mode = { "i", "n" } },
               ["<c-l>"] = { "list_up", mode = { "i", "n" } },
-              ["k"] = { "list_down", mode = { "i", "n" } },
-              ["l"] = { "list_up", mode = { "i", "n" } },
+              ["k"] = { "list_down", mode = { "n" } },
+              ["l"] = { "list_up", mode = { "n" } },
             },
           },
           list = {
