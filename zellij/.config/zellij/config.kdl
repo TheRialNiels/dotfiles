@@ -12,16 +12,18 @@ keybinds clear-defaults=true {
         bind "up" { MoveFocus "up"; }
         bind "right" { MoveFocus "right"; }
         bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
-        bind "d" { NewPane "down"; SwitchToMode "locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
-        bind "h" { MoveFocus "left"; }
-        bind "j" { MoveFocus "down"; }
-        bind "k" { MoveFocus "up"; }
-        bind "l" { MoveFocus "right"; }
+        bind "j" { MoveFocus "left"; }
+        bind "k" { MoveFocus "down"; }
+        bind "l" { MoveFocus "up"; }
+        bind "ñ" { MoveFocus "right"; }
         bind "n" { NewPane; SwitchToMode "locked"; }
         bind "p" { SwitchToMode "normal"; }
-        bind "r" { NewPane "right"; SwitchToMode "locked"; }
+        bind "J" { NewPane "left"; SwitchToMode "locked"; }
+        bind "K" { NewPane "down"; SwitchToMode "locked"; }
+        bind "L" { NewPane "up"; SwitchToMode "locked"; }
+        bind "Ñ" { NewPane "right"; SwitchToMode "locked"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "locked"; }
         bind "x" { CloseFocus; SwitchToMode "locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "locked"; }
@@ -44,10 +46,10 @@ keybinds clear-defaults=true {
         bind "[" { BreakPaneLeft; SwitchToMode "locked"; }
         bind "]" { BreakPaneRight; SwitchToMode "locked"; }
         bind "b" { BreakPane; SwitchToMode "locked"; }
-        bind "h" { GoToPreviousTab; }
-        bind "j" { GoToNextTab; }
-        bind "k" { GoToPreviousTab; }
-        bind "l" { GoToNextTab; }
+        bind "j" { GoToPreviousTab; }
+        bind "k" { GoToNextTab; }
+        bind "l" { GoToPreviousTab; }
+        bind "ñ" { GoToNextTab; }
         bind "n" { NewTab; SwitchToMode "locked"; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "locked"; }
@@ -63,14 +65,14 @@ keybinds clear-defaults=true {
         bind "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
         bind "=" { Resize "Increase"; }
-        bind "H" { Resize "Decrease left"; }
-        bind "J" { Resize "Decrease down"; }
-        bind "K" { Resize "Decrease up"; }
-        bind "L" { Resize "Decrease right"; }
-        bind "h" { Resize "Increase left"; }
-        bind "j" { Resize "Increase down"; }
-        bind "k" { Resize "Increase up"; }
-        bind "l" { Resize "Increase right"; }
+        bind "J" { Resize "Decrease left"; }
+        bind "K" { Resize "Decrease down"; }
+        bind "L" { Resize "Decrease up"; }
+        bind "Ñ" { Resize "Decrease right"; }
+        bind "j" { Resize "Increase left"; }
+        bind "k" { Resize "Increase down"; }
+        bind "l" { Resize "Increase up"; }
+        bind "ñ" { Resize "Increase right"; }
         bind "r" { SwitchToMode "normal"; }
     }
     move {
@@ -78,10 +80,10 @@ keybinds clear-defaults=true {
         bind "down" { MovePane "down"; }
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
-        bind "h" { MovePane "left"; }
-        bind "j" { MovePane "down"; }
-        bind "k" { MovePane "up"; }
-        bind "l" { MovePane "right"; }
+        bind "j" { MovePane "left"; }
+        bind "k" { MovePane "down"; }
+        bind "l" { MovePane "up"; }
+        bind "ñ" { MovePane "right"; }
         bind "m" { SwitchToMode "normal"; }
         bind "n" { MovePane; }
         bind "p" { MovePaneBackwards; }
@@ -94,10 +96,10 @@ keybinds clear-defaults=true {
         bind "Alt right" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
         bind "e" { EditScrollback; SwitchToMode "locked"; }
         bind "f" { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "Alt h" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
-        bind "Alt j" { MoveFocus "down"; SwitchToMode "locked"; }
-        bind "Alt k" { MoveFocus "up"; SwitchToMode "locked"; }
-        bind "Alt l" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
+        bind "Alt j" { MoveFocusOrTab "left"; SwitchToMode "locked"; }
+        bind "Alt k" { MoveFocus "down"; SwitchToMode "locked"; }
+        bind "Alt l" { MoveFocus "up"; SwitchToMode "locked"; }
+        bind "Alt ñ" { MoveFocusOrTab "right"; SwitchToMode "locked"; }
         bind "s" { SwitchToMode "normal"; }
     }
     search {
@@ -143,44 +145,44 @@ keybinds clear-defaults=true {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
+        bind "Alt J" { MoveTab "left"; }
+        bind "Alt Ñ" { MoveTab "right"; }
+        bind "Alt j" { MoveFocusOrTab "left"; }
+        bind "Alt k" { MoveFocus "down"; }
+        bind "Alt l" { MoveFocus "up"; }
+        bind "Alt ñ" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
-        bind "Alt o" { MoveTab "right"; }
         bind "Alt y" {
-            LaunchOrFocusPlugin "file:/home/niels/.config/zellij/plugins/zellij_forgot.wasm" {
+            LaunchOrFocusPlugin "file:$HOME/.config/zellij/plugins/zellij_forgot.wasm" {
                 floating true
                 "brake pane left" "ctrl + g + t + ["
                 "brake pane right" "ctrl + g + t + ]"
                 "brake pane to new tab" "ctrl + g + t + b"
                 "change focus of pane" "Alt + arrow key || ctrl + g + p + arrow key"
                 "change focus of tab" "ctrl + g + t + arrow key"
-                "choose left pane" "ctrl + g + p + r"
-                "choose lower pane" "ctrl + g + p + j"
+                "choose left pane" "ctrl + g + p + j"
+                "choose lower pane" "ctrl + g + p + k"
                 "choose right pane" "ctrl + g + p + l"
-                "choose upper pane" "ctrl + g + p + k"
+                "choose upper pane" "ctrl + g + p + ñ"
                 "close pane" "ctrl + g + p + x"
                 "close tab" "ctrl + g + t + x"
-                "decrease pane bottom" "ctrl + g + n + J"
-                "decrease pane left" "ctrl + g + n + H"
-                "decrease pane right" "ctrl + g + n + L"
+                "decrease pane left" "ctrl + g + n + J"
+                "decrease pane bottom" "ctrl + g + n + K"
+                "decrease pane top" "ctrl + g + n + L"
+                "decrease pane right" "ctrl + g + n + Ñ"
                 "decrease pane size" "ctrl + g + n + -"
-                "decrease pane top" "ctrl + g + n + K"
                 "detach session" "ctrl + g + o + w"
                 "go into edit mode" "ctrl + g + s + e"
-                "increase pane bottom" "ctrl + g + n + j"
-                "increase pane left" "ctrl + g + n + h"
-                "increase pane right" "ctrl + g + n + l"
+                "increase pane left" "ctrl + g + n + J"
+                "increase pane bottom" "ctrl + g + n + K"
+                "increase pane top" "ctrl + g + n + L"
+                "increase pane right" "ctrl + g + n + Ñ"
                 "increase pane size" "ctrl + g + n + +"
-                "increase pane top" "ctrl + g + n + k"
                 lock "ctrl + g"
-                "move pane to bottom" "ctrl + g + h + j"
-                "move pane to left" "ctrl + g + h + h"
-                "move pane to right" "ctrl + g + h + l"
-                "move pane to top" "ctrl + g + h + k"
+                "move pane to left" "ctrl + g + h + J"
+                "move pane to bottom" "ctrl + g + h + K"
+                "move pane to top" "ctrl + g + h + L"
+                "move pane to right" "ctrl + g + h + Ñ"
                 "new pane" "Alt + n || ctrl + g + p + n"
                 "new tab" "ctrl + g + t + n"
                 "open session manager" "ctrl + g + o + w"
@@ -236,10 +238,10 @@ keybinds clear-defaults=true {
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
         bind "d" { HalfPageScrollDown; }
         bind "Ctrl f" { PageScrollDown; }
-        bind "h" { PageScrollUp; }
-        bind "j" { ScrollDown; }
-        bind "k" { ScrollUp; }
-        bind "l" { PageScrollDown; }
+        bind "j" { PageScrollUp; }
+        bind "k" { ScrollDown; }
+        bind "l" { ScrollUp; }
+        bind "ñ" { PageScrollDown; }
         bind "u" { HalfPageScrollUp; }
     }
     entersearch {
@@ -276,7 +278,7 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    zjstatus location="file:/home/niels/.config/zellij/plugins/zjstatus.wasm"
+    zjstatus location="file:$HOME/.config/zellij/plugins/zjstatus.wasm"
 }
 
 // Plugins to load in the background when a new session starts
