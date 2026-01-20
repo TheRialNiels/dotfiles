@@ -110,6 +110,11 @@ fenv() {
 }
 
 gb() {
-	git branch -a | fzf | xargs git checkout
+  git branch -a \
+    | grep -v 'HEAD' \
+    | sed 's/^[* ]*//' \
+    | fzf \
+    | sed 's#remotes/origin/##' \
+    | xargs git switch
 }
 
