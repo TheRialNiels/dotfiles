@@ -23,3 +23,6 @@ if command -v fzf &> /dev/null; then
   fi
 fi
 
+if command -v fnm &> /dev/null; then
+  eval "$(fnm env --use-on-cd)"
+fi
