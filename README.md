@@ -126,8 +126,7 @@ Most of the setup scripts in this repository are **derived from Omarchy**.
 
 **Omarchy** is a beautiful, modern, and opinionated Linux distribution created by **DHH**.
 
-Learn more at:
-👉 [https://omarchy.org](https://omarchy.org)
+Learn more at: [https://omarchy.org](https://omarchy.org)
 
 ---
 
