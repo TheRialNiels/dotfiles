@@ -17,7 +17,7 @@ if [ -n "$NVIDIA" ]; then
     exit 0
   fi
 
-  omarchy-pkg-add "$KERNEL_HEADERS" "${PACKAGES[@]}"
+  trnd-pkg-add "$KERNEL_HEADERS" "${PACKAGES[@]}"
 
   # Configure modprobe for early KMS
   sudo tee /etc/modprobe.d/nvidia.conf <<EOF >/dev/null

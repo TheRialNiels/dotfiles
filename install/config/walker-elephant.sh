@@ -2,7 +2,7 @@
 
 # Ensure Walker service is started automatically on boot
 mkdir -p ~/.config/autostart/
-cp $OMARCHY_PATH/default/walker/walker.desktop ~/.config/autostart/
+cp $TRND_PATH/default/walker/walker.desktop ~/.config/autostart/
 
 # Create pacman hook to restart walker after updates
 sudo mkdir -p /etc/pacman.d/hooks
@@ -17,9 +17,9 @@ Target = elephant*
 [Action]
 Description = Restarting Walker services after system update
 When = PostTransaction
-Exec = $OMARCHY_PATH/bin/omarchy-restart-walker
+Exec = $TRND_PATH/bin/trnd-restart-walker
 EOF
 
 # Link the visual theme menu config
 mkdir -p ~/.config/elephant/menus
-ln -snf $OMARCHY_PATH/default/elephant/omarchy_themes.lua ~/.config/elephant/menus/omarchy_themes.lua
+ln -snf $TRND_PATH/default/elephant/trnd_themes.lua ~/.config/elephant/menus/trnd_themes.lua
