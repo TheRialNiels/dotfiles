@@ -1,8 +1,8 @@
 if command -v limine &>/dev/null; then
   sudo pacman -S --noconfirm --needed limine-snapper-sync limine-mkinitcpio-hook
 
-  sudo tee /etc/mkinitcpio.conf.d/omarchy_hooks.conf <<EOF >/dev/null
-HOOKS=(base udev plymouth keyboard autodetect microcode modconf kms keymap consolefont block encrypt filesystems fsck btrfs-overlayfs)
+  sudo tee /etc/mkinitcpio.conf.d/trnd_hooks.conf <<EOF >/dev/null
+HOOKS=(base udev keyboard autodetect microcode modconf kms keymap consolefont block encrypt filesystems fsck btrfs-overlayfs)
 EOF
   sudo tee /etc/mkinitcpio.conf.d/thunderbolt_module.conf <<EOF >/dev/null
 MODULES+=(thunderbolt)
@@ -29,7 +29,7 @@ EOF
 
   CMDLINE=$(grep "^[[:space:]]*cmdline:" "$limine_config" | head -1 | sed 's/^[[:space:]]*cmdline:[[:space:]]*//')
 
-  sudo cp $OMARCHY_PATH/default/limine/default.conf /etc/default/limine
+  sudo cp $TRND_PATH/default/limine/default.conf /etc/default/limine
   sudo sed -i "s|@@CMDLINE@@|$CMDLINE|g" /etc/default/limine
 
   # UKI and EFI fallback are EFI only
@@ -43,11 +43,11 @@ EOF
   fi
 
   # We overwrite the whole thing knowing the limine-update will add the entries for us
-  sudo cp $OMARCHY_PATH/default/limine/limine.conf /boot/limine.conf
+  sudo cp $TRND_PATH/default/limine/limine.conf /boot/limine.conf
 
 
   # Match Snapper configs if not installing from the ISO
-  if [[ -z ${OMARCHY_CHROOT_INSTALL:-} ]]; then
+  if [[ -z ${TRND_CHROOT_INSTALL:-} ]]; then
     if ! sudo snapper list-configs 2>/dev/null | grep -q "root"; then
       sudo snapper -c root create-config /
     fi
@@ -97,13 +97,13 @@ fi
 #   ! cat /sys/class/dmi/id/bios_vendor 2>/dev/null | grep -qi "American Megatrends" &&
 #   ! cat /sys/class/dmi/id/bios_vendor 2>/dev/null | grep -qi "Apple"; then
 #
-#   uki_file=$(find /boot/EFI/Linux/ -name "omarchy*.efi" -printf "%f\n" 2>/dev/null | head -1)
+#   uki_file=$(find /boot/EFI/Linux/ -name "trnd*.efi" -printf "%f\n" 2>/dev/null | head -1)
 #
 #   if [[ -n "$uki_file" ]]; then
 #     sudo efibootmgr --create \
 #       --disk "$(findmnt -n -o SOURCE /boot | sed 's/p\?[0-9]*$//')" \
 #       --part "$(findmnt -n -o SOURCE /boot | grep -o 'p\?[0-9]*$' | sed 's/^p//')" \
-#       --label "Omarchy" \
+#       --label "TRND" \
 #       --loader "\\EFI\\Linux\\$uki_file"
 #   fi
 # fi
