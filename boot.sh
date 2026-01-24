@@ -17,14 +17,14 @@ echo -e "\n$ansi_art\n"
 
 sudo pacman -Syu --noconfirm --needed git
 
-# Use custom repo if specified, otherwise default to basecamp/trnd
+# Use custom repo if specified, otherwise default to TheRialNiels/dotfiles
 TRND_REPO="${TRND_REPO:-TheRialNiels/dotfiles}"
 
 echo -e "\nCloning TRND from: https://github.com/${TRND_REPO}.git"
 rm -rf ~/.local/share/trnd/
 git clone "https://github.com/${TRND_REPO}.git" ~/.local/share/trnd >/dev/null
 
-# Use custom branch if instructed, otherwise default to master
+# Use custom branch if instructed, otherwise default to main
 TRND_REF="${TRND_REF:-main}"
 if [[ $TRND_REF != "main" ]]; then
   echo -e "\e[32mUsing branch: $TRND_REF\e[0m"
