@@ -1,6 +1,6 @@
-OMARCHY_MIGRATIONS_STATE_PATH=~/.local/state/omarchy/migrations
-mkdir -p $OMARCHY_MIGRATIONS_STATE_PATH
+TRND_MIGRATIONS_STATE_PATH=~/.local/state/trnd/migrations
+mkdir -p $TRND_MIGRATIONS_STATE_PATH
 
-for file in ~/.local/share/omarchy/migrations/*.sh; do
-  touch "$OMARCHY_MIGRATIONS_STATE_PATH/$(basename "$file")"
+for file in ~/.local/share/trnd/migrations/*.sh; do
+  touch "$TRND_MIGRATIONS_STATE_PATH/$(basename "$file")"
 done
