@@ -109,7 +109,7 @@ fenv() {
   env | fzf --preview 'echo {}'
 }
 
-gb() {
+fgb() {
   git branch -a \
     | grep -v 'HEAD' \
     | sed 's/^[* ]*//' \
