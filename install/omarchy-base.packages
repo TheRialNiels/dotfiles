@@ -7,7 +7,6 @@ asdcontrol
 avahi
 bash-completion
 bat
-bibata-cursor-theme
 bluetui
 bolt
 brightnessctl
@@ -35,7 +34,6 @@ fd
 ffmpegthumbnailer
 fontconfig
 fzf
-gemini-cli
 ghostty
 github-cli
 gnome-calculator
@@ -109,7 +107,6 @@ sddm
 slurp
 spotify
 starship
-stow
 sushi
 swaybg
 swayosd
@@ -126,7 +123,6 @@ ufw-docker
 unzip
 usage
 uwsm
-vial-appimage
 waybar
 wayfreeze
 whois
@@ -142,10 +138,17 @@ xmlstarlet
 yaru-icon-theme
 yay
 zoxide
-zsh
-zsh-auto-venv-git
-zsh-autocomplete-git
-zsh-autosuggestions-git
-zsh-fast-syntax-highlighting
-zsh-sudo
-zsh-vi-mode
+
+# TODO - Check if aur is not required
+# bibata-cursor-theme
+# gemini-cli
+# stow
+# vial-appimage
+# zsh
+# zsh-auto-venv-git
+# zsh-autocomplete-git
+# zsh-autosuggestions-git
+# zsh-fast-syntax-highlighting
+# zsh-sudo
+# zsh-vi-mode
+
