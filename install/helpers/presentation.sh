@@ -21,14 +21,13 @@ else
   export TERM_HEIGHT=24
 fi
 
-export LOGO_PATH="$TRND_PATH/logo.txt"
+export LOGO_PATH="$OMARCHY_PATH/logo.txt"
 export LOGO_WIDTH=$(awk '{ if (length > max) max = length } END { print max+0 }' "$LOGO_PATH" 2>/dev/null || echo 0)
 export LOGO_HEIGHT=$(wc -l <"$LOGO_PATH" 2>/dev/null || echo 0)
 
 export PADDING_LEFT=$((($TERM_WIDTH - $LOGO_WIDTH) / 2))
 export PADDING_LEFT_SPACES=$(printf "%*s" $PADDING_LEFT "")
 
-# TODO - Change theme for nord theme
 # Tokyo Night theme for gum confirm
 export GUM_CONFIRM_PROMPT_FOREGROUND="6"     # Cyan for prompt
 export GUM_CONFIRM_SELECTED_FOREGROUND="0"   # Black text on selected

@@ -1,7 +1,6 @@
-# TODO - Change to stow
-# Copy over TRND configs
+# Copy over Omarchy configs
 mkdir -p ~/.config
-cp -R ~/.local/share/trnd/config/* ~/.config/
+cp -R ~/.local/share/omarchy/config/* ~/.config/
 
-# Use default bashrc from TRND
-cp ~/.local/share/trnd/default/bashrc ~/.bashrc
+# Use default bashrc from Omarchy
+cp ~/.local/share/omarchy/default/bashrc ~/.bashrc
