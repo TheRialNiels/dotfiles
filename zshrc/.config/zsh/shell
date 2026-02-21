@@ -36,6 +36,9 @@ export PATH="$HOME/.local/share/omarchy/bin:$PATH"
 setopt NO_HASH_CMDS
 
 # Zellij
-WM_VAR="/$ZELLIJ"
-WM_CMD="zellij"
+# WM_VAR="/$ZELLIJ"
+# WM_CMD="zellij"
 
+# Tmux
+# WM_VAR="/$TMUX"
+# WM_CMD="tmux"
