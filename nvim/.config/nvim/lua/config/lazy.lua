@@ -14,30 +14,60 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Setup lazy.nvim with the specified configuration
 require("lazy").setup({
   spec = {
-    -- add LazyVim and import its plugins
+    -- Add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import/override with your plugins
+
+    -- -- Editor plugins
+    -- { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    -- { import = "lazyvim.plugins.extras.editor.mini-files" },
+    -- -- { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
+    -- { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+    --
+    -- -- Debgugging plugins
+    -- { import = "lazyvim.plugins.extras.dap.core" },
+    --
+    -- -- Formatting plugins
+    -- { import = "lazyvim.plugins.extras.formatting.biome" },
+    -- { import = "lazyvim.plugins.extras.formatting.prettier" },
+    --
+    -- -- Linting plugins
+    -- { import = "lazyvim.plugins.extras.linting.eslint" },
+    --
+    -- -- Language support plugins
+    -- { import = "lazyvim.plugins.extras.lang.json" },
+    -- { import = "lazyvim.plugins.extras.lang.markdown" },
+    --
+    -- -- Coding plugins
+    -- { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    -- { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    -- { import = "lazyvim.plugins.extras.coding.blink" },
+    --
+    -- -- Utility plugins
+    -- { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    --
+    -- -- AI plugins
+    -- { import = "lazyvim.plugins.extras.ai.copilot" },
+
+    -- Import/override with your plugins
     { import = "plugins" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
     lazy = false,
-    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
+    -- It's recommended to leave version=false for now, since a lot of the plugins that support versioning
     -- have outdated releases, which may break your Neovim install.
-    version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
+    version = false, -- Always use the latest git commit
+    -- version = "*", -- Try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = {
-    enabled = true, -- check for plugin updates periodically
-    notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+  install = { colorscheme = { "tokyonight", "habamax" } }, -- Specify colorschemes to install
+  checker = { enabled = true }, -- Automatically check for plugin updates
   performance = {
     rtp = {
-      -- disable some rtp plugins
+      -- Disable some runtime path plugins to improve performance
       disabled_plugins = {
         "gzip",
         -- "matchit",
