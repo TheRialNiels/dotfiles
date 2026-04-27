@@ -1,0 +1,37 @@
+# Fzf functions
+# ff() {
+#   rg --files | fzf --preview 'bat --color=always --style=numbers {}'
+# }
+
+fcd() {
+  local dir
+  dir=$(fd -t d . | fzf --preview 'exa -T --icons {} | head -200')
+  [[ -n "$dir" ]] && cd "$dir"
+}
+
+fdot() {
+  rg --files ~/.config | fzf --preview 'bat --color=always {}' | wl-copy
+  echo "Path copied to clipboard"
+}
+
+fkill() {
+  ps -ef | sed 1d | fzf --preview 'echo {}' | awk '{print $2}' | xargs kill -9
+}
+
+fssh() {
+  ssh $(grep -i "^Host " ~/.ssh/config | awk '{print $2}' | fzf)
+}
+
+fenv() {
+  env | fzf --preview 'echo {}'
+}
+
+fgb() {
+  git branch -a \
+    | grep -v 'HEAD' \
+    | sed 's/^[* ]*//' \
+    | fzf \
+    | sed 's#remotes/origin/##' \
+    | xargs git switch
+}
+
