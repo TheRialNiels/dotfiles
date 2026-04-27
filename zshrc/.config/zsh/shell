@@ -40,5 +40,5 @@ setopt NO_HASH_CMDS
 # WM_CMD="zellij"
 
 # Tmux
-# WM_VAR="/$TMUX"
-# WM_CMD="tmux"
+WM_VAR="/$TMUX"
+WM_CMD="tmux"
