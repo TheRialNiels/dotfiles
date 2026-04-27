@@ -18,7 +18,7 @@ bindkey "\e[C" forward-char
 bindkey "\e[D" backward-char
 
 # Auto suggestions plugin
-bindkey '^ ' autosuggest-accept
+bindkey '`' autosuggest-accept
 
 # History
 bindkey '^p' history-search-backward
