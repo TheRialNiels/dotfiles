@@ -1,5 +1,8 @@
 # Keybindings
 
+# Clear screen
+bindkey '^[l' clear-screen
+
 # Ensure home / end keys continue to work.
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[H" beginning-of-line
