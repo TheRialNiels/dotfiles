@@ -225,32 +225,6 @@ return {
           ignorecase = true,
           filename_bonus = true,
         },
-        win = {
-          input = {
-            keys = {
-              -- Disable h
-              ["h"] = false,
-
-              -- New movement keys
-              ["<c-k>"] = { "list_down", mode = { "i", "n" } },
-              ["<c-l>"] = { "list_up", mode = { "i", "n" } },
-              ["k"] = { "list_down", mode = { "n" } },
-              ["l"] = { "list_up", mode = { "n" } },
-            },
-          },
-          list = {
-            keys = {
-              -- Disable h
-              ["h"] = false,
-
-              -- New movement keys
-              ["<c-k>"] = "list_down",
-              ["<c-l>"] = "list_up",
-              ["k"] = "list_down",
-              ["l"] = "list_up",
-            },
-          },
-        },
         sources = {
           -- explorer = {
           --   matcher = {

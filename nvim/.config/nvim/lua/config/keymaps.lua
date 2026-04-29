@@ -4,29 +4,6 @@
 
 local opts = { noremap = true, silent = true }
 
--- Disable default hjkl movement
-vim.keymap.set({ "n", "v" }, "h", "<Nop>", opts)
-vim.keymap.set({ "n", "v" }, "j", "<Nop>", opts)
-vim.keymap.set({ "n", "v" }, "k", "<Nop>", opts)
-vim.keymap.set({ "n", "v" }, "l", "<Nop>", opts)
-
--- New movement keys
-vim.keymap.set({ "n", "v" }, "j", "h", opts) -- left
-vim.keymap.set({ "n", "v" }, "k", "j", opts) -- down
-vim.keymap.set({ "n", "v" }, "l", "k", opts) -- up
-vim.keymap.set({ "n", "v" }, "ñ", "l", opts) -- right
-
--- Operator-pending mode
-vim.keymap.set("o", "j", "h", opts)
-vim.keymap.set("o", "k", "j", opts)
-vim.keymap.set("o", "l", "k", opts)
-vim.keymap.set("o", "ñ", "l", opts)
-
-vim.keymap.set("i", "<A-j>", "<A-k>", opts)
-vim.keymap.set("i", "<A-k>", "<A-l>", opts)
-vim.keymap.set("n", "<A-j>", "<A-k>", opts)
-vim.keymap.set("n", "<A-k>", "<A-l>", opts)
-
 -- Map Ctrl+b in insert mode to delete to the end of the word without leaving insert mode
 vim.keymap.set("i", "<C-b>", "<C-o>de")
 
@@ -52,10 +29,10 @@ vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Proje
 ----- Tmux Navigation ------
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
-vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateLeft) -- Navigate to the left pane
-vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateDown) -- Navigate to the bottom pane
-vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateUp) -- Navigate to the top pane
-vim.keymap.set("n", "<C-ñ>", nvim_tmux_nav.NvimTmuxNavigateRight) -- Navigate to the right pane
+vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft) -- Navigate to the left pane
+vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown) -- Navigate to the bottom pane
+vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp) -- Navigate to the top pane
+vim.keymap.set("n", "<C-l", nvim_tmux_nav.NvimTmuxNavigateRight) -- Navigate to the right pane
 vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive) -- Navigate to the last active pane
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext) -- Navigate to the next pane
 
