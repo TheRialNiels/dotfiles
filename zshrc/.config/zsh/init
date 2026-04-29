@@ -30,3 +30,7 @@ fi
 if command -v fnm &> /dev/null; then
   eval "$(fnm env --use-on-cd)"
 fi
+
+if [[ -d /home/linuxbrew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+fi
