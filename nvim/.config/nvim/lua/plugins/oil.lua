@@ -25,12 +25,14 @@ return {
     -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
     prompt_save_on_select_new_entry = true,
 
+    delete_to_trash = true,
+
     -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
     keymaps = {
       ["g?"] = "actions.show_help",
       ["<CR>"] = "actions.select",
-      ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open in vertical split" },
-      ["<C-v>"] = { "actions.select", opts = { horizontal = true }, desc = "Open in horizontal split" },
+      ["<C-s>"] = { "actions.select", opts = { horizontal = true }, desc = "Open in horizontal split" },
+      ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open in vertical split" },
       ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open in new tab" },
       ["<C-p>"] = "actions.preview",
       ["<C-c>"] = "actions.close",
@@ -53,12 +55,8 @@ return {
     view_options = {
       -- Show files and directories that start with "." by default
       show_hidden = true,
-      -- This function defines what is considered a "hidden" file
-      is_hidden_file = function(name, bufnr)
-        return vim.startswith(name, ".")
-      end,
       -- This function defines what will never be shown, even when `show_hidden` is set
-      is_always_hidden = function(name, bufnr)
+      is_always_hidden = function(name, _)
         return name == ".." or name == ".git"
       end,
       -- Natural sort order for files and directories
@@ -108,6 +106,7 @@ return {
       border = "rounded",
       win_options = {
         winblend = 0,
+        wrap = true,
       },
       -- Whether the preview window is automatically updated when the cursor is moved
       update_on_cursor_moved = true,
