@@ -20,6 +20,11 @@ bindkey "\e[D" backward-char
 # Auto suggestions plugin
 bindkey '`' autosuggest-accept
 
+# Zsh autocomplete plugin
+bindkey              '^I' menu-select
+bindkey "$terminfo[kcbt]" menu-select
+bindkey -r '^[^H'
+
 # History
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
