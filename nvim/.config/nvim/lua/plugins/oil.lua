@@ -20,7 +20,7 @@ return {
     restore_win_options = true,
 
     -- Skip the confirmation popup for simple operations
-    skip_confirm_for_simple_edits = false,
+    skip_confirm_for_simple_edits = true,
 
     -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
     prompt_save_on_select_new_entry = true,
@@ -31,8 +31,8 @@ return {
     keymaps = {
       ["g?"] = "actions.show_help",
       ["<CR>"] = "actions.select",
-      ["<C-s>"] = { "actions.select", opts = { horizontal = true }, desc = "Open in horizontal split" },
-      ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open in vertical split" },
+      ["<M-d>"] = { "actions.select", opts = { horizontal = true }, desc = "Open in horizontal split" },
+      ["<M-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open in vertical split" },
       ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open in new tab" },
       ["<C-p>"] = "actions.preview",
       ["<C-c>"] = "actions.close",
