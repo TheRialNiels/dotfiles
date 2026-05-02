@@ -67,3 +67,7 @@ vim.opt.undofile = true
 
 -- Directory where undo history files are stored
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
+
+-- Spell-checking
+vim.opt.spell = true
+vim.opt.spelllang = { "en" }
