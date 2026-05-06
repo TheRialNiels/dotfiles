@@ -71,3 +71,12 @@ vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
 -- Spell-checking
 vim.opt.spell = true
 vim.opt.spelllang = { "en" }
+
+-- Indentation settings
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
