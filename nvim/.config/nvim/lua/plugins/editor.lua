@@ -68,17 +68,18 @@ return {
       },
     },
   },
-  {
-    -- Plugin: git.nvim
-    -- URL: https://github.com/dinhhuy258/git.nvim
-    -- Description: Provides Git integration for Neovim.
-    "dinhhuy258/git.nvim",
-    event = "BufReadPre", -- Load the plugin before reading a buffer
-    opts = {
-      keymaps = {
-        blame = "<Leader>gb", -- Keybinding to open blame window
-        browse = "<Leader>go", -- Keybinding to open file/folder in git repository
-      },
-    },
-  },
+  -- {
+  --   -- Plugin: git.nvim
+  --   -- URL: https://github.com/dinhhuy258/git.nvim
+  --   -- Description: Provides Git integration for Neovim.
+  --   -- DISABLED: Using Snacks for git features instead
+  --   "dinhhuy258/git.nvim",
+  --   event = "BufReadPre", -- Load the plugin before reading a buffer
+  --   opts = {
+  --     keymaps = {
+  --       -- blame = "<Leader>gb", -- Using Snacks' <leader>gm instead
+  --       browse = "<Leader>go", -- Keybinding to open file/folder in git repository
+  --     },
+  --   },
+  -- },
 }
