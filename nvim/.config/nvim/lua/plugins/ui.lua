@@ -216,7 +216,7 @@ return {
           Snacks.terminal()
         end,
         desc = "Toggle Terminal",
-        mode = { "n", "t" },
+        mode = { "n" },
       },
       {
         "]]",
