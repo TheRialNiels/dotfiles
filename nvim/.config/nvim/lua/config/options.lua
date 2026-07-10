@@ -80,3 +80,6 @@ vim.opt.smarttab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+
+-- Speed up the hover delay (default is 4000ms / 4 seconds)
+vim.o.updatetime = 250
