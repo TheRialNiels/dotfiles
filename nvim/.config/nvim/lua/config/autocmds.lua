@@ -11,13 +11,13 @@ local float_style = {
   border = "rounded",
 }
 
-local diagnostic_float_auto = vim.tbl_extend("force", float_style, {
-  focusable = false,
-  close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-  source = "always",
-  prefix = " ",
-  scope = "cursor",
-})
+-- local diagnostic_float_auto = vim.tbl_extend("force", float_style, {
+--   focusable = false,
+--   close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+--   source = "always",
+--   prefix = " ",
+--   scope = "cursor",
+-- })
 
 local diagnostic_float_manual = vim.tbl_extend("force", float_style, {
   focusable = true,
@@ -29,12 +29,6 @@ local diagnostic_float_manual = vim.tbl_extend("force", float_style, {
 vim.keymap.set("n", "<leader>e", function()
   vim.diagnostic.open_float(nil, diagnostic_float_manual)
 end, { desc = "Show diagnostics float" })
-
-vim.keymap.set("n", "K", function()
-  vim.lsp.buf.hover(vim.tbl_extend("force", float_style, {
-    focusable = true,
-  }))
-end, { desc = "Show hover docs" })
 
 -- Auto-show errors when hovering with the cursor
 -- vim.api.nvim_create_autocmd("CursorHold", {

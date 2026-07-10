@@ -30,6 +30,17 @@ map("n", "N", "Nzzzv")
 -- Telescope projects
 map("n", "<leader>fp", "<cmd>Telescope projects<CR>", { desc = "Projects" })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    vim.keymap.set("n", "K", function()
+      vim.lsp.buf.hover({
+        border = "rounded",
+        focusable = true,
+      })
+    end, { buffer = event.buf, desc = "Hover" })
+  end,
+})
+
 ----- Tmux Navigation ------
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
